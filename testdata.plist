@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fulldata</key>
+	<array>
+		<dict>
+			<key>user_name</key>
+			<string>Jason G</string>
+			<key>destination</key>
+			<string>Franklin&apos;s BBQ</string>
+			<key>cutoff_date</key>
+			<date>2010-10-27T04:00:00Z</date>
+			<key>open</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>user_name</key>
+			<string>Jason G</string>
+			<key>destination</key>
+			<string>Thai Passion</string>
+			<key>cutoff_date</key>
+			<date>2010-10-28T17:00:00Z</date>
+			<key>open</key>
+			<false/>
+		</dict>
+	</array>
+</dict>
+</plist>

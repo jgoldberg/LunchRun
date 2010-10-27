@@ -1,0 +1,454 @@
+TLunchRun
+v7
+r0
+t309851402.572921
+cCheck dependencies
+cProcessInfoPlistFile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/Info.plist LunchRun-Info.plist
+cCompileXIB /Users/jgoldberg/Documents/LunchRun/MainWindow.xib
+cCompileXIB /Users/jgoldberg/Documents/LunchRun/RootViewController.xib
+cCopyPlistFile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/testdata.plist testdata.plist
+cCompileXIB /Users/jgoldberg/Documents/LunchRun/ScheduledRunCell.xib
+cCompileXIB /Users/jgoldberg/Documents/LunchRun/ScheduledRunView.xib
+cProcessPCH /var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch.gch LunchRun_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/main.o /Users/jgoldberg/Documents/LunchRun/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LunchRunAppDelegate.o /Users/jgoldberg/Documents/LunchRun/Classes/LunchRunAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/RootViewController.o /Users/jgoldberg/Documents/LunchRun/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunCell.o /Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LRTimeRemaining.o /Users/jgoldberg/Documents/LunchRun/Classes/LRTimeRemaining.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunViewController.o /Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun normal i386
+cGenerateDSYMFile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app.dSYM /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun
+cTouch /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk
+c000000004BCFCBB600000000000000EE
+t1271909302
+s238
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004B2B4CC3000000000026EE30
+t1261128899
+s2551344
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004B2B4DC8000000000027E880
+t1261129160
+s2615424
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004B2B4DAE0000000000001355
+t1261129134
+s4949
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004B2B61620000000000000788
+t1261134178
+s1928
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004B2B62B500000000016721E0
+t1261134517
+s23536096
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk/usr/include/Availability.h
+c000000004B2B4EE200000000000019F9
+t1261129442
+s6649
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/LRTimeRemaining.h
+c000000004CC74EDB0000000000000114
+t1288130267
+s276
+i<Foundation/Foundation.h>
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/LRTimeRemaining.m
+c000000004CC75F6900000000000002B2
+t1288134505
+s690
+i"LRTimeRemaining.h"
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/LunchRunAppDelegate.h
+c000000004CC7BD29000000000000028B
+t1288158505
+s651
+i<UIKit/UIKit.h>
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/LunchRunAppDelegate.m
+c000000004CC7BD450000000000000418
+t1288158533
+s1048
+i"LunchRunAppDelegate.h"
+i"RootViewController.h"
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/OrderViewController.h
+c000000004CC7BA0900000000000000E0
+t1288157705
+s224
+i<UIKit/UIKit.h>
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/OrderViewController.m
+c000000004CC7BA090000000000000613
+t1288157705
+s1555
+i"OrderViewController.h"
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/RootViewController.h
+c000000004CC73C090000000000000156
+t1288125449
+s342
+i<UIKit/UIKit.h>
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/RootViewController.m
+c000000004CC7BAE700000000000016A4
+t1288157927
+s5796
+i"RootViewController.h"
+i"ScheduledRunCell.h"
+i"LRTimeRemaining.h"
+i"ScheduledRunViewController.h"
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunCell.h
+c000000004CC743A80000000000000269
+t1288127400
+s617
+i<UIKit/UIKit.h>
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunCell.m
+c000000004CC743B000000000000002F9
+t1288127408
+s761
+i"ScheduledRunCell.h"
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunViewController.h
+c000000004CC7BA8A00000000000000E7
+t1288157834
+s231
+i<UIKit/UIKit.h>
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunViewController.m
+c000000004CC8151F0000000000000644
+t1288181023
+s1604
+i"ScheduledRunViewController.h"
+
+N/Users/jgoldberg/Documents/LunchRun/Classes/ScheduledViewController.m
+c000000004CC7BA090000000000000613
+t1288157705
+s1555
+i"OrderViewController.h"
+
+N/Users/jgoldberg/Documents/LunchRun/LunchRun_Prefix.pch
+c000000004CC72C6C0000000000000142
+t1288121452
+s322
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/jgoldberg/Documents/LunchRun/MainWindow.xib
+c000000004CC7BCEA0000000000006278
+t1288158442
+s25208
+
+N/Users/jgoldberg/Documents/LunchRun/OrderView.xib
+c000000004CC7BA150000000000001643
+t1288157717
+s5699
+
+N/Users/jgoldberg/Documents/LunchRun/RootViewController.xib
+c000000004CC72C6C0000000000004453
+t1288121452
+s17491
+
+N/Users/jgoldberg/Documents/LunchRun/ScheduledRunCell.xib
+c000000004CC744740000000000005D3E
+t1288127604
+s23870
+
+N/Users/jgoldberg/Documents/LunchRun/ScheduledRunView.xib
+c000000004CC7BA840000000000003B15
+t1288157828
+s15125
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app
+t1288158534
+s340
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app.dSYM
+t1288158534
+s102
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/Info.plist
+t1288121465
+s597
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun
+t1288158534
+s28892
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/MainWindow.nib
+t1288158534
+s2212
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/OrderView.nib
+t2
+s0
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/PkgInfo
+t1288121465
+s8
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/RootViewController.nib
+t1288121465
+s1389
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/ScheduledRunCell.nib
+t1288127720
+s3749
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/ScheduledRunView.nib
+t1288157897
+s1106
+
+N/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/testdata.plist
+t1288134470
+s184
+
+N/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LRTimeRemaining.o
+t1288134547
+s7112
+
+N/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LunchRun.LinkFileList
+c000000004CC7BAC90000000000000320
+t1288157897
+s800
+
+N/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LunchRunAppDelegate.o
+t1288158534
+s40892
+
+N/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/OrderViewController.o
+t2
+s0
+
+N/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/RootViewController.o
+t1288157929
+s43860
+
+N/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunCell.o
+t1288127720
+s20836
+
+N/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunViewController.o
+t1288157897
+s30128
+
+N/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledViewController.o
+t2
+s0
+
+N/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/main.o
+t1288121466
+s5944
+
+N/Users/jgoldberg/Documents/LunchRun/main.m
+c000000004CC72C6C000000000000015F
+t1288121452
+s351
+i<UIKit/UIKit.h>
+
+N/Users/jgoldberg/Documents/LunchRun/testdata.plist
+c000000004CC75F4500000000000002AA
+t1288134469
+s682
+
+N/var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch.gch
+t1288121465
+s13026768
+
+NLunchRun-Info.plist
+c000000004CC72C6C000000000000038D
+t1288121452
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies309851402#309851402#0(0"0(0#1#0"4300911832#0"0#
+
+CCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LRTimeRemaining.o /Users/jgoldberg/Documents/LunchRun/Classes/LRTimeRemaining.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s309827347.680718
+e309827347.777928
+r1
+xCompileC
+xbuild/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LRTimeRemaining.o
+x/Users/jgoldberg/Documents/LunchRun/Classes/LRTimeRemaining.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/jgoldberg/Documents/LunchRun/Classes/LRTimeRemaining.m309827347#309827347#0(0"0(0#0#61"/Users/jgoldberg/Documents/LunchRun/Classes/LRTimeRemaining.m4300911832#1876"    cd /Users/jgoldberg/Documents/LunchRun    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-generated-files.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-own-target-headers.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-all-target-headers.hmap -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-project-headers.hmap -F/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator -I/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/include -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources/i386 -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources -include /var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch -c /Users/jgoldberg/Documents/LunchRun/Classes/LRTimeRemaining.m -o /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LRTimeRemaining.o0#
+
+CCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LunchRunAppDelegate.o /Users/jgoldberg/Documents/LunchRun/Classes/LunchRunAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s309851334.871963
+e309851334.930997
+r1
+xCompileC
+xbuild/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LunchRunAppDelegate.o
+x/Users/jgoldberg/Documents/LunchRun/Classes/LunchRunAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/jgoldberg/Documents/LunchRun/Classes/LunchRunAppDelegate.m309851334#309851334#0(0"0(0#0#65"/Users/jgoldberg/Documents/LunchRun/Classes/LunchRunAppDelegate.m4300911832#1884"    cd /Users/jgoldberg/Documents/LunchRun    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-generated-files.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-own-target-headers.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-all-target-headers.hmap -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-project-headers.hmap -F/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator -I/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/include -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources/i386 -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources -include /var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch -c /Users/jgoldberg/Documents/LunchRun/Classes/LunchRunAppDelegate.m -o /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LunchRunAppDelegate.o0#
+
+CCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/OrderViewController.o /Users/jgoldberg/Documents/LunchRun/Classes/OrderViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/RootViewController.o /Users/jgoldberg/Documents/LunchRun/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s309850729.243072
+e309850729.306448
+r1
+xCompileC
+xbuild/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/RootViewController.o
+x/Users/jgoldberg/Documents/LunchRun/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/jgoldberg/Documents/LunchRun/Classes/RootViewController.m309850729#309850729#0(0"0(0#0#64"/Users/jgoldberg/Documents/LunchRun/Classes/RootViewController.m4300911832#1882"    cd /Users/jgoldberg/Documents/LunchRun    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-generated-files.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-own-target-headers.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-all-target-headers.hmap -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-project-headers.hmap -F/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator -I/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/include -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources/i386 -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources -include /var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch -c /Users/jgoldberg/Documents/LunchRun/Classes/RootViewController.m -o /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/RootViewController.o0#
+
+CCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunCell.o /Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s309820520.331541
+e309820520.440572
+r1
+xCompileC
+xbuild/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunCell.o
+x/Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunCell.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@70"Compile /Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunCell.m309820520#309820520#0(0"0(0#0#62"/Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunCell.m4300911832#1878"    cd /Users/jgoldberg/Documents/LunchRun    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-generated-files.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-own-target-headers.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-all-target-headers.hmap -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-project-headers.hmap -F/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator -I/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/include -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources/i386 -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources -include /var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch -c /Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunCell.m -o /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunCell.o0#
+
+CCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunViewController.o /Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s309850697.327770
+e309850697.382964
+r1
+xCompileC
+xbuild/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunViewController.o
+x/Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@80"Compile /Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunViewController.m309850697#309850697#0(0"0(0#0#72"/Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunViewController.m4300911832#1898"    cd /Users/jgoldberg/Documents/LunchRun    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-generated-files.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-own-target-headers.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-all-target-headers.hmap -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-project-headers.hmap -F/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator -I/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/include -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources/i386 -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources -include /var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch -c /Users/jgoldberg/Documents/LunchRun/Classes/ScheduledRunViewController.m -o /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledRunViewController.o0#
+
+CCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/ScheduledViewController.o /Users/jgoldberg/Documents/LunchRun/Classes/ScheduledViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/main.o /Users/jgoldberg/Documents/LunchRun/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s309814265.983622
+e309814266.034907
+r1
+xCompileC
+xbuild/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/main.o
+x/Users/jgoldberg/Documents/LunchRun/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@50"Compile /Users/jgoldberg/Documents/LunchRun/main.m309814265#309814266#0(0"0(0#0#42"/Users/jgoldberg/Documents/LunchRun/main.m4300911832#1846"    cd /Users/jgoldberg/Documents/LunchRun    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-generated-files.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-own-target-headers.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-all-target-headers.hmap -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-project-headers.hmap -F/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator -I/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/include -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources/i386 -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources -include /var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch -c /Users/jgoldberg/Documents/LunchRun/main.m -o /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/jgoldberg/Documents/LunchRun/MainWindow.xib
+s309851334.620117
+e309851334.871584
+r1
+xCompileXIB
+x/Users/jgoldberg/Documents/LunchRun/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib309851334#309851334#0(0"0(0#0#50"/Users/jgoldberg/Documents/LunchRun/MainWindow.xib4300911832#474"    cd /Users/jgoldberg/Documents/LunchRun    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/MainWindow.nib /Users/jgoldberg/Documents/LunchRun/MainWindow.xib0#
+
+CCompileXIB /Users/jgoldberg/Documents/LunchRun/OrderView.xib
+r0
+
+CCompileXIB /Users/jgoldberg/Documents/LunchRun/RootViewController.xib
+s309814265.193171
+e309814265.454923
+r1
+xCompileXIB
+x/Users/jgoldberg/Documents/LunchRun/RootViewController.xib
+lSLF07#2@33"CompileXIB RootViewController.xib309814265#309814265#0(0"0(0#0#58"/Users/jgoldberg/Documents/LunchRun/RootViewController.xib4300911832#490"    cd /Users/jgoldberg/Documents/LunchRun    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/RootViewController.nib /Users/jgoldberg/Documents/LunchRun/RootViewController.xib0#
+
+CCompileXIB /Users/jgoldberg/Documents/LunchRun/ScheduledRunCell.xib
+s309820519.987357
+e309820520.279123
+r1
+xCompileXIB
+x/Users/jgoldberg/Documents/LunchRun/ScheduledRunCell.xib
+lSLF07#2@31"CompileXIB ScheduledRunCell.xib309820519#309820520#0(0"0(0#0#56"/Users/jgoldberg/Documents/LunchRun/ScheduledRunCell.xib4300911832#486"    cd /Users/jgoldberg/Documents/LunchRun    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/ScheduledRunCell.nib /Users/jgoldberg/Documents/LunchRun/ScheduledRunCell.xib0#
+
+CCompileXIB /Users/jgoldberg/Documents/LunchRun/ScheduledRunView.xib
+s309850697.098003
+e309850697.326274
+r1
+xCompileXIB
+x/Users/jgoldberg/Documents/LunchRun/ScheduledRunView.xib
+lSLF07#2@31"CompileXIB ScheduledRunView.xib309850697#309850697#0(0"0(0#0#56"/Users/jgoldberg/Documents/LunchRun/ScheduledRunView.xib4300911832#486"    cd /Users/jgoldberg/Documents/LunchRun    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.1.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/ScheduledRunView.nib /Users/jgoldberg/Documents/LunchRun/ScheduledRunView.xib0#
+
+CCopyPlistFile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/testdata.plist testdata.plist
+s309827270.019323
+e309827270.043512
+r1
+xCopyPlistFile
+x/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/testdata.plist
+xtestdata.plist
+lSLF07#2@19"Copy testdata.plist309827270#309827270#0(0"0(0#0#50"/Users/jgoldberg/Documents/LunchRun/testdata.plist4300911832#384"    cd /Users/jgoldberg/Documents/LunchRun    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copyplist --convert binary1 testdata.plist --outdir /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app0#
+
+CGenerateDSYMFile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app.dSYM /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun
+s309851334.949689
+e309851334.963486
+r1
+xGenerateDSYMFile
+x/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app.dSYM
+x/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun
+lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/LunchRun.app.dSYM build/Debug-iphonesimulator/LunchRun.app/LunchRun309851334#309851334#0(0"0(0#0#85"/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun4300911832#377"    cd /Users/jgoldberg/Documents/LunchRun    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun -o /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app.dSYM0#
+
+CLd /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun normal i386
+s309851334.931086
+e309851334.949595
+r1
+xLd
+x/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun
+xnormal
+xi386
+lSLF07#2@90"Link /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun309851334#309851334#0(0"0(0#0#0"4300911832#854"    cd /Users/jgoldberg/Documents/LunchRun    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -L/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator -F/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator -filelist /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/Objects-normal/i386/LunchRun.LinkFileList -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/LunchRun0#
+
+CProcessInfoPlistFile /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/Info.plist LunchRun-Info.plist
+s309814265.188200
+e309814265.192323
+r1
+xProcessInfoPlistFile
+x/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/Info.plist
+xLunchRun-Info.plist
+lSLF07#2@27"Process LunchRun-Info.plist309814265#309814265#0(0"0(0#0#55"/Users/jgoldberg/Documents/LunchRun/LunchRun-Info.plist4300911832#473"    cd /Users/jgoldberg/Documents/LunchRun    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility LunchRun-Info.plist -genpkginfo /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app/Info.plist0#
+
+CProcessPCH /var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch.gch LunchRun_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s309814265.461694
+e309814265.983527
+r1
+xProcessPCH
+x/var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch.gch
+xLunchRun_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile LunchRun_Prefix.pch309814265#309814265#0(0"0(0#0#55"/Users/jgoldberg/Documents/LunchRun/LunchRun_Prefix.pch4300911832#1740"    cd /Users/jgoldberg/Documents/LunchRun    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.3.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-generated-files.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-own-target-headers.hmap -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-all-target-headers.hmap -iquote /Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/LunchRun-project-headers.hmap -F/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator -I/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/include -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources/i386 -I/Users/jgoldberg/Documents/LunchRun/build/LunchRun.build/Debug-iphonesimulator/LunchRun.build/DerivedSources -c /Users/jgoldberg/Documents/LunchRun/LunchRun_Prefix.pch -o /var/folders/QF/QF9ZSTSlHhiqF7TRLnCNBU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/LunchRun_Prefix-cqvvgeexunakjbgfchjjcndsarfu/LunchRun_Prefix.pch.gch0#
+
+CTouch /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app
+s309851334.963577
+e309851334.965736
+r1
+xTouch
+x/Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app
+lSLF07#2@82"Touch /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app309851334#309851334#0(0"0(0#0#0"4300911832#273"    cd /Users/jgoldberg/Documents/LunchRun    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/jgoldberg/Documents/LunchRun/build/Debug-iphonesimulator/LunchRun.app0#
+
