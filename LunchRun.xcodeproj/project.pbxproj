@@ -23,6 +23,9 @@
 		C91FFB921277F19500615EAA /* ScheduledRunView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91FFB911277F19500615EAA /* ScheduledRunView.xib */; };
 		C96B11CC127907560083BFEB /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96B11CB127907560083BFEB /* MyOrderViewController.m */; };
 		C96B11CE1279076C0083BFEB /* MyOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B11CD1279076C0083BFEB /* MyOrderView.xib */; };
+		C96B121612790F760083BFEB /* OrderItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96B121512790F760083BFEB /* OrderItemViewController.m */; };
+		C96B121812790F880083BFEB /* AddOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B121712790F880083BFEB /* AddOrderItemView.xib */; };
+		C96B121A12790F930083BFEB /* EditOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B121912790F930083BFEB /* EditOrderItemView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,10 @@
 		C96B11CA127907560083BFEB /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
 		C96B11CB127907560083BFEB /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
 		C96B11CD1279076C0083BFEB /* MyOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderView.xib; sourceTree = "<group>"; };
+		C96B121412790F760083BFEB /* OrderItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemViewController.h; sourceTree = "<group>"; };
+		C96B121512790F760083BFEB /* OrderItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemViewController.m; sourceTree = "<group>"; };
+		C96B121712790F880083BFEB /* AddOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddOrderItemView.xib; sourceTree = "<group>"; };
+		C96B121912790F930083BFEB /* EditOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditOrderItemView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,8 @@
 				C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */,
 				C96B11CA127907560083BFEB /* MyOrderViewController.h */,
 				C96B11CB127907560083BFEB /* MyOrderViewController.m */,
+				C96B121412790F760083BFEB /* OrderItemViewController.h */,
+				C96B121512790F760083BFEB /* OrderItemViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -124,6 +133,8 @@
 				C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */,
 				C91FFB911277F19500615EAA /* ScheduledRunView.xib */,
 				C96B11CD1279076C0083BFEB /* MyOrderView.xib */,
+				C96B121712790F880083BFEB /* AddOrderItemView.xib */,
+				C96B121912790F930083BFEB /* EditOrderItemView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -202,6 +213,8 @@
 				C91FF9B812776CC100615EAA /* ScheduledRunCell.xib in Resources */,
 				C91FFB921277F19500615EAA /* ScheduledRunView.xib in Resources */,
 				C96B11CE1279076C0083BFEB /* MyOrderView.xib in Resources */,
+				C96B121812790F880083BFEB /* AddOrderItemView.xib in Resources */,
+				C96B121A12790F930083BFEB /* EditOrderItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +232,7 @@
 				C91FFA6012777DC100615EAA /* LRTimeRemaining.m in Sources */,
 				C91FFB901277F18900615EAA /* ScheduledRunViewController.m in Sources */,
 				C96B11CC127907560083BFEB /* MyOrderViewController.m in Sources */,
+				C96B121612790F760083BFEB /* OrderItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

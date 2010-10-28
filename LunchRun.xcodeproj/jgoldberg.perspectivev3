@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -277,8 +275,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
-									<integer>16</integer>
+									<integer>14</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -311,6 +309,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C96B120812790B5C0083BFEB</string>
+										<string>C96B124A127911AA0083BFEB</string>
 										<key>history</key>
 										<array>
 											<string>C91FFB731277971800615EAA</string>
@@ -336,14 +336,16 @@
 											<string>C91FFB761277971800615EAA</string>
 											<string>C91FFB771277971800615EAA</string>
 											<string>C96B11D51279083C0083BFEB</string>
-											<string>C96B11F412790ACD0083BFEB</string>
 											<string>C96B11F912790B1A0083BFEB</string>
 											<string>C96B11FA12790B1A0083BFEB</string>
-											<string>C96B11FB12790B1A0083BFEB</string>
 											<string>C96B11FC12790B1A0083BFEB</string>
-											<string>C96B11FD12790B1A0083BFEB</string>
-											<string>C96B11FE12790B1A0083BFEB</string>
-											<string>C96B120412790B300083BFEB</string>
+											<string>C96B1243127911AA0083BFEB</string>
+											<string>C96B1244127911AA0083BFEB</string>
+											<string>C96B1245127911AA0083BFEB</string>
+											<string>C96B1246127911AA0083BFEB</string>
+											<string>C96B1247127911AA0083BFEB</string>
+											<string>C96B1248127911AA0083BFEB</string>
+											<string>C96B1249127911AA0083BFEB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
