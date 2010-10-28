@@ -12,12 +12,14 @@
     
     UIWindow *window;
     UINavigationController *navigationController;
+	NSString *currentScheduledRun;
+	NSDictionary *menuData;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated;
+@property (nonatomic, retain) NSString *currentScheduledRun;
+@property (nonatomic, retain) NSDictionary *menuData;
 
 @end
 

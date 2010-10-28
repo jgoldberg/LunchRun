@@ -7,6 +7,7 @@
 //
 
 #import "MyOrderViewController.h"
+#import "OrderItemViewController.h"
 
 
 @implementation MyOrderViewController
@@ -15,10 +16,10 @@
 {
 	NSLog(@"Add Order Item");
 	
-	MyOrderViewController *scheduledRunViewController = [[MyOrderViewController alloc] initWithNibName:@"MyOrderView" bundle:nil];
-	[scheduledRunViewController setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-	[self presentModalViewController:scheduledRunViewController animated:YES];
-	[scheduledRunViewController release];
+	OrderItemViewController *orderItemView = [[OrderItemViewController alloc] initWithNibName:@"AddOrderItemView" bundle:nil];
+	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+	[self presentModalViewController:orderItemView animated:YES];
+	[orderItemView release];
 }
 
 // Customize the number of sections in the table view.

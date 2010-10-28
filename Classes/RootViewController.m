@@ -10,6 +10,7 @@
 #import "ScheduledRunCell.h"
 #import "LRTimeRemaining.h"
 #import "ScheduledRunViewController.h"
+#import "LunchRunAppDelegate.h"
 
 @implementation RootViewController
 
@@ -172,12 +173,20 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	 ScheduledRunViewController *scheduledRunViewController = [[ScheduledRunViewController alloc] initWithNibName:@"ScheduledRunView" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:scheduledRunViewController animated:YES];
-	 [scheduledRunViewController release];
+    NSInteger row = [indexPath row];
+	NSDictionary *order = [orderList objectAtIndex:row];
+	NSInteger scheduledRun = [order objectForKey:@"scheduled_run_id"];
+	NSString *scheduledRunStr = [NSString stringWithFormat:@"%i",[scheduledRun intValue]];
+	
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
+	NSLog(@"Setting currentScheduledRun to: %@", scheduledRunStr);
+	delegate.currentScheduledRun = scheduledRunStr;
+	
+	ScheduledRunViewController *scheduledRunViewController = [[ScheduledRunViewController alloc] initWithNibName:@"ScheduledRunView" bundle:nil];
+    // ...
+    // Pass the selected object to the new view controller.
+	[self.navigationController pushViewController:scheduledRunViewController animated:YES];
+	[scheduledRunViewController release];
 }
 
 

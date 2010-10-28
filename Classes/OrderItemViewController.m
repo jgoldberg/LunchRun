@@ -7,9 +7,79 @@
 //
 
 #import "OrderItemViewController.h"
+#import "QuartzCore/QuartzCore.h"
+#import "LunchRunAppDelegate.h"
 
+#define QUANTITY_COMPONENT 0
+#define ITEM_COMPONENT 1
 
 @implementation OrderItemViewController
+
+@synthesize instructionField;
+@synthesize chooseItemButton;
+@synthesize itemPickerView;
+@synthesize currentQuantities;
+@synthesize currentItems;
+
+- (IBAction) chooseItem: (id) sender
+{
+	[itemPickerView setHidden:FALSE];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+	return 2;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+	if (component == QUANTITY_COMPONENT)
+	{
+		return [currentQuantities count];
+	}
+	
+	if (component == ITEM_COMPONENT) 
+	{
+		return [currentItems count];
+	}
+	
+	return 0;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+	if (component == QUANTITY_COMPONENT)
+	{
+		return [currentQuantities objectAtIndex:row];
+	}
+	
+	if (component == ITEM_COMPONENT) 
+	{
+		return [currentItems objectAtIndex:row];
+	}
+	
+	return nil;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{	
+	if (component == ITEM_COMPONENT)
+	{
+		LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
+		NSDictionary *menuTable = [delegate menuData];
+		NSString *key = [delegate currentScheduledRun];
+		NSArray *menuList = [menuTable objectForKey:key];
+		NSDictionary *menuItem = [menuList objectAtIndex:row];
+		
+		NSArray *quantity = [menuItem objectForKey:@"quantity_options"];
+		// Set default if no quantity array exists
+		quantity = quantity != nil ? quantity : [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",nil];		
+		self.currentQuantities = quantity;
+		
+		[self.itemPickerView selectRow: 0 inComponent:QUANTITY_COMPONENT animated:TRUE];
+		[self.itemPickerView reloadComponent:QUANTITY_COMPONENT];
+	}
+}
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -27,12 +97,32 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
+	NSDictionary *menuTable = [delegate menuData];
+	NSString *key = [delegate currentScheduledRun];
+	NSArray *menuList = [menuTable objectForKey:key];
+	
+	NSMutableArray *nameList = [[NSMutableArray alloc] initWithCapacity:[menuList count]];
+	for (NSInteger i=0; i<[menuList count]; i++)
+	{
+		NSDictionary *menuItem = [menuList objectAtIndex:i];
+		[nameList insertObject:[menuItem objectForKey:@"name"] atIndex:i];
+		
+		if (i == 0)
+		{
+			NSArray *quantity = [menuItem objectForKey:@"quantity_options"];
+			self.currentQuantities = quantity != nil ? quantity : [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",nil];
+		}
+	}
+	
+	self.currentItems = [NSArray arrayWithArray:nameList];
+	
+	[nameList release];
+	
     [super viewDidLoad];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.

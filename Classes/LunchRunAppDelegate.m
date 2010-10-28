@@ -14,11 +14,17 @@
 
 @synthesize window;
 @synthesize navigationController;
-
+@synthesize currentScheduledRun;
+@synthesize menuData;
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
 	NSLog(@"Clicked");
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+	
 }
 
 #pragma mark -
@@ -26,6 +32,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     // Override point for customization after app launch    
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"menudata" ofType:@"plist"];
+	NSDictionary *_menuData = [[NSDictionary alloc] initWithContentsOfFile:path];
+	self.menuData = _menuData;
+	
+	[_menuData release];
 	
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];

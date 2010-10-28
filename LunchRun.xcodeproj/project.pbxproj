@@ -26,6 +26,7 @@
 		C96B121612790F760083BFEB /* OrderItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96B121512790F760083BFEB /* OrderItemViewController.m */; };
 		C96B121812790F880083BFEB /* AddOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B121712790F880083BFEB /* AddOrderItemView.xib */; };
 		C96B121A12790F930083BFEB /* EditOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B121912790F930083BFEB /* EditOrderItemView.xib */; };
+		C96B126E127918C70083BFEB /* menudata.plist in Resources */ = {isa = PBXBuildFile; fileRef = C96B126D127918C70083BFEB /* menudata.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		C96B121512790F760083BFEB /* OrderItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemViewController.m; sourceTree = "<group>"; };
 		C96B121712790F880083BFEB /* AddOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddOrderItemView.xib; sourceTree = "<group>"; };
 		C96B121912790F930083BFEB /* EditOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditOrderItemView.xib; sourceTree = "<group>"; };
+		C96B126D127918C70083BFEB /* menudata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menudata.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				C96B11CD1279076C0083BFEB /* MyOrderView.xib */,
 				C96B121712790F880083BFEB /* AddOrderItemView.xib */,
 				C96B121912790F930083BFEB /* EditOrderItemView.xib */,
+				C96B126D127918C70083BFEB /* menudata.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				C96B11CE1279076C0083BFEB /* MyOrderView.xib in Resources */,
 				C96B121812790F880083BFEB /* AddOrderItemView.xib in Resources */,
 				C96B121A12790F930083BFEB /* EditOrderItemView.xib in Resources */,
+				C96B126E127918C70083BFEB /* menudata.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

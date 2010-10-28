@@ -9,8 +9,20 @@
 #import <UIKit/UIKit.h>
 
 
-@interface OrderItemViewController : UIViewController {
-
+@interface OrderItemViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
+	IBOutlet UITextField *instructionField;
+	IBOutlet UIButton *chooseItemButton;
+	IBOutlet UIPickerView *itemPickerView;
+	NSArray *currentItems;
+	NSArray *currentQuantities;
 }
+
+- (IBAction) chooseItem: (id) sender;
+
+@property (nonatomic, retain) IBOutlet UITextField *instructionField;
+@property (nonatomic, retain) IBOutlet UIButton *chooseItemButton;
+@property (nonatomic, retain) IBOutlet UIPickerView *itemPickerView;
+@property (nonatomic, retain) NSArray *currentItems;
+@property (nonatomic, retain) NSArray *currentQuantities;
 
 @end
