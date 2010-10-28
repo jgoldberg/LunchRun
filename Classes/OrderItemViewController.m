@@ -23,7 +23,18 @@
 
 - (IBAction) chooseItem: (id) sender
 {
+	NSInteger itemIndex = [itemPickerView selectedRowInComponent:ITEM_COMPONENT];
+	NSInteger quantityIndex = [itemPickerView selectedRowInComponent:QUANTITY_COMPONENT];
+	
+	NSString *title = [NSString stringWithFormat:@"%@ %@", [currentQuantities objectAtIndex:quantityIndex],[currentItems objectAtIndex:itemIndex]];
+	[chooseItemButton setTitle:title forState:UIControlStateNormal];
+	
 	[itemPickerView setHidden:FALSE];
+}
+
+- (IBAction) closePicker: (id) sender
+{
+	[itemPickerView setHidden:TRUE];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -62,7 +73,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{	
+{		
 	if (component == ITEM_COMPONENT)
 	{
 		LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -79,6 +90,12 @@
 		[self.itemPickerView selectRow: 0 inComponent:QUANTITY_COMPONENT animated:TRUE];
 		[self.itemPickerView reloadComponent:QUANTITY_COMPONENT];
 	}
+	
+	NSInteger itemIndex = [pickerView selectedRowInComponent:ITEM_COMPONENT];
+	NSInteger quantityIndex = [pickerView selectedRowInComponent:QUANTITY_COMPONENT];
+	
+	NSString *title = [NSString stringWithFormat:@"%@ %@", [currentQuantities objectAtIndex:quantityIndex],[currentItems objectAtIndex:itemIndex]];
+	[chooseItemButton setTitle:title forState:UIControlStateNormal];
 }
 
 /*

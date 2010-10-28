@@ -18,6 +18,7 @@
 }
 
 - (IBAction) chooseItem: (id) sender;
+- (IBAction) closePicker: (id) sender;
 
 @property (nonatomic, retain) IBOutlet UITextField *instructionField;
 @property (nonatomic, retain) IBOutlet UIButton *chooseItemButton;
