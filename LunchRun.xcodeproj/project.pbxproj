@@ -21,6 +21,8 @@
 		C91FFA6012777DC100615EAA /* LRTimeRemaining.m in Sources */ = {isa = PBXBuildFile; fileRef = C91FFA5F12777DC100615EAA /* LRTimeRemaining.m */; };
 		C91FFB901277F18900615EAA /* ScheduledRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */; };
 		C91FFB921277F19500615EAA /* ScheduledRunView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91FFB911277F19500615EAA /* ScheduledRunView.xib */; };
+		C96B11CC127907560083BFEB /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96B11CB127907560083BFEB /* MyOrderViewController.m */; };
+		C96B11CE1279076C0083BFEB /* MyOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B11CD1279076C0083BFEB /* MyOrderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,9 @@
 		C91FFB8E1277F18900615EAA /* ScheduledRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRunViewController.h; sourceTree = "<group>"; };
 		C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRunViewController.m; sourceTree = "<group>"; };
 		C91FFB911277F19500615EAA /* ScheduledRunView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduledRunView.xib; sourceTree = "<group>"; };
+		C96B11CA127907560083BFEB /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
+		C96B11CB127907560083BFEB /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
+		C96B11CD1279076C0083BFEB /* MyOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,8 @@
 				C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */,
 				C91FFB8E1277F18900615EAA /* ScheduledRunViewController.h */,
 				C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */,
+				C96B11CA127907560083BFEB /* MyOrderViewController.h */,
+				C96B11CB127907560083BFEB /* MyOrderViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -116,6 +123,7 @@
 				C91FF95B1277662800615EAA /* testdata.plist */,
 				C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */,
 				C91FFB911277F19500615EAA /* ScheduledRunView.xib */,
+				C96B11CD1279076C0083BFEB /* MyOrderView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 				C91FF95C1277662800615EAA /* testdata.plist in Resources */,
 				C91FF9B812776CC100615EAA /* ScheduledRunCell.xib in Resources */,
 				C91FFB921277F19500615EAA /* ScheduledRunView.xib in Resources */,
+				C96B11CE1279076C0083BFEB /* MyOrderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +218,7 @@
 				C91FF9B612776C4B00615EAA /* ScheduledRunCell.m in Sources */,
 				C91FFA6012777DC100615EAA /* LRTimeRemaining.m in Sources */,
 				C91FFB901277F18900615EAA /* ScheduledRunViewController.m in Sources */,
+				C96B11CC127907560083BFEB /* MyOrderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

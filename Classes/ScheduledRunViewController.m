@@ -7,9 +7,17 @@
 //
 
 #import "ScheduledRunViewController.h"
+#import "MyOrderViewController.h"
 
 
 @implementation ScheduledRunViewController
+
+- (IBAction) viewMyOrder: (id) sender
+{
+	MyOrderViewController *scheduledRunViewController = [[MyOrderViewController alloc] initWithNibName:@"MyOrderView" bundle:nil];
+	[self.navigationController pushViewController:scheduledRunViewController animated:YES];
+	[scheduledRunViewController release];
+}
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
