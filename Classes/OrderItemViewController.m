@@ -35,11 +35,37 @@
 - (IBAction) closePicker: (id) sender
 {
 	[itemPickerView setHidden:TRUE];
+	[instructionField resignFirstResponder];
+}
+
+- (IBAction) cancelForm: (id) sender
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction) saveForm: (id) sender
+{
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
 	return 2;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+	if (component == QUANTITY_COMPONENT)
+	{
+		return 50;
+	}
+	
+	if (component == ITEM_COMPONENT)
+	{
+		return 270;
+	}
+	
+	return 0;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
