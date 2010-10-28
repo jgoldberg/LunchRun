@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -276,7 +278,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>26</integer>
+									<integer>24</integer>
 									<integer>18</integer>
 									<integer>0</integer>
 								</array>
@@ -310,14 +312,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C91FFB1B1277927C00615EAA</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>OrderItemViewController.m</string>
+								<string>MyOrderViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C91FFB1C1277927C00615EAA</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>OrderItemViewController.m</string>
+										<string>MyOrderViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9969B7A12794F9A00365CC5</string>
+										<string>C9969BA21279640800365CC5</string>
 										<key>history</key>
 										<array>
 											<string>C91FFB751277971800615EAA</string>
@@ -342,12 +342,12 @@
 											<string>C9E278D1127943650064C3BD</string>
 											<string>C9E278D2127943650064C3BD</string>
 											<string>C9E278D3127943650064C3BD</string>
-											<string>C9E278D4127943650064C3BD</string>
-											<string>C9E278D5127943650064C3BD</string>
 											<string>C9969B6E12794ECE00365CC5</string>
-											<string>C9969B6F12794ECE00365CC5</string>
-											<string>C9969B7012794ECE00365CC5</string>
-											<string>C9969B7112794ECE00365CC5</string>
+											<string>C9969B7D1279504200365CC5</string>
+											<string>C9969B7E1279504200365CC5</string>
+											<string>C9969B8F127962E600365CC5</string>
+											<string>C9969B90127962E600365CC5</string>
+											<string>C9969BA01279640300365CC5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

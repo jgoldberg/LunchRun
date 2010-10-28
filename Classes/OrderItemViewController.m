@@ -21,6 +21,9 @@
 @synthesize currentQuantities;
 @synthesize currentItems;
 
+#pragma mark -
+#pragma mark Actions
+
 - (IBAction) chooseItem: (id) sender
 {
 	NSInteger itemIndex = [itemPickerView selectedRowInComponent:ITEM_COMPONENT];
@@ -46,26 +49,16 @@
 - (IBAction) saveForm: (id) sender
 {
 	[self dismissModalViewControllerAnimated:YES];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"OrderItemClose" object:self];
 }
+
+#pragma mark -
+#pragma mark Picker Data Source
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
 	return 2;
-}
-
-- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
-{
-	if (component == QUANTITY_COMPONENT)
-	{
-		return 50;
-	}
-	
-	if (component == ITEM_COMPONENT)
-	{
-		return 270;
-	}
-	
-	return 0;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -78,6 +71,24 @@
 	if (component == ITEM_COMPONENT) 
 	{
 		return [currentItems count];
+	}
+	
+	return 0;
+}
+
+#pragma mark -
+#pragma mark Picker Delegate
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+	if (component == QUANTITY_COMPONENT)
+	{
+		return 50;
+	}
+	
+	if (component == ITEM_COMPONENT)
+	{
+		return 270;
 	}
 	
 	return 0;

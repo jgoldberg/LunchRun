@@ -15,11 +15,16 @@
 - (IBAction) addOrderItem: (id) sender
 {
 	NSLog(@"Add Order Item");
-	
+		
 	OrderItemViewController *orderItemView = [[OrderItemViewController alloc] initWithNibName:@"AddOrderItemView" bundle:nil];
 	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 	[self presentModalViewController:orderItemView animated:YES];
 	[orderItemView release];
+}
+
+- (void)handleClose
+{
+	NSLog(@"Closed!");
 }
 
 // Customize the number of sections in the table view.
@@ -71,6 +76,8 @@
 																			   action:@selector(addOrderItem:)];
 	self.navigationItem.rightBarButtonItem = addButton;
 	[addButton release];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleClose) name:@"OrderItemClose" object:nil];
 	
 	[super viewDidLoad];
 }
