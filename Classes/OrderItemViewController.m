@@ -20,6 +20,7 @@
 @synthesize itemPickerView;
 @synthesize currentQuantities;
 @synthesize currentItems;
+@synthesize scheduledRunId;
 
 #pragma mark -
 #pragma mark Actions
@@ -115,8 +116,7 @@
 	{
 		LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
 		NSDictionary *menuTable = [delegate menuData];
-		NSString *key = [delegate currentScheduledRun];
-		NSArray *menuList = [menuTable objectForKey:key];
+		NSArray *menuList = [menuTable objectForKey:scheduledRunId];
 		NSDictionary *menuItem = [menuList objectAtIndex:row];
 		
 		NSArray *quantity = [menuItem objectForKey:@"quantity_options"];
@@ -155,8 +155,7 @@
 - (void)viewDidLoad {
 	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
 	NSDictionary *menuTable = [delegate menuData];
-	NSString *key = [delegate currentScheduledRun];
-	NSArray *menuList = [menuTable objectForKey:key];
+	NSArray *menuList = [menuTable objectForKey:scheduledRunId];
 	
 	NSMutableArray *nameList = [[NSMutableArray alloc] initWithCapacity:[menuList count]];
 	for (NSInteger i=0; i<[menuList count]; i++)

@@ -12,11 +12,14 @@
 
 @implementation MyOrderViewController
 
+@synthesize scheduledRunId;
+
 - (IBAction) addOrderItem: (id) sender
 {
 	NSLog(@"Add Order Item");
 		
 	OrderItemViewController *orderItemView = [[OrderItemViewController alloc] initWithNibName:@"AddOrderItemView" bundle:nil];
+	orderItemView.scheduledRunId = scheduledRunId;
 	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 	[self presentModalViewController:orderItemView animated:YES];
 	[orderItemView release];

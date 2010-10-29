@@ -15,6 +15,7 @@
 	IBOutlet UIPickerView *itemPickerView;
 	NSArray *currentItems;
 	NSArray *currentQuantities;
+	NSString *scheduledRunId;
 }
 
 - (IBAction) chooseItem: (id) sender;
@@ -27,5 +28,6 @@
 @property (nonatomic, retain) IBOutlet UIPickerView *itemPickerView;
 @property (nonatomic, retain) NSArray *currentItems;
 @property (nonatomic, retain) NSArray *currentQuantities;
+@property (nonatomic, copy) NSString *scheduledRunId;
 
 @end

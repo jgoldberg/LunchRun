@@ -278,7 +278,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>24</integer>
+									<integer>25</integer>
 									<integer>18</integer>
 									<integer>0</integer>
 								</array>
@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9969BA21279640800365CC5</string>
+										<string>C9969C1F127A7D1E00365CC5</string>
 										<key>history</key>
 										<array>
 											<string>C91FFB751277971800615EAA</string>
@@ -337,17 +337,17 @@
 											<string>C91FFB771277971800615EAA</string>
 											<string>C96B11F912790B1A0083BFEB</string>
 											<string>C96B12AD127920670083BFEB</string>
-											<string>C96B13B1127933450083BFEB</string>
-											<string>C96B13B2127933450083BFEB</string>
 											<string>C9E278D1127943650064C3BD</string>
 											<string>C9E278D2127943650064C3BD</string>
 											<string>C9E278D3127943650064C3BD</string>
-											<string>C9969B6E12794ECE00365CC5</string>
-											<string>C9969B7D1279504200365CC5</string>
-											<string>C9969B7E1279504200365CC5</string>
-											<string>C9969B8F127962E600365CC5</string>
-											<string>C9969B90127962E600365CC5</string>
-											<string>C9969BA01279640300365CC5</string>
+											<string>C9969BB7127A2DDB00365CC5</string>
+											<string>C9969BC0127A2E5500365CC5</string>
+											<string>C9969BC7127A764200365CC5</string>
+											<string>C9969BE1127A7A1E00365CC5</string>
+											<string>C9969C13127A7CCA00365CC5</string>
+											<string>C9969C1C127A7D1E00365CC5</string>
+											<string>C9969C1D127A7D1E00365CC5</string>
+											<string>C9969C1E127A7D1E00365CC5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -404,7 +404,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1469, 1}}</string>
+										<string>{{10, 27}, {1469, 351}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -664,6 +664,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C9969BF5127A7AC000365CC5</string>
+		<string>C9969BF6127A7AC000365CC5</string>
 		<string>/Users/jgoldberg/Documents/LunchRun/LunchRun.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

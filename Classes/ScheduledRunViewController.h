@@ -10,9 +10,11 @@
 
 
 @interface ScheduledRunViewController : UIViewController {
-
+	NSString *scheduledRunId;
 }
 
 - (IBAction) viewMyOrder: (id) sender;
+
+@property (nonatomic, copy) NSString *scheduledRunId;
 
 @end

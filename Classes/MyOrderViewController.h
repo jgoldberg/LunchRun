@@ -10,9 +10,11 @@
 
 
 @interface MyOrderViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
-
+	NSString *scheduledRunId;
 }
 
 - (IBAction) addOrderItem: (id) sender;
+
+@property (nonatomic, copy) NSString *scheduledRunId;
 
 @end

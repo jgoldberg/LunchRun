@@ -93,7 +93,7 @@
     
     ScheduledRunCell *cell = (ScheduledRunCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        NSArray *nib = [[[NSBundle mainBundle] loadNibNamed:@"ScheduledRunCell" owner:self options:nil] autorelease];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ScheduledRunCell" owner:self options:nil];
 		cell = [nib objectAtIndex:0];
     }
     
@@ -175,16 +175,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
 	NSDictionary *order = [orderList objectAtIndex:row];
-	NSInteger scheduledRun = [order objectForKey:@"scheduled_run_id"];
-	NSString *scheduledRunStr = [NSString stringWithFormat:@"%i",[scheduledRun intValue]];
-	
-	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
-	NSLog(@"Setting currentScheduledRun to: %@", scheduledRunStr);
-	delegate.currentScheduledRun = scheduledRunStr;
-	
+	NSInteger scheduledRun = (NSInteger)[order objectForKey:@"scheduled_run_id"];
+	NSString *scheduledRunStr = [NSString stringWithFormat:@"%@",scheduledRun];
+	NSLog(@"scheduledRunStr: %@", scheduledRunStr);
+
 	ScheduledRunViewController *scheduledRunViewController = [[ScheduledRunViewController alloc] initWithNibName:@"ScheduledRunView" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
+    scheduledRunViewController.scheduledRunId = scheduledRunStr;
 	[self.navigationController pushViewController:scheduledRunViewController animated:YES];
 	[scheduledRunViewController release];
 }
