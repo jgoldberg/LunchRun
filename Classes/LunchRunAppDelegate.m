@@ -17,16 +17,6 @@
 @synthesize currentScheduledRun;
 @synthesize menuData;
 
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-	NSLog(@"Clicked");
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-	
-}
-
 
 #pragma mark -
 #pragma mark Core Data stack

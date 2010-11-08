@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface LunchRunAppDelegate : NSObject <UIApplicationDelegate, UINavigationControllerDelegate> {
+@interface LunchRunAppDelegate : NSObject <UIApplicationDelegate> {
 	NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    
     NSPersistentStoreCoordinator *persistentStoreCoordinator;

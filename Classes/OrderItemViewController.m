@@ -9,6 +9,7 @@
 #import "OrderItemViewController.h"
 #import "QuartzCore/QuartzCore.h"
 #import "LunchRunAppDelegate.h"
+#import "OrderItem.h"
 
 #define QUANTITY_COMPONENT 0
 #define ITEM_COMPONENT 1
@@ -50,6 +51,26 @@
 - (IBAction) saveForm: (id) sender
 {
 	[self dismissModalViewControllerAnimated:YES];
+	
+	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+	
+	OrderItem *orderItem = [NSEntityDescription
+							insertNewObjectForEntityForName:@"OrderItem" 
+							inManagedObjectContext:context];
+	
+	NSInteger itemIndex = [itemPickerView selectedRowInComponent:ITEM_COMPONENT];
+	NSInteger quantityIndex = [itemPickerView selectedRowInComponent:QUANTITY_COMPONENT];
+	
+	NSString *quantity = (NSString *)[currentQuantities objectAtIndex:quantityIndex];
+	NSString *item = (NSString *)[currentItems objectAtIndex:itemIndex];
+	
+	orderItem.item = [item copy];
+	orderItem.quantity = [quantity copy];
+	
+	NSError *error;
+	if (![context save:&error]) {
+		NSLog(@"Error saving");
+	}
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"OrderItemClose" object:self];
 }
