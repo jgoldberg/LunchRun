@@ -22,9 +22,6 @@
 		C91FFB901277F18900615EAA /* ScheduledRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */; };
 		C91FFB921277F19500615EAA /* ScheduledRunView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91FFB911277F19500615EAA /* ScheduledRunView.xib */; };
 		C9643DC01285223600DA5D09 /* LunchRun.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C9643DBF1285223600DA5D09 /* LunchRun.xcdatamodel */; };
-		C9643DCE1285257000DA5D09 /* ScheduledRun.m in Sources */ = {isa = PBXBuildFile; fileRef = C9643DC91285257000DA5D09 /* ScheduledRun.m */; };
-		C9643DCF1285257000DA5D09 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = C9643DCB1285257000DA5D09 /* Order.m */; };
-		C9643DD01285257000DA5D09 /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C9643DCD1285257000DA5D09 /* OrderItem.m */; };
 		C9643DF1128527B900DA5D09 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9643DF0128527B900DA5D09 /* CoreData.framework */; };
 		C96B11CC127907560083BFEB /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96B11CB127907560083BFEB /* MyOrderViewController.m */; };
 		C96B11CE1279076C0083BFEB /* MyOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B11CD1279076C0083BFEB /* MyOrderView.xib */; };
@@ -32,6 +29,9 @@
 		C96B121812790F880083BFEB /* AddOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B121712790F880083BFEB /* AddOrderItemView.xib */; };
 		C96B121A12790F930083BFEB /* EditOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B121912790F930083BFEB /* EditOrderItemView.xib */; };
 		C96B126E127918C70083BFEB /* menudata.plist in Resources */ = {isa = PBXBuildFile; fileRef = C96B126D127918C70083BFEB /* menudata.plist */; };
+		C98318A21288F51100C9EBFA /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = C983189E1288F51100C9EBFA /* Order.m */; };
+		C98318A31288F51100C9EBFA /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C98318A01288F51100C9EBFA /* OrderItem.m */; };
+		C98318AB1288F6F600C9EBFA /* ScheduledRun.m in Sources */ = {isa = PBXBuildFile; fileRef = C98318AA1288F6F600C9EBFA /* ScheduledRun.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,12 +58,6 @@
 		C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRunViewController.m; sourceTree = "<group>"; };
 		C91FFB911277F19500615EAA /* ScheduledRunView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduledRunView.xib; sourceTree = "<group>"; };
 		C9643DBF1285223600DA5D09 /* LunchRun.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = LunchRun.xcdatamodel; sourceTree = "<group>"; };
-		C9643DC81285257000DA5D09 /* ScheduledRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduledRun.h; path = ../ScheduledRun.h; sourceTree = "<group>"; };
-		C9643DC91285257000DA5D09 /* ScheduledRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduledRun.m; path = ../ScheduledRun.m; sourceTree = "<group>"; };
-		C9643DCA1285257000DA5D09 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Order.h; path = ../Order.h; sourceTree = "<group>"; };
-		C9643DCB1285257000DA5D09 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Order.m; path = ../Order.m; sourceTree = "<group>"; };
-		C9643DCC1285257000DA5D09 /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderItem.h; path = ../OrderItem.h; sourceTree = "<group>"; };
-		C9643DCD1285257000DA5D09 /* OrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderItem.m; path = ../OrderItem.m; sourceTree = "<group>"; };
 		C9643DF0128527B900DA5D09 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C96B11CA127907560083BFEB /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
 		C96B11CB127907560083BFEB /* MyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderViewController.m; sourceTree = "<group>"; };
@@ -73,6 +67,12 @@
 		C96B121712790F880083BFEB /* AddOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddOrderItemView.xib; sourceTree = "<group>"; };
 		C96B121912790F930083BFEB /* EditOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditOrderItemView.xib; sourceTree = "<group>"; };
 		C96B126D127918C70083BFEB /* menudata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menudata.plist; sourceTree = "<group>"; };
+		C983189D1288F51100C9EBFA /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		C983189E1288F51100C9EBFA /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		C983189F1288F51100C9EBFA /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItem.h; sourceTree = "<group>"; };
+		C98318A01288F51100C9EBFA /* OrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItem.m; sourceTree = "<group>"; };
+		C98318A91288F6F600C9EBFA /* ScheduledRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduledRun.h; path = ../ScheduledRun.h; sourceTree = "<group>"; };
+		C98318AA1288F6F600C9EBFA /* ScheduledRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduledRun.m; path = ../ScheduledRun.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,12 +181,12 @@
 		C9643DD11285257B00DA5D09 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C9643DC81285257000DA5D09 /* ScheduledRun.h */,
-				C9643DC91285257000DA5D09 /* ScheduledRun.m */,
-				C9643DCA1285257000DA5D09 /* Order.h */,
-				C9643DCB1285257000DA5D09 /* Order.m */,
-				C9643DCC1285257000DA5D09 /* OrderItem.h */,
-				C9643DCD1285257000DA5D09 /* OrderItem.m */,
+				C98318A91288F6F600C9EBFA /* ScheduledRun.h */,
+				C98318AA1288F6F600C9EBFA /* ScheduledRun.m */,
+				C983189D1288F51100C9EBFA /* Order.h */,
+				C983189E1288F51100C9EBFA /* Order.m */,
+				C983189F1288F51100C9EBFA /* OrderItem.h */,
+				C98318A01288F51100C9EBFA /* OrderItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -268,9 +268,9 @@
 				C96B11CC127907560083BFEB /* MyOrderViewController.m in Sources */,
 				C96B121612790F760083BFEB /* OrderItemViewController.m in Sources */,
 				C9643DC01285223600DA5D09 /* LunchRun.xcdatamodel in Sources */,
-				C9643DCE1285257000DA5D09 /* ScheduledRun.m in Sources */,
-				C9643DCF1285257000DA5D09 /* Order.m in Sources */,
-				C9643DD01285257000DA5D09 /* OrderItem.m in Sources */,
+				C98318A21288F51100C9EBFA /* Order.m in Sources */,
+				C98318A31288F51100C9EBFA /* OrderItem.m in Sources */,
+				C98318AB1288F6F600C9EBFA /* ScheduledRun.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

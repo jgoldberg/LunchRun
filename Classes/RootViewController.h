@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface RootViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
-	NSArray *orderList;
+@interface RootViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {
+	NSFetchedResultsController *_fetchedResultsController;
+	IBOutlet UITableView *tableView;
 }
 
-@property (nonatomic, retain) NSArray *orderList;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 
 @end

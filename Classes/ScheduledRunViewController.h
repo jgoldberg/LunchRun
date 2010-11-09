@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScheduledRun.h"
 
 
 @interface ScheduledRunViewController : UIViewController {
-	NSString *scheduledRunId;
+	ScheduledRun *scheduledRun;
 }
 
 - (IBAction) viewMyOrder: (id) sender;
 
-@property (nonatomic, copy) NSString *scheduledRunId;
+@property (nonatomic, retain) ScheduledRun *scheduledRun;
 
 @end

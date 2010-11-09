@@ -12,12 +12,12 @@
 
 @implementation ScheduledRunViewController
 
-@synthesize scheduledRunId;
+@synthesize scheduledRun;
 
 - (IBAction) viewMyOrder: (id) sender
 {
 	MyOrderViewController *myOrderViewController = [[MyOrderViewController alloc] initWithNibName:@"MyOrderView" bundle:nil];
-	myOrderViewController.scheduledRunId = scheduledRunId;
+	myOrderViewController.scheduledRun = scheduledRun;
 	[self.navigationController pushViewController:myOrderViewController animated:YES];
 	[myOrderViewController release];
 }

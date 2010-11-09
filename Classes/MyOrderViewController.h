@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ScheduledRun.h"
 
 @interface MyOrderViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>{
-	NSString *scheduledRunId;
+	ScheduledRun *scheduledRun;
 	NSFetchedResultsController *_fetchedResultsController;
 	IBOutlet UITableView *tableView;
 }
 
 - (IBAction) addOrderItem: (id) sender;
 
-@property (nonatomic, copy) NSString *scheduledRunId;
+@property (nonatomic, retain) ScheduledRun *scheduledRun;
 @property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 

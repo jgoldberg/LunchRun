@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#include "ScheduledRun.h"
 
 @interface OrderItemViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
 	IBOutlet UITextField *instructionField;
@@ -15,7 +15,7 @@
 	IBOutlet UIPickerView *itemPickerView;
 	NSArray *currentItems;
 	NSArray *currentQuantities;
-	NSString *scheduledRunId;
+	ScheduledRun *scheduledRun;
 }
 
 - (IBAction) chooseItem: (id) sender;
@@ -28,6 +28,6 @@
 @property (nonatomic, retain) IBOutlet UIPickerView *itemPickerView;
 @property (nonatomic, retain) NSArray *currentItems;
 @property (nonatomic, retain) NSArray *currentQuantities;
-@property (nonatomic, copy) NSString *scheduledRunId;
+@property (nonatomic, retain) ScheduledRun *scheduledRun;
 
 @end

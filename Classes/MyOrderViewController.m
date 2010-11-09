@@ -14,7 +14,7 @@
 
 @implementation MyOrderViewController
 
-@synthesize scheduledRunId;
+@synthesize scheduledRun;
 @synthesize tableView;
 @synthesize fetchedResultsController = _fetchedResultsController;
 
@@ -23,7 +23,7 @@
 	NSLog(@"Add Order Item");
 		
 	OrderItemViewController *orderItemView = [[OrderItemViewController alloc] initWithNibName:@"AddOrderItemView" bundle:nil];
-	orderItemView.scheduledRunId = scheduledRunId;
+	orderItemView.scheduledRun = scheduledRun;
 	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 	[self presentModalViewController:orderItemView animated:YES];
 	[orderItemView release];
@@ -140,6 +140,10 @@
 	[self.tableView endUpdates];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"SELECT");
+}
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.

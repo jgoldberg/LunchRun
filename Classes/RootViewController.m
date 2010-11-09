@@ -14,31 +14,68 @@
 
 @implementation RootViewController
 
-@synthesize orderList;
+@synthesize fetchedResultsController=_fetchedResultsController;
+@synthesize tableView;
 
 #pragma mark -
 #pragma mark View lifecycle
 
 
 - (void)viewDidLoad {
-	
-	NSLog(@"Loading test data.");
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"testdata" ofType:@"plist"];
-	NSDictionary *testdata = [[NSDictionary alloc] initWithContentsOfFile:path];
-	NSArray *testOrderList = [testdata objectForKey:@"fulldata"];
-	
-	self.orderList = testOrderList;
-	
-	[testdata release];
-	
-	NSLog(@"Test data loaded.");
-	
 	[super viewDidLoad];
 	
+	NSError *error;
+	if (![self.fetchedResultsController performFetch:&error]) {
+		NSLog(@"Unresolved error %@: %@", error, [error userInfo]);
+		exit(-1);
+	}
 	
+	/*
+	ScheduledRun *run1 = [NSEntityDescription insertNewObjectForEntityForName:@"ScheduledRun" inManagedObjectContext:context];
+	run1.scheduledRunID = [NSNumber numberWithInt:1];
+	run1.ownerName = @"Jason G";
+	run1.isOpen = [NSNumber numberWithBool:YES];
+	run1.destination = @"Franklin's BBQ";
+	run1.cutoffDate = [NSDate date];
+	
+	run1 = [NSEntityDescription insertNewObjectForEntityForName:@"ScheduledRun" inManagedObjectContext:context];
+	run1.scheduledRunID = [NSNumber numberWithInt:2];
+	run1.ownerName = @"Alex G";
+	run1.isOpen = [NSNumber numberWithBool:NO];
+	run1.destination = @"Thai Passion";
+	run1.cutoffDate = [NSDate date];
+	
+	[context save:nil];
+	*/
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+	if (_fetchedResultsController != nil)
+		return _fetchedResultsController;
+	
+	LunchRunAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [delegate managedObjectContext];
+	
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"ScheduledRun" inManagedObjectContext:context];
+	[fetchRequest setEntity:entityDescription];
+	
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"cutoffDate" ascending:NO];
+	[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	
+	[fetchRequest setFetchBatchSize:20];
+	
+	NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+																				 managedObjectContext:context 
+																				   sectionNameKeyPath:nil 
+																							cacheName:@"Root"];
+	[controller setDelegate:self];
+	_fetchedResultsController = controller;
+	
+	return _fetchedResultsController;	
 }
 
 /*
@@ -76,18 +113,19 @@
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [[self.fetchedResultsController sections] count];
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [orderList count];
+	//NSLog("count %@", [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects]);
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
 }
 
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"ScheduledRun";
     
@@ -102,21 +140,17 @@
 	[dateFormat setDateStyle:NSDateFormatterMediumStyle];
 	
 	// Configure the cell.
-	NSInteger row = [indexPath row];
-	NSDictionary *order = [orderList objectAtIndex:row];
+	ScheduledRun *scheduledRun = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	
-	cell.destinationLabel.text = [order objectForKey:@"destination"];
-	cell.cutoffDateLabel.text =  [dateFormat stringFromDate:[order objectForKey:@"cutoff_date"]];
-	cell.userLabel.text = [order objectForKey:@"user_name"];
+	cell.destinationLabel.text = [scheduledRun destination];
+	cell.cutoffDateLabel.text =  [dateFormat stringFromDate:[scheduledRun cutoffDate]];
+	cell.userLabel.text = [scheduledRun	ownerName];
 	
-	NSDate *cutoffDate = [order objectForKey:@"cutoff_date"];
-	if (cutoffDate == [cutoffDate earlierDate:[NSDate date]])
-	{
+	NSDate *cutoffDate = [scheduledRun cutoffDate];
+	if (cutoffDate == [cutoffDate earlierDate:[NSDate date]]) {
 		cell.timeRemainingLabel.text = @"Expired";
-	}
-	else
-	{
-		cell.timeRemainingLabel.text = [[order objectForKey:@"open"] boolValue] ? [LRTimeRemaining stringFromTimeRemaining:[order objectForKey:@"cutoff_date"]] : @"Closed";
+	} else {
+		cell.timeRemainingLabel.text = [[scheduledRun isOpen] boolValue] ? [LRTimeRemaining stringFromTimeRemaining:[scheduledRun cutoffDate]] : @"Closed";
 	}
 	
 	[dateFormat release];
@@ -128,6 +162,58 @@
 {
 	return 66;
 }
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+	
+    switch(type) {
+			
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+			
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+			
+        case NSFetchedResultsChangeUpdate:
+			//OrderItem *orderItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+			//UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+			//cell.textLabel.text = [NSString stringWithFormat:@"Item %@", [orderItem item]];
+            break;
+			
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            // Reloading the section inserts a new row and ensures that titles are updated appropriately.
+            [tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+	
+    switch(type) {
+			
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+			
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+	NSLog(@"Data Changed!");
+	[self.tableView endUpdates];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -174,13 +260,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
-	NSDictionary *order = [orderList objectAtIndex:row];
-	NSInteger scheduledRun = (NSInteger)[order objectForKey:@"scheduled_run_id"];
-	NSString *scheduledRunStr = [NSString stringWithFormat:@"%@",scheduledRun];
-	NSLog(@"scheduledRunStr: %@", scheduledRunStr);
+	ScheduledRun *scheduledRun = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
 	ScheduledRunViewController *scheduledRunViewController = [[ScheduledRunViewController alloc] initWithNibName:@"ScheduledRunView" bundle:nil];
-    scheduledRunViewController.scheduledRunId = scheduledRunStr;
+    scheduledRunViewController.scheduledRun = scheduledRun;
 	[self.navigationController pushViewController:scheduledRunViewController animated:YES];
 	[scheduledRunViewController release];
 }
