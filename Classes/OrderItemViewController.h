@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #include "ScheduledRun.h"
+#include "OrderItem.h"
 
 @interface OrderItemViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource> {
 	IBOutlet UITextField *instructionField;
@@ -16,6 +17,7 @@
 	NSArray *currentItems;
 	NSArray *currentQuantities;
 	ScheduledRun *scheduledRun;
+	OrderItem *orderItem;
 }
 
 - (IBAction) chooseItem: (id) sender;
@@ -29,5 +31,6 @@
 @property (nonatomic, retain) NSArray *currentItems;
 @property (nonatomic, retain) NSArray *currentQuantities;
 @property (nonatomic, retain) ScheduledRun *scheduledRun;
+@property (nonatomic, retain) OrderItem *orderItem;
 
 @end

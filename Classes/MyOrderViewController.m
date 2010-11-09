@@ -142,7 +142,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	NSLog(@"SELECT");
+	OrderItem *orderItem = [self.fetchedResultsController objectAtIndexPath: indexPath];
+	
+	OrderItemViewController *orderItemView = [[OrderItemViewController alloc] initWithNibName:@"EditOrderItemView" bundle:nil];
+	orderItemView.scheduledRun = scheduledRun;
+	orderItemView.orderItem = orderItem;
+	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+	[self presentModalViewController:orderItemView animated:YES];
+	[orderItemView release];
 }
 
 /*
@@ -203,7 +210,11 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+	[_fetchedResultsController release];
+	[scheduledRun release];
+	[tableView release];
+    
+	[super dealloc];
 }
 
 

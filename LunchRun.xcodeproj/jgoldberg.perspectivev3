@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>C98319FE1289055600C9EBFA</string>
+						<string>C9831AD912891C0D00C9EBFA</string>
 						<key>history</key>
 						<array>
 							<string>C98318EA1288F98200C9EBFA</string>
@@ -319,13 +319,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>35</integer>
+									<integer>34</integer>
 									<integer>25</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {185, 914}}</string>
+							<string>{{0, 21}, {185, 914}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -368,7 +368,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C98319FD1289055600C9EBFA</string>
+										<string>C9831AD812891C0D00C9EBFA</string>
 										<key>history</key>
 										<array>
 											<string>C91FFB751277971800615EAA</string>
@@ -376,30 +376,30 @@
 											<string>C9643E21128835A800DA5D09</string>
 											<string>C9643E29128835A800DA5D09</string>
 											<string>C9643E611288388500DA5D09</string>
-											<string>C9643E641288388500DA5D09</string>
 											<string>C9643E72128839F800DA5D09</string>
 											<string>C9643E73128839F800DA5D09</string>
 											<string>C9643E75128839F800DA5D09</string>
 											<string>C98318CB1288F98200C9EBFA</string>
-											<string>C98318CC1288F98200C9EBFA</string>
-											<string>C98318CD1288F98200C9EBFA</string>
 											<string>C98318CE1288F98200C9EBFA</string>
 											<string>C98318CF1288F98200C9EBFA</string>
 											<string>C98318D01288F98200C9EBFA</string>
-											<string>C98318D11288F98200C9EBFA</string>
 											<string>C98318D21288F98200C9EBFA</string>
 											<string>C98318D31288F98200C9EBFA</string>
-											<string>C98318D41288F98200C9EBFA</string>
-											<string>C98318D51288F98200C9EBFA</string>
 											<string>C98319401288FF2200C9EBFA</string>
 											<string>C98319411288FF2200C9EBFA</string>
-											<string>C98319941289016900C9EBFA</string>
-											<string>C98319961289016900C9EBFA</string>
-											<string>C98319971289016900C9EBFA</string>
 											<string>C98319981289016900C9EBFA</string>
-											<string>C98319B21289026800C9EBFA</string>
 											<string>C98319EF1289046F00C9EBFA</string>
-											<string>C98319E9128903FF00C9EBFA</string>
+											<string>C9831A121289081100C9EBFA</string>
+											<string>C9831A131289081100C9EBFA</string>
+											<string>C9831A141289081100C9EBFA</string>
+											<string>C9831A221289089100C9EBFA</string>
+											<string>C9831A7512890ABA00C9EBFA</string>
+											<string>C9831A811289167F00C9EBFA</string>
+											<string>C9831A851289167F00C9EBFA</string>
+											<string>C9831A971289183B00C9EBFA</string>
+											<string>C9831A981289183B00C9EBFA</string>
+											<string>C9831A991289183B00C9EBFA</string>
+											<string>C9831AD012891BEB00C9EBFA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -563,6 +563,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -642,11 +644,11 @@
 							<key>DebugVariablesTableConfiguration</key>
 							<array>
 								<string>Name</string>
-								<real>120</real>
+								<real>275</real>
 								<string>Value</string>
 								<real>85</real>
 								<string>Summary</string>
-								<real>628</real>
+								<real>473</real>
 							</array>
 							<key>Frame</key>
 							<string>{{818, 0}, {858, 292}}</string>
@@ -718,7 +720,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C98319FF1289055600C9EBFA</string>
+		<string>C9831ADA12891C0D00C9EBFA</string>
 		<string>C98319511288FF8200C9EBFA</string>
 		<string>C98319521288FF8200C9EBFA</string>
 		<string>C98318E81288F98200C9EBFA</string>

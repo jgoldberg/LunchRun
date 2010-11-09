@@ -22,6 +22,7 @@
 @synthesize currentQuantities;
 @synthesize currentItems;
 @synthesize scheduledRun;
+@synthesize orderItem;
 
 #pragma mark -
 #pragma mark Actions
@@ -186,6 +187,10 @@
 		NSDictionary *menuItem = [menuList objectAtIndex:i];
 		[nameList insertObject:[menuItem objectForKey:@"name"] atIndex:i];
 		
+		if (<#condition#>) {
+			<#statements#>
+		}
+		
 		if (i == 0)
 		{
 			NSArray *quantity = [menuItem objectForKey:@"quantity_options"];
@@ -196,6 +201,21 @@
 	self.currentItems = [NSArray arrayWithArray:nameList];
 	
 	[nameList release];
+	
+	
+	if (orderItem != nil) {
+		NSLog(@"orderItem set");
+
+		NSInteger itemIndex = [currentItems indexOfObject:[orderItem item]];
+		NSInteger quantityIndex = [currentQuantities indexOfObject:[orderItem quantity]];
+	
+		[itemPickerView selectRow: itemIndex inComponent:ITEM_COMPONENT animated:TRUE];
+		[itemPickerView selectRow: quantityIndex inComponent:QUANTITY_COMPONENT animated:TRUE];
+		[itemPickerView reloadAllComponents];
+		
+		NSString *title = [NSString stringWithFormat:@"%@ %@", [currentQuantities objectAtIndex:quantityIndex],[currentItems objectAtIndex:itemIndex]];
+		[chooseItemButton setTitle:title forState:UIControlStateNormal];
+	}
 	
     [super viewDidLoad];
 }
@@ -223,7 +243,13 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+    [instructionField release];
+	[chooseItemButton release];
+	[itemPickerView release];
+	[currentQuantities release];
+	[currentItems release];
+	[scheduledRun release];
+	[super dealloc];
 }
 
 

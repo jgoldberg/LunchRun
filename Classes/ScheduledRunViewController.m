@@ -67,6 +67,7 @@
 
 
 - (void)dealloc {
+	[scheduledRun release];
     [super dealloc];
 }
 
