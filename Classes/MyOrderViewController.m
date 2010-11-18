@@ -32,7 +32,6 @@
 - (void)handleClose
 {
 	NSLog(@"Closed!");
-	[self.tableView reloadData];
 }
 
 // Customize the number of sections in the table view.
@@ -107,9 +106,7 @@
             break;
 			
         case NSFetchedResultsChangeUpdate:
-			//OrderItem *orderItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-			//UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-			//cell.textLabel.text = [NSString stringWithFormat:@"Item %@", [orderItem item]];
+			[tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
             break;
 			
         case NSFetchedResultsChangeMove:
@@ -143,6 +140,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
 	OrderItem *orderItem = [self.fetchedResultsController objectAtIndexPath: indexPath];
 	
 	OrderItemViewController *orderItemView = [[OrderItemViewController alloc] initWithNibName:@"EditOrderItemView" bundle:nil];

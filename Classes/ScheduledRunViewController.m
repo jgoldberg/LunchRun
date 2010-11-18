@@ -8,6 +8,7 @@
 
 #import "ScheduledRunViewController.h"
 #import "MyOrderViewController.h"
+#import "Order.h"
 
 
 @implementation ScheduledRunViewController
@@ -16,10 +17,26 @@
 
 - (IBAction) viewMyOrder: (id) sender
 {
+	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+	if ([scheduledRun myOrder] == nil) {
+		NSLog(@"Creating Order");
+		Order *myOrder = [NSEntityDescription insertNewObjectForEntityForName:@"Order" inManagedObjectContext:context];
+		myOrder.myOrder = [NSNumber numberWithBool:TRUE];
+		myOrder.scheduledRun = scheduledRun;
+		NSError *error;
+		if (![context save:&error]) {
+			NSLog(@"Error creating order: %@", [error userInfo]);
+		}
+	}
+	
 	MyOrderViewController *myOrderViewController = [[MyOrderViewController alloc] initWithNibName:@"MyOrderView" bundle:nil];
 	myOrderViewController.scheduledRun = scheduledRun;
 	[self.navigationController pushViewController:myOrderViewController animated:YES];
 	[myOrderViewController release];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+
 }
 
 /*

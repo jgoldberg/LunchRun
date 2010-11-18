@@ -17,6 +17,15 @@
 @synthesize currentScheduledRun;
 @synthesize menuData;
 
+#pragma mark -
+#pragma mark UINavigationControllerDelegate
+
+- (void)navigationController:(UINavigationController *)_navigationController willShowViewController:(UIViewController *)_viewController animated:(BOOL)animated {
+	if ([_viewController conformsToProtocol:@protocol(UINavigationControllerDelegate)]) {
+		id<UINavigationControllerDelegate> *delegate = (id<UINavigationControllerDelegate> *)_viewController;
+		[delegate navigationController:_navigationController willShowViewController:_viewController animated:animated];
+	}
+}
 
 #pragma mark -
 #pragma mark Core Data stack

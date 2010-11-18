@@ -72,6 +72,7 @@
 	
 	newOrderItem.item = [item copy];
 	newOrderItem.quantity = [quantity copy];
+	newOrderItem.order = [scheduledRun myOrder];
 	
 	NSError *error;
 	if (![context save:&error]) {
