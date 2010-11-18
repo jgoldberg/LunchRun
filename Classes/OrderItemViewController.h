@@ -21,9 +21,11 @@
 }
 
 - (IBAction) chooseItem: (id) sender;
+- (IBAction) chooseItemForEdit: (id) sender;
 - (IBAction) closePicker: (id) sender;
 - (IBAction) cancelForm: (id) sender;
 - (IBAction) saveForm: (id) sender;
+- (IBAction) saveFormForEdit: (id) sender;
 
 @property (nonatomic, retain) IBOutlet UITextField *instructionField;
 @property (nonatomic, retain) IBOutlet UIButton *chooseItemButton;

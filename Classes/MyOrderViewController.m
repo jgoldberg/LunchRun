@@ -32,6 +32,7 @@
 - (void)handleClose
 {
 	NSLog(@"Closed!");
+	[self.tableView reloadData];
 }
 
 // Customize the number of sections in the table view.

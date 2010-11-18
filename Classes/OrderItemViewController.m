@@ -38,6 +38,11 @@
 	[itemPickerView setHidden:FALSE];
 }
 
+- (IBAction) chooseItemForEdit: (id) sender
+{
+	[itemPickerView setHidden:FALSE];
+}
+
 - (IBAction) closePicker: (id) sender
 {
 	[itemPickerView setHidden:TRUE];
@@ -55,7 +60,7 @@
 	
 	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
 	
-	OrderItem *orderItem = [NSEntityDescription
+	OrderItem *newOrderItem = [NSEntityDescription
 							insertNewObjectForEntityForName:@"OrderItem" 
 							inManagedObjectContext:context];
 	
@@ -65,14 +70,39 @@
 	NSString *quantity = (NSString *)[currentQuantities objectAtIndex:quantityIndex];
 	NSString *item = (NSString *)[currentItems objectAtIndex:itemIndex];
 	
-	orderItem.item = [item copy];
-	orderItem.quantity = [quantity copy];
+	newOrderItem.item = [item copy];
+	newOrderItem.quantity = [quantity copy];
 	
 	NSError *error;
 	if (![context save:&error]) {
 		NSLog(@"Error saving");
 	}
 	
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"OrderItemClose" object:self];
+}
+
+- (IBAction) saveFormForEdit: (id) sender
+{
+	[self dismissModalViewControllerAnimated:YES];
+	
+	if (orderItem != nil) {
+
+		NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+		
+		NSInteger itemIndex = [itemPickerView selectedRowInComponent:ITEM_COMPONENT];
+		NSInteger quantityIndex = [itemPickerView selectedRowInComponent:QUANTITY_COMPONENT];
+		
+		NSString *quantity = (NSString *)[currentQuantities objectAtIndex:quantityIndex];
+		NSString *item = (NSString *)[currentItems objectAtIndex:itemIndex];
+		
+		self.orderItem.item = [item copy];
+		self.orderItem.quantity = [quantity copy];
+		
+		NSError *error;
+		if (![context save:&error]) {
+			NSLog(@"Error saving");
+		}
+	}
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"OrderItemClose" object:self];
 }
 
@@ -138,7 +168,7 @@
 	{
 		LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
 		NSDictionary *menuTable = [delegate menuData];
-		NSArray *menuList = [menuTable objectForKey:[scheduledRun scheduledRunID]];
+		NSArray *menuList = [menuTable objectForKey:[NSString stringWithFormat:@"%@",[scheduledRun scheduledRunID]]];
 		NSDictionary *menuItem = [menuList objectAtIndex:row];
 		
 		NSArray *quantity = [menuItem objectForKey:@"quantity_options"];
@@ -151,7 +181,7 @@
 	}
 	
 	NSInteger itemIndex = [pickerView selectedRowInComponent:ITEM_COMPONENT];
-	NSInteger quantityIndex = [pickerView selectedRowInComponent:QUANTITY_COMPONENT];
+	NSInteger quantityIndex = component == ITEM_COMPONENT ? 0 : [pickerView selectedRowInComponent:QUANTITY_COMPONENT];
 	
 	NSString *title = [NSString stringWithFormat:@"%@ %@", [currentQuantities objectAtIndex:quantityIndex],[currentItems objectAtIndex:itemIndex]];
 	[chooseItemButton setTitle:title forState:UIControlStateNormal];
@@ -184,16 +214,12 @@
 	NSMutableArray *nameList = [[NSMutableArray alloc] initWithCapacity:[menuList count]];
 	for (NSInteger i=0; i<[menuList count]; i++)
 	{
-		NSDictionary *menuItem = [menuList objectAtIndex:i];
-		[nameList insertObject:[menuItem objectForKey:@"name"] atIndex:i];
-		
-		if (<#condition#>) {
-			<#statements#>
-		}
+		NSDictionary *menuEntry= [menuList objectAtIndex:i];
+		[nameList insertObject:[menuEntry objectForKey:@"name"] atIndex:i];
 		
 		if (i == 0)
 		{
-			NSArray *quantity = [menuItem objectForKey:@"quantity_options"];
+			NSArray *quantity = [menuEntry objectForKey:@"quantity_options"];
 			self.currentQuantities = quantity != nil ? quantity : [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",nil];
 		}
 	}
@@ -204,17 +230,26 @@
 	
 	
 	if (orderItem != nil) {
-		NSLog(@"orderItem set");
-
-		NSInteger itemIndex = [currentItems indexOfObject:[orderItem item]];
-		NSInteger quantityIndex = [currentQuantities indexOfObject:[orderItem quantity]];
-	
-		[itemPickerView selectRow: itemIndex inComponent:ITEM_COMPONENT animated:TRUE];
-		[itemPickerView selectRow: quantityIndex inComponent:QUANTITY_COMPONENT animated:TRUE];
-		[itemPickerView reloadAllComponents];
-		
-		NSString *title = [NSString stringWithFormat:@"%@ %@", [currentQuantities objectAtIndex:quantityIndex],[currentItems objectAtIndex:itemIndex]];
-		[chooseItemButton setTitle:title forState:UIControlStateNormal];
+		NSLog(@"Reading State From OrderItem");
+		for (NSInteger i=0; i<[menuList count]; i++) {
+			NSDictionary *menuEntry = [menuList objectAtIndex:i];
+			NSString *menuName = [menuEntry objectForKey:@"name"];
+			NSArray *menuQuantities = [menuEntry objectForKey:@"quantity_options"];
+			
+			if ([menuName isEqualToString:[orderItem item]]) {
+				self.currentQuantities = menuQuantities != nil ? menuQuantities : [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",nil];;
+				
+				NSInteger itemIndex = [currentItems indexOfObject:[orderItem item]];
+				NSInteger quantityIndex = [currentQuantities indexOfObject:[orderItem quantity]];
+				
+				[itemPickerView selectRow: itemIndex inComponent:ITEM_COMPONENT animated:TRUE];
+				[itemPickerView selectRow: quantityIndex inComponent:QUANTITY_COMPONENT animated:TRUE];
+				//[itemPickerView reloadAllComponents];
+				
+				NSString *title = [NSString stringWithFormat:@"%@ %@", [currentQuantities objectAtIndex:quantityIndex],[currentItems objectAtIndex:itemIndex]];
+				[chooseItemButton setTitle:title forState:UIControlStateNormal];
+			}
+		}
 	}
 	
     [super viewDidLoad];

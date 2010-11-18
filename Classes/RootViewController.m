@@ -31,6 +31,7 @@
 	}
 	
 	/*
+	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
 	ScheduledRun *run1 = [NSEntityDescription insertNewObjectForEntityForName:@"ScheduledRun" inManagedObjectContext:context];
 	run1.scheduledRunID = [NSNumber numberWithInt:1];
 	run1.ownerName = @"Jason G";
