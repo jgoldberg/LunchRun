@@ -331,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9C3904F12958A830036317B</string>
+										<string>C9C3905C12958B260036317B</string>
 										<key>history</key>
 										<array>
 											<string>C91FFB751277971800615EAA</string>
@@ -358,8 +358,8 @@
 											<string>C9C3902E1295058B0036317B</string>
 											<string>C9C3904512958A270036317B</string>
 											<string>C9C3904612958A270036317B</string>
-											<string>C9C3904712958A270036317B</string>
-											<string>C9C3904B12958A2A0036317B</string>
+											<string>C9C3905412958AF90036317B</string>
+											<string>C9C3905B12958B260036317B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -676,7 +676,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C9C3905012958A830036317B</string>
 		<string>C9C38EFD1294E36D0036317B</string>
 		<string>C9C38EFE1294E36D0036317B</string>
 		<string>/Users/jgoldberg/Documents/LunchRun/LunchRun.xcodeproj</string>

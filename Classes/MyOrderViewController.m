@@ -67,7 +67,7 @@
 	if (_fetchedResultsController != nil)
 		return _fetchedResultsController;
 	
-	LunchRunAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [delegate managedObjectContext];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -140,7 +140,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
 	OrderItem *orderItem = [self.fetchedResultsController objectAtIndexPath: indexPath];
 	
