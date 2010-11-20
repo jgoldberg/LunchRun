@@ -9,20 +9,23 @@
 #import "ScheduledRunViewController.h"
 #import "MyOrderViewController.h"
 #import "Order.h"
+#import "JSON.h"
 
 
 @implementation ScheduledRunViewController
 
 @synthesize scheduledRun;
+@synthesize textView;
 
 - (IBAction) viewMyOrder: (id) sender
 {
 	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
-	if ([scheduledRun myOrder] == nil) {
+	if ([self.scheduledRun myOrder] == nil) {
 		NSLog(@"Creating Order");
 		Order *myOrder = [NSEntityDescription insertNewObjectForEntityForName:@"Order" inManagedObjectContext:context];
 		myOrder.myOrder = [NSNumber numberWithBool:TRUE];
-		myOrder.scheduledRun = scheduledRun;
+		myOrder.scheduledRun = self.scheduledRun;
+		self.scheduledRun.myOrder = myOrder;
 		NSError *error;
 		if (![context save:&error]) {
 			NSLog(@"Error creating order: %@", [error userInfo]);
@@ -33,6 +36,21 @@
 	myOrderViewController.scheduledRun = scheduledRun;
 	[self.navigationController pushViewController:myOrderViewController animated:YES];
 	[myOrderViewController release];
+}
+
+- (IBAction) sendOrder: (id) sender {
+	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+	[context refreshObject:scheduledRun mergeChanges:YES];
+	
+	SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+
+	NSDictionary *d = [[[UIApplication sharedApplication] delegate] menuData];
+	
+	if ([scheduledRun myOrder] == nil) {
+		[textView setText:[NSString stringWithFormat:@"No Order Created: %d %d", [scheduledRun.orders count]]];
+	} else {
+		[textView setText:[NSString stringWithFormat:@"Order Exists: %d %d %@", [scheduledRun.orders count], [scheduledRun.myOrder.orderItems count], [writer stringWithObject:d ]]];
+	}
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {

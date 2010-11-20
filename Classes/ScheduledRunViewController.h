@@ -12,10 +12,13 @@
 
 @interface ScheduledRunViewController : UIViewController <UINavigationControllerDelegate> {
 	ScheduledRun *scheduledRun;
+	IBOutlet UITextView *textView;
 }
 
 - (IBAction) viewMyOrder: (id) sender;
+- (IBAction) sendOrder: (id) sender;
 
 @property (nonatomic, retain) ScheduledRun *scheduledRun;
+@property (nonatomic, retain) IBOutlet UITextView *textView;
 
 @end
