@@ -33,3 +33,7 @@
 
 @end
 
+@interface ScheduledRun (JSON)
+- (NSDictionary *) serialize;
+- (void)unserialize:(NSDictionary *) dictionary;
+@end

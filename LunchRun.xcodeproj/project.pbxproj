@@ -30,6 +30,7 @@
 		C96B121A12790F930083BFEB /* EditOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B121912790F930083BFEB /* EditOrderItemView.xib */; };
 		C96B126E127918C70083BFEB /* menudata.plist in Resources */ = {isa = PBXBuildFile; fileRef = C96B126D127918C70083BFEB /* menudata.plist */; };
 		C9B916731298CABD006D121A /* LRJSONRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B916721298CABD006D121A /* LRJSONRequest.m */; };
+		C9B918061298FC4D006D121A /* EntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B918051298FC4D006D121A /* EntityFactory.m */; };
 		C9C38FE31294FF230036317B /* ScheduledRun.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C38FDE1294FF230036317B /* ScheduledRun.m */; };
 		C9C38FE41294FF230036317B /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C38FE01294FF230036317B /* Order.m */; };
 		C9C38FE51294FF230036317B /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C38FE21294FF230036317B /* OrderItem.m */; };
@@ -76,6 +77,8 @@
 		C9B916711298CABD006D121A /* LRJSONRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRJSONRequest.h; sourceTree = "<group>"; };
 		C9B916721298CABD006D121A /* LRJSONRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRJSONRequest.m; sourceTree = "<group>"; };
 		C9B917031298D5EF006D121A /* JSONRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRequestDelegate.h; sourceTree = "<group>"; };
+		C9B918041298FC4D006D121A /* EntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityFactory.h; sourceTree = "<group>"; };
+		C9B918051298FC4D006D121A /* EntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityFactory.m; sourceTree = "<group>"; };
 		C9C38FDD1294FF230036317B /* ScheduledRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRun.h; sourceTree = "<group>"; };
 		C9C38FDE1294FF230036317B /* ScheduledRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRun.m; sourceTree = "<group>"; };
 		C9C38FDF1294FF230036317B /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 			children = (
 				C91FFA5E12777DC100615EAA /* LRTimeRemaining.h */,
 				C91FFA5F12777DC100615EAA /* LRTimeRemaining.m */,
+				C9B918041298FC4D006D121A /* EntityFactory.h */,
+				C9B918051298FC4D006D121A /* EntityFactory.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				C9F0310E1296440B0054671D /* SBJsonParser.m in Sources */,
 				C9F0310F1296440B0054671D /* SBJsonWriter.m in Sources */,
 				C9B916731298CABD006D121A /* LRJSONRequest.m in Sources */,
+				C9B918061298FC4D006D121A /* EntityFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

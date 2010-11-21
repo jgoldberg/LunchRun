@@ -12,6 +12,7 @@
 #import "ScheduledRunViewController.h"
 #import "LunchRunAppDelegate.h"
 #import "LRJSONRequest.h"
+#import "EntityFactory.h"
 
 @implementation RootViewController
 
@@ -56,8 +57,16 @@
 	[request performGet];
 }
 
-- (void) onFetchScheduledRunsSuccess: (NSString *) response {
+- (void) onFetchScheduledRunsSuccess: (NSMutableArray *) response {
 	NSLog(@"Success: %@", response);
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [delegate managedObjectContext];
+	
+	for (NSDictionary *item in response) {
+		NSLog(@"Processing row: %@", item);
+		ScheduledRun *newScheduledRun = [EntityFactory createScheduledRun];
+		[newScheduledRun unserialize:item];
+	}
 }
 
 - (void) onFetchScheduledRunsFailure: (NSError *) error {
