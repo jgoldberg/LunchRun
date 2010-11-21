@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -281,13 +283,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>36</integer>
-									<integer>1</integer>
+									<integer>49</integer>
+									<integer>48</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 424}, {373, 914}}</string>
+							<string>{{0, 221}, {373, 914}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -315,26 +317,18 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C91FFB1B1277927C00615EAA</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>RootViewController.m</string>
+								<string>&lt;No Editor&gt;</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>C91FFB1C1277927C00615EAA</string>
-										<key>PBXProjectModuleLabel</key>
-										<string>RootViewController.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>C91F44F61299977D00440A84</string>
 										<key>history</key>
 										<array>
 											<string>C91FFB761277971800615EAA</string>
@@ -381,7 +375,7 @@
 											<string>C91F44F01299976300440A84</string>
 											<string>C91F44F11299976300440A84</string>
 											<string>C91F44F21299976300440A84</string>
-											<string>C91F44F31299976300440A84</string>
+											<string>C91F45A01299C7D900440A84</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -698,6 +692,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C91F45AE1299C8B400440A84</string>
 		<string>C91F443112992ACF00440A84</string>
 		<string>C91F442012992A5900440A84</string>
 		<string>/Users/jgoldberg/Documents/LunchRun/LunchRun.xcodeproj</string>

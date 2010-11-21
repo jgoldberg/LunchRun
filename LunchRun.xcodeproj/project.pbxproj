@@ -17,6 +17,7 @@
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
 		C91F43F31299289A00440A84 /* LRProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F43F21299289A00440A84 /* LRProgressHUD.m */; };
 		C91F43F81299293400440A84 /* HUDBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F43F71299293400440A84 /* HUDBackground.png */; };
+		C91F45081299BCF300440A84 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C91F45071299BCF300440A84 /* Settings.bundle */; };
 		C91FF95C1277662800615EAA /* testdata.plist in Resources */ = {isa = PBXBuildFile; fileRef = C91FF95B1277662800615EAA /* testdata.plist */; };
 		C91FF9B612776C4B00615EAA /* ScheduledRunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */; };
 		C91FF9B812776CC100615EAA /* ScheduledRunCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */; };
@@ -61,6 +62,7 @@
 		C91F43F11299289A00440A84 /* LRProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRProgressHUD.h; sourceTree = "<group>"; };
 		C91F43F21299289A00440A84 /* LRProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRProgressHUD.m; sourceTree = "<group>"; };
 		C91F43F71299293400440A84 /* HUDBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HUDBackground.png; path = Classes/HUDBackground.png; sourceTree = "<group>"; };
+		C91F45071299BCF300440A84 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C91FF95B1277662800615EAA /* testdata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testdata.plist; sourceTree = "<group>"; };
 		C91FF9B412776C4B00615EAA /* ScheduledRunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRunCell.h; sourceTree = "<group>"; };
 		C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRunCell.m; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C91F45071299BCF300440A84 /* Settings.bundle */,
 				C91F43F71299293400440A84 /* HUDBackground.png */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -326,6 +329,7 @@
 				C96B121A12790F930083BFEB /* EditOrderItemView.xib in Resources */,
 				C96B126E127918C70083BFEB /* menudata.plist in Resources */,
 				C91F43F81299293400440A84 /* HUDBackground.png in Resources */,
+				C91F45081299BCF300440A84 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

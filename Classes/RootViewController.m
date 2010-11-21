@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	NSLog(@"Device: %@", [[UIDevice currentDevice] uniqueIdentifier]);
+	
 	NSError *error;
 	if (![self.fetchedResultsController performFetch:&error]) {
 		NSLog(@"Unresolved error %@: %@", error, [error userInfo]);
