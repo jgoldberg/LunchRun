@@ -66,11 +66,22 @@
 		NSLog(@"Processing row: %@", item);
 		ScheduledRun *newScheduledRun = [EntityFactory createScheduledRun];
 		[newScheduledRun unserialize:item];
+		NSError *error;
+		if (![context save:&error]) {
+			NSLog(@"Error Saving");
+		}
 	}
 }
 
 - (void) onFetchScheduledRunsFailure: (NSError *) error {
-	NSLog(@"Failure");	
+	NSLog(@"Failure");
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LunchRun" 
+													message:@"Sorry!  Could not connect to remote host." 
+												   delegate:nil
+										  cancelButtonTitle:@"OK" 
+										  otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 
