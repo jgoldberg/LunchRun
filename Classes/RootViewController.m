@@ -11,6 +11,7 @@
 #import "LRTimeRemaining.h"
 #import "ScheduledRunViewController.h"
 #import "LunchRunAppDelegate.h"
+#import "LRJSONRequest.h"
 
 @implementation RootViewController
 
@@ -48,16 +49,27 @@
 	
 	[context save:nil];
 	*/
-	
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/scheduledruns/list" 
+																	delegate:self 
+																   onSuccess:@selector(onFetchScheduledRunsSuccess:) 
+																   onFailure:@selector(onFetchScheduledRunsFailure:)];
+	[request performGet];
 }
+
+- (void) onFetchScheduledRunsSuccess: (NSString *) response {
+	NSLog(@"Success: %@", response);
+}
+
+- (void) onFetchScheduledRunsFailure: (NSError *) error {
+	NSLog(@"Failure");	
+}
+
 
 - (NSFetchedResultsController *)fetchedResultsController {
 	if (_fetchedResultsController != nil)
 		return _fetchedResultsController;
 	
-	LunchRunAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [delegate managedObjectContext];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];

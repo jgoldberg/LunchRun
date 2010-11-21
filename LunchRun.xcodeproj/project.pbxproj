@@ -29,6 +29,7 @@
 		C96B121812790F880083BFEB /* AddOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B121712790F880083BFEB /* AddOrderItemView.xib */; };
 		C96B121A12790F930083BFEB /* EditOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96B121912790F930083BFEB /* EditOrderItemView.xib */; };
 		C96B126E127918C70083BFEB /* menudata.plist in Resources */ = {isa = PBXBuildFile; fileRef = C96B126D127918C70083BFEB /* menudata.plist */; };
+		C9B916731298CABD006D121A /* LRJSONRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B916721298CABD006D121A /* LRJSONRequest.m */; };
 		C9C38FE31294FF230036317B /* ScheduledRun.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C38FDE1294FF230036317B /* ScheduledRun.m */; };
 		C9C38FE41294FF230036317B /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C38FE01294FF230036317B /* Order.m */; };
 		C9C38FE51294FF230036317B /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C38FE21294FF230036317B /* OrderItem.m */; };
@@ -72,6 +73,9 @@
 		C96B121712790F880083BFEB /* AddOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddOrderItemView.xib; sourceTree = "<group>"; };
 		C96B121912790F930083BFEB /* EditOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditOrderItemView.xib; sourceTree = "<group>"; };
 		C96B126D127918C70083BFEB /* menudata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = menudata.plist; sourceTree = "<group>"; };
+		C9B916711298CABD006D121A /* LRJSONRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRJSONRequest.h; sourceTree = "<group>"; };
+		C9B916721298CABD006D121A /* LRJSONRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRJSONRequest.m; sourceTree = "<group>"; };
+		C9B917031298D5EF006D121A /* JSONRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRequestDelegate.h; sourceTree = "<group>"; };
 		C9C38FDD1294FF230036317B /* ScheduledRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRun.h; sourceTree = "<group>"; };
 		C9C38FDE1294FF230036317B /* ScheduledRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRun.m; sourceTree = "<group>"; };
 		C9C38FDF1294FF230036317B /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
@@ -109,9 +113,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C9B917021298D5B2006D121A /* Protocols */,
 				C9F030FE129643E60054671D /* JSON */,
 				C9643DD11285257B00DA5D09 /* Model */,
 				C91FFB6E127796FE00615EAA /* Utility */,
+				C9B916741298CADB006D121A /* Remote */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				1D3623240D0F684500981E51 /* LunchRunAppDelegate.h */,
@@ -206,6 +212,23 @@
 				C9C38FE21294FF230036317B /* OrderItem.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C9B916741298CADB006D121A /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				C9B916711298CABD006D121A /* LRJSONRequest.h */,
+				C9B916721298CABD006D121A /* LRJSONRequest.m */,
+			);
+			name = Remote;
+			sourceTree = "<group>";
+		};
+		C9B917021298D5B2006D121A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C9B917031298D5EF006D121A /* JSONRequestDelegate.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		C9F030FE129643E60054671D /* JSON */ = {
@@ -311,6 +334,7 @@
 				C9F0310D1296440B0054671D /* SBJsonBase.m in Sources */,
 				C9F0310E1296440B0054671D /* SBJsonParser.m in Sources */,
 				C9F0310F1296440B0054671D /* SBJsonWriter.m in Sources */,
+				C9B916731298CABD006D121A /* LRJSONRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
