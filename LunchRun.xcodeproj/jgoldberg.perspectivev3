@@ -281,13 +281,32 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>32</integer>
+									<integer>23</integer>
+									<integer>16</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>24</integer>
+									<integer>16</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>25</integer>
+									<integer>16</integer>
+									<integer>1</integer>
+									<integer>0</integer>
+								</array>
+								<array>
+									<integer>26</integer>
+									<integer>16</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {185, 914}}</string>
+							<string>{{0, 16}, {185, 914}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -330,7 +349,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9B9188512990741006D121A</string>
+										<string>C9B918FF12991A92006D121A</string>
 										<key>history</key>
 										<array>
 											<string>C91FFB761277971800615EAA</string>
@@ -362,7 +381,6 @@
 											<string>C9B917EF1298ECE1006D121A</string>
 											<string>C9B917F21298ECE1006D121A</string>
 											<string>C9B9181A1298FD92006D121A</string>
-											<string>C9B91850129900CC006D121A</string>
 											<string>C9B91852129900CC006D121A</string>
 											<string>C9B91855129900CC006D121A</string>
 											<string>C9B91857129900CC006D121A</string>
@@ -371,8 +389,11 @@
 											<string>C9B9187612990681006D121A</string>
 											<string>C9B9187712990681006D121A</string>
 											<string>C9B9187812990681006D121A</string>
-											<string>C9B9187912990681006D121A</string>
-											<string>C9B9187A12990681006D121A</string>
+											<string>C9B918A71299153D006D121A</string>
+											<string>C9B918D4129916B3006D121A</string>
+											<string>C9B918D5129916B3006D121A</string>
+											<string>C9B918F5129918F2006D121A</string>
+											<string>C9B918F212991841006D121A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -691,7 +712,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C9B9188612990741006D121A</string>
+		<string>C9B9190012991A92006D121A</string>
 		<string>C9643E521288370800DA5D09</string>
 		<string>C9B9167C1298CB10006D121A</string>
 		<string>C9B916681298A90D006D121A</string>
@@ -1422,7 +1443,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CA6456E063B45B4001379D8</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Class Browser - NSDateFormatter</string>
+								<string>Class Browser - NSManagedObject</string>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
@@ -1451,7 +1472,7 @@
 									<real>22</real>
 								</array>
 								<key>RubberWindowFrame</key>
-								<string>25 256 1200 749 0 0 1680 1028 </string>
+								<string>146 190 1200 749 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXClassBrowserModule</string>
@@ -1480,7 +1501,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.classbrowser</string>
 			<key>WindowString</key>
-			<string>25 256 1200 749 0 0 1680 1028 </string>
+			<string>146 190 1200 749 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>C9643E521288370800DA5D09</string>
 			<key>WindowToolIsVisible</key>

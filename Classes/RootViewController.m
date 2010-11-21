@@ -13,6 +13,7 @@
 #import "LunchRunAppDelegate.h"
 #import "LRJSONRequest.h"
 #import "EntityFactory.h"
+#import "EntityService.h"
 
 @implementation RootViewController
 
@@ -62,8 +63,61 @@
 	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [delegate managedObjectContext];
 	
-	for (NSDictionary *item in response) {
-		NSLog(@"Processing row: %@", item);
+	NSArray *localScheduledRuns = [EntityService findAllScheduledRuns];
+	
+	NSMutableArray *toBeDeleted = [[NSMutableArray alloc] init];
+	NSMutableArray *toBeAdded = [[NSMutableArray alloc] init];
+	
+	// Sync logic
+	int maxSize = [localScheduledRuns count] > [response count] ? [localScheduledRuns count] : [response count];
+	int localIdx = 0;
+	int remoteIdx = 0;
+	while (localIdx <= maxSize && remoteIdx <= maxSize) {
+		int remoteID = 0;
+		int localID = 0;
+		
+		NSLog(@"Local Index: %d, Remote Index: %d", localIdx, remoteIdx);
+		
+		if (localIdx < [localScheduledRuns count]) {
+			localID = [[[localScheduledRuns objectAtIndex:localIdx] scheduledRunID] intValue];
+		}
+		if (remoteIdx < [response count]) {
+			remoteID = [[[response objectAtIndex:remoteIdx] objectForKey:@"scheduled_run_id"] intValue];
+		}
+		
+		NSLog(@"Local ID: %d, Remote ID: %d", localID, remoteID);
+		
+		if (remoteID == 0 && localID != 0) {
+			NSLog(@"Deleted");
+			[toBeDeleted addObject:[localScheduledRuns objectAtIndex:localIdx]];
+			localIdx++;
+		} else if (remoteID != 0 && localID == 0) {
+			NSLog(@"Added");
+			[toBeAdded addObject:[response objectAtIndex:remoteIdx]];
+			remoteIdx++;
+		} else if (remoteID < localID) {
+			NSLog(@"Added");
+			[toBeAdded addObject:[response objectAtIndex:remoteIdx]];
+			remoteIdx++;
+		} else if (remoteID > localID) {
+			NSLog(@"Deleted");
+			[toBeDeleted addObject:[localScheduledRuns objectAtIndex:localIdx]];
+			localIdx++;
+		} else {
+			NSLog(@"Match");
+			localIdx++;
+			remoteIdx++;
+		}
+
+	}
+	
+	for (ScheduledRun *item in toBeDeleted) {
+		NSLog(@"Deleting Object");
+		[context deleteObject:item];
+	}
+	
+	for (NSDictionary *item in toBeAdded) {
+		NSLog(@"Adding Run: %@", item);
 		ScheduledRun *newScheduledRun = [EntityFactory createScheduledRun];
 		[newScheduledRun unserialize:item];
 		NSError *error;
