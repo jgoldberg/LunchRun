@@ -16,6 +16,7 @@
 #import "EntityFactory.h"
 #import "EntityService.h"
 #import "LRProgressHUD.h"
+#import "SettingsViewController.h"
 
 @interface RootViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UINavigationControllerDelegate> {
 	NSFetchedResultsController *_fetchedResultsController;

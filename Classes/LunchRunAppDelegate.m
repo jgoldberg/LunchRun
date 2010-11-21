@@ -116,9 +116,10 @@
 	NSDictionary *_menuData = [[NSDictionary alloc] initWithContentsOfFile:path];
 	self.menuData = _menuData;
 	[_menuData release];
-	
+		
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];
+	
 	return YES;
 }
 

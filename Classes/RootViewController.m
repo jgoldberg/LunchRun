@@ -30,14 +30,25 @@
 		exit(-1);
 	}
 	
-	hud = [[LRProgressHUD alloc] initWithLabel:@"Loading"];
-	[hud show];
-	
-	LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/scheduledruns/list" 
-																	delegate:self 
-																   onSuccess:@selector(onFetchScheduledRunsSuccess:) 
-																   onFailure:@selector(onFetchScheduledRunsFailure:)];
-	[request performGet];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	if ([defaults objectForKey:@"not_configured"] == nil) {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome to LunchRun!" 
+														message:@"In order to participate, you must be a member of a group.  Use the info button on the bottom right to create or join a group." 
+													   delegate:nil 
+											  cancelButtonTitle:@"Continue" 
+											  otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+	} else {
+		hud = [[LRProgressHUD alloc] initWithLabel:@"Loading"];
+		[hud show];
+		
+		LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/scheduledruns/list" 
+																		delegate:self 
+																	   onSuccess:@selector(onFetchScheduledRunsSuccess:) 
+																	   onFailure:@selector(onFetchScheduledRunsFailure:)];
+		[request performGet];
+	}
 }
 
 - (void) onFetchScheduledRunsSuccess:(NSMutableArray *) response {
@@ -71,7 +82,12 @@
 }
 
 - (void) onShowSettings: (id)sender {
+	SettingsViewController *controller = [[SettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
 	
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:controller animated:YES];
+	
+	[controller release];	
 }
 
 

@@ -18,6 +18,8 @@
 		C91F43F31299289A00440A84 /* LRProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F43F21299289A00440A84 /* LRProgressHUD.m */; };
 		C91F43F81299293400440A84 /* HUDBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F43F71299293400440A84 /* HUDBackground.png */; };
 		C91F45081299BCF300440A84 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C91F45071299BCF300440A84 /* Settings.bundle */; };
+		C91F45FD1299D30000440A84 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F45FB1299D30000440A84 /* SettingsViewController.m */; };
+		C91F45FE1299D30000440A84 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91F45FC1299D30000440A84 /* SettingsView.xib */; };
 		C91FF95C1277662800615EAA /* testdata.plist in Resources */ = {isa = PBXBuildFile; fileRef = C91FF95B1277662800615EAA /* testdata.plist */; };
 		C91FF9B612776C4B00615EAA /* ScheduledRunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */; };
 		C91FF9B812776CC100615EAA /* ScheduledRunCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */; };
@@ -63,6 +65,9 @@
 		C91F43F21299289A00440A84 /* LRProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRProgressHUD.m; sourceTree = "<group>"; };
 		C91F43F71299293400440A84 /* HUDBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HUDBackground.png; path = Classes/HUDBackground.png; sourceTree = "<group>"; };
 		C91F45071299BCF300440A84 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		C91F45FA1299D30000440A84 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		C91F45FB1299D30000440A84 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		C91F45FC1299D30000440A84 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsView.xib; path = Classes/SettingsView.xib; sourceTree = "<group>"; };
 		C91FF95B1277662800615EAA /* testdata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testdata.plist; sourceTree = "<group>"; };
 		C91FF9B412776C4B00615EAA /* ScheduledRunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRunCell.h; sourceTree = "<group>"; };
 		C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRunCell.m; sourceTree = "<group>"; };
@@ -143,6 +148,8 @@
 				C96B11CB127907560083BFEB /* MyOrderViewController.m */,
 				C96B121412790F760083BFEB /* OrderItemViewController.h */,
 				C96B121512790F760083BFEB /* OrderItemViewController.m */,
+				C91F45FA1299D30000440A84 /* SettingsViewController.h */,
+				C91F45FB1299D30000440A84 /* SettingsViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 				C96B121912790F930083BFEB /* EditOrderItemView.xib */,
 				C96B126D127918C70083BFEB /* menudata.plist */,
 				C9643DBF1285223600DA5D09 /* LunchRun.xcdatamodel */,
+				C91F45FC1299D30000440A84 /* SettingsView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				C96B126E127918C70083BFEB /* menudata.plist in Resources */,
 				C91F43F81299293400440A84 /* HUDBackground.png in Resources */,
 				C91F45081299BCF300440A84 /* Settings.bundle in Resources */,
+				C91F45FE1299D30000440A84 /* SettingsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +370,7 @@
 				C9B918061298FC4D006D121A /* EntityFactory.m in Sources */,
 				C9B91894129909FC006D121A /* EntityService.m in Sources */,
 				C91F43F31299289A00440A84 /* LRProgressHUD.m in Sources */,
+				C91F45FD1299D30000440A84 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
