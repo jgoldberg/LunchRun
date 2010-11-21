@@ -17,7 +17,7 @@
 #import "EntityService.h"
 #import "LRProgressHUD.h"
 
-@interface RootViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {
+@interface RootViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UINavigationControllerDelegate> {
 	NSFetchedResultsController *_fetchedResultsController;
 	IBOutlet UITableView *tableView;
 	LRProgressHUD *hud;

@@ -10,7 +10,7 @@
 #import "ScheduledRun.h"
 
 
-@interface ScheduledRunViewController : UIViewController <UINavigationControllerDelegate> {
+@interface ScheduledRunViewController : UIViewController {
 	ScheduledRun *scheduledRun;
 	IBOutlet UITextView *textView;
 }

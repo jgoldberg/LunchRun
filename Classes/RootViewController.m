@@ -56,6 +56,22 @@
 	[alert release];
 }
 
+- (void)navigationController:(UINavigationController *)_navigationController willShowViewController:(UIViewController *)_viewController animated:(BOOL)animated {
+	UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+	[infoButton addTarget:self action:@selector(onShowSettings:) forControlEvents:UIControlEventTouchUpInside];
+	UIBarButtonItem *infoItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+	
+	UIBarButtonItem *fixed = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+	[fixed setWidth:280.0];
+	
+	NSArray *tabBarItems = [NSArray arrayWithObjects:fixed,infoItem,nil];
+	[self setToolbarItems:tabBarItems];
+}
+
+- (void) onShowSettings: (id)sender {
+	
+}
+
 
 - (NSFetchedResultsController *)fetchedResultsController {
 	if (_fetchedResultsController != nil)
