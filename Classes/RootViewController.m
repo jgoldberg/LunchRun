@@ -7,18 +7,13 @@
 //
 
 #import "RootViewController.h"
-#import "ScheduledRunCell.h"
-#import "LRTimeRemaining.h"
-#import "ScheduledRunViewController.h"
-#import "LunchRunAppDelegate.h"
-#import "LRJSONRequest.h"
-#import "EntityFactory.h"
-#import "EntityService.h"
+
 
 @implementation RootViewController
 
 @synthesize fetchedResultsController=_fetchedResultsController;
 @synthesize tableView;
+@synthesize hud;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -33,24 +28,9 @@
 		exit(-1);
 	}
 	
-	/*
-	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
-	ScheduledRun *run1 = [NSEntityDescription insertNewObjectForEntityForName:@"ScheduledRun" inManagedObjectContext:context];
-	run1.scheduledRunID = [NSNumber numberWithInt:1];
-	run1.ownerName = @"Jason G";
-	run1.isOpen = [NSNumber numberWithBool:YES];
-	run1.destination = @"Franklin's BBQ";
-	run1.cutoffDate = [NSDate date];
+	hud = [[LRProgressHUD alloc] initWithLabel:@"Loading"];
+	[hud show];
 	
-	run1 = [NSEntityDescription insertNewObjectForEntityForName:@"ScheduledRun" inManagedObjectContext:context];
-	run1.scheduledRunID = [NSNumber numberWithInt:2];
-	run1.ownerName = @"Alex G";
-	run1.isOpen = [NSNumber numberWithBool:NO];
-	run1.destination = @"Thai Passion";
-	run1.cutoffDate = [NSDate date];
-	
-	[context save:nil];
-	*/
 	LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/scheduledruns/list" 
 																	delegate:self 
 																   onSuccess:@selector(onFetchScheduledRunsSuccess:) 
@@ -58,73 +38,11 @@
 	[request performGet];
 }
 
-- (void) onFetchScheduledRunsSuccess: (NSMutableArray *) response {
+- (void) onFetchScheduledRunsSuccess:(NSMutableArray *) response {
 	NSLog(@"Success: %@", response);
-	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
-	NSManagedObjectContext *context = [delegate managedObjectContext];
+	[EntityService syncScheduledRuns:response];
+	[hud dismiss];
 	
-	NSArray *localScheduledRuns = [EntityService findAllScheduledRuns];
-	
-	NSMutableArray *toBeDeleted = [[NSMutableArray alloc] init];
-	NSMutableArray *toBeAdded = [[NSMutableArray alloc] init];
-	
-	// Sync logic
-	int maxSize = [localScheduledRuns count] > [response count] ? [localScheduledRuns count] : [response count];
-	int localIdx = 0;
-	int remoteIdx = 0;
-	while (localIdx <= maxSize && remoteIdx <= maxSize) {
-		int remoteID = 0;
-		int localID = 0;
-		
-		NSLog(@"Local Index: %d, Remote Index: %d", localIdx, remoteIdx);
-		
-		if (localIdx < [localScheduledRuns count]) {
-			localID = [[[localScheduledRuns objectAtIndex:localIdx] scheduledRunID] intValue];
-		}
-		if (remoteIdx < [response count]) {
-			remoteID = [[[response objectAtIndex:remoteIdx] objectForKey:@"scheduled_run_id"] intValue];
-		}
-		
-		NSLog(@"Local ID: %d, Remote ID: %d", localID, remoteID);
-		
-		if (remoteID == 0 && localID != 0) {
-			NSLog(@"Deleted");
-			[toBeDeleted addObject:[localScheduledRuns objectAtIndex:localIdx]];
-			localIdx++;
-		} else if (remoteID != 0 && localID == 0) {
-			NSLog(@"Added");
-			[toBeAdded addObject:[response objectAtIndex:remoteIdx]];
-			remoteIdx++;
-		} else if (remoteID < localID) {
-			NSLog(@"Added");
-			[toBeAdded addObject:[response objectAtIndex:remoteIdx]];
-			remoteIdx++;
-		} else if (remoteID > localID) {
-			NSLog(@"Deleted");
-			[toBeDeleted addObject:[localScheduledRuns objectAtIndex:localIdx]];
-			localIdx++;
-		} else {
-			NSLog(@"Match");
-			localIdx++;
-			remoteIdx++;
-		}
-
-	}
-	
-	for (ScheduledRun *item in toBeDeleted) {
-		NSLog(@"Deleting Object");
-		[context deleteObject:item];
-	}
-	
-	for (NSDictionary *item in toBeAdded) {
-		NSLog(@"Adding Run: %@", item);
-		ScheduledRun *newScheduledRun = [EntityFactory createScheduledRun];
-		[newScheduledRun unserialize:item];
-		NSError *error;
-		if (![context save:&error]) {
-			NSLog(@"Error Saving");
-		}
-	}
 }
 
 - (void) onFetchScheduledRunsFailure: (NSError *) error {

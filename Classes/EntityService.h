@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "EntityFactory.h"
+#import "LunchRunAppDelegate.h"
 
 @interface EntityService : NSObject {
 
 }
 
 + (NSArray *)findAllScheduledRuns;
++ (void) syncScheduledRuns:(NSArray *)remoteScheduledRuns;
 
 @end

@@ -16,6 +16,7 @@
 @synthesize navigationController;
 @synthesize currentScheduledRun;
 @synthesize menuData;
+@synthesize alertRunning;
 
 #pragma mark -
 #pragma mark UINavigationControllerDelegate
@@ -114,7 +115,6 @@
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"menudata" ofType:@"plist"];
 	NSDictionary *_menuData = [[NSDictionary alloc] initWithContentsOfFile:path];
 	self.menuData = _menuData;
-	
 	[_menuData release];
 	
 	[window addSubview:[navigationController view]];

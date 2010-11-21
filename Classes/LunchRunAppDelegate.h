@@ -18,6 +18,8 @@
     UINavigationController *navigationController;
 	NSString *currentScheduledRun;
 	NSDictionary *menuData;
+	
+	BOOL alertRunning;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -28,6 +30,8 @@
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (nonatomic, getter = isAlertRunning) BOOL alertRunning;
 
 @end
 
