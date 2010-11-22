@@ -12,9 +12,9 @@
 
 + (ScheduledRun *)createScheduledRun {
 	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
-	ScheduledRun *newScheduledRun = [[NSEntityDescription
+	ScheduledRun *newScheduledRun = [NSEntityDescription
 							   insertNewObjectForEntityForName:@"ScheduledRun" 
-							   inManagedObjectContext:context] autorelease];
+							   inManagedObjectContext:context];
 	return newScheduledRun;
 }
 

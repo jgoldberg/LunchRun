@@ -19,10 +19,10 @@
 
 - (id)initWithURL:(NSString *)url delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure {
 	if (self = [super init]) {
-		_delegate = delegate;
+		_delegate = [delegate retain];
 		_onSuccess = onSuccess;
 		_onFailure = onFailure;
-		_url = url;
+		_url = [url retain];
 		_baseUrl = @"http://localhost:8080";
 	}
 	return self;
@@ -30,7 +30,7 @@
 
 - (void) performGet {
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",_baseUrl,_url]]];
-	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 	if (connection) {
 		_receivedData = [[NSMutableData data] retain];
 	} else {
@@ -45,7 +45,7 @@
 	NSData *paramData = [[NSString stringWithFormat:@"%@=%@",@"query",postData] dataUsingEncoding:NSUTF8StringEncoding]; 
 	[request setHTTPBody: paramData];
 	
-	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 	if (connection) {
 		_receivedData = [[NSMutableData data] retain];
 	} else {
@@ -86,13 +86,16 @@
 	[_delegate performSelector:_onSuccess withObject:[parser objectWithString:response]];
 	
 	[parser release];
+	[response release];
 	
     [connection release];
 }
 
 - (void) dealloc
 {
-    [_receivedData release];
+	[_delegate release];
+	[_url release];
+	[_receivedData release];
 	[super dealloc];
 }
 

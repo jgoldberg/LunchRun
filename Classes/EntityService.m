@@ -28,6 +28,8 @@
 	{
 		NSLog(@"Error Finding All Scheduled Runs");
 	}
+	[sortDescriptor release];
+	[request release];
 	return array;
 }
 
@@ -84,13 +86,13 @@
 	}
 	
 	for (ScheduledRun *item in toBeDeleted) {
-		NSLog(@"Deleting Object");
 		[context deleteObject:item];
 		NSError *error;
 		if (![context save:&error]) {
 			NSLog(@"Error Saving");
 		}
 	}
+	[toBeDeleted release];
 	
 	for (NSDictionary *item in toBeAdded) {
 		NSLog(@"Adding Run: %@", item);
@@ -100,7 +102,8 @@
 		if (![context save:&error]) {
 			NSLog(@"Error Saving");
 		}
-	}	
+	}
+	[toBeAdded release];
 }
 
 @end

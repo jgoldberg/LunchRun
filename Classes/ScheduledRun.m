@@ -33,6 +33,8 @@
 	self.cutoffDate = [dateFormat dateFromString:[dictionary objectForKey:@"cutoff_datetime"]];
 	self.destination = [dictionary objectForKey:@"destination"];
 	self.ownerName = [dictionary objectForKey:@"owner"];
+	
+	[dateFormat release];
 }
 
 @end

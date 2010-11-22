@@ -54,6 +54,7 @@
 														  onSuccess:@selector(onFetchScheduledRunsSuccess:) 
 														  onFailure:@selector(onFetchScheduledRunsFailure:)];
 		[request performGet];
+		[request release];
 	}
 }
 
@@ -194,7 +195,6 @@
 	
 	// Configure the cell.
 	ScheduledRun *scheduledRun = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	
 	cell.destinationLabel.text = [scheduledRun destination];
 	cell.cutoffDateLabel.text =  [dateFormat stringFromDate:[scheduledRun cutoffDate]];
 	cell.userLabel.text = [scheduledRun	ownerName];

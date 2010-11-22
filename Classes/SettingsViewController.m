@@ -41,6 +41,9 @@
 													  onSuccess:@selector(onRegisterSuccess:) 
 													  onFailure:@selector(onRegisterFailure:)];
 	[request performPost:postData];
+	[request release];
+	[writer release];
+	[dict release];
 }
 
 - (void) onRegisterSuccess:(NSMutableArray *) response {
@@ -132,7 +135,8 @@
 
 
 - (void)dealloc {
-    [super dealloc];
+    [hud release];
+	[super dealloc];
 }
 
 
