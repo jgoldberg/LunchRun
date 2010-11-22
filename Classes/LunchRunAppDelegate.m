@@ -45,6 +45,7 @@
     if (coordinator != nil) {
         managedObjectContext = [[NSManagedObjectContext alloc] init];
         [managedObjectContext setPersistentStoreCoordinator: coordinator];
+		[managedObjectContext setRetainsRegisteredObjects:YES];
     }
     return managedObjectContext;
 }

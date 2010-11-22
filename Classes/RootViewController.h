@@ -24,6 +24,8 @@
 	LRProgressHUD *hud;
 }
 
+- (void) reloadRemoteData;
+
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 

@@ -29,6 +29,10 @@
 		exit(-1);
 	}
 	
+	[self reloadRemoteData];
+}
+
+- (void) reloadRemoteData {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	if ([defaults objectForKey:@"group_token"] == nil) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome to LunchRun!" 
@@ -43,10 +47,10 @@
 		[hud show];
 		
 		LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/scheduledruns/list"
-																	  groupToken:[defaults objectForKey:@"group_token"]
-																		delegate:self 
-																	   onSuccess:@selector(onFetchScheduledRunsSuccess:) 
-																	   onFailure:@selector(onFetchScheduledRunsFailure:)];
+														 groupToken:[defaults objectForKey:@"group_token"]
+														   delegate:self 
+														  onSuccess:@selector(onFetchScheduledRunsSuccess:) 
+														  onFailure:@selector(onFetchScheduledRunsFailure:)];
 		[request performGet];
 	}
 }
@@ -84,7 +88,7 @@
 
 - (void) onShowSettings: (id)sender {
 	SettingsViewController *controller = [[SettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
-	
+	controller.parentController = self;
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:controller animated:YES];
 	

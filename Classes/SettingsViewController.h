@@ -11,8 +11,10 @@
 #import "LRProgressHUD.h"
 #import "SBJsonWriter.h"
 
+@class RootViewController;
 
 @interface SettingsViewController : UIViewController {
+	RootViewController *parentController;
 	IBOutlet UITextField *userFullName;
 	IBOutlet UITextField *groupName;
 	IBOutlet UITextField *groupPassword;
@@ -26,6 +28,7 @@
 - (void) saveSettings: (id) sender;
 - (void) backgroundClick: (id) sender;
 
+@property (nonatomic, retain) RootViewController *parentController;
 @property (nonatomic, retain) IBOutlet UITextField *userFullName;
 @property (nonatomic, retain) IBOutlet UITextField *groupName;
 @property (nonatomic, retain) IBOutlet UITextField *groupPassword;

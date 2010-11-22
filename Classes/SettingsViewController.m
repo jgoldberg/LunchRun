@@ -10,6 +10,7 @@
 
 @implementation SettingsViewController
 
+@synthesize parentController;
 @synthesize userFullName, groupName, groupPassword;
 @synthesize scrollView;
 @synthesize contentView;
@@ -56,6 +57,7 @@
 			[defaults setObject:[groupPassword text] forKey:@"group_password"];
 			[defaults setObject:groupToken forKey:@"group_token"];
 			
+			[parentController reloadRemoteData];
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LunchRun" 
 															message:[NSString stringWithFormat:@"You successfully joined the group \"%@\" as \"%@\"!",[groupName text],[userFullName text]]
 														   delegate:nil

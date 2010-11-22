@@ -86,6 +86,10 @@
 	for (ScheduledRun *item in toBeDeleted) {
 		NSLog(@"Deleting Object");
 		[context deleteObject:item];
+		NSError *error;
+		if (![context save:&error]) {
+			NSLog(@"Error Saving");
+		}
 	}
 	
 	for (NSDictionary *item in toBeAdded) {
