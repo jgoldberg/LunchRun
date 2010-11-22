@@ -29,6 +29,8 @@
 		exit(-1);
 	}
 	
+	tableView.rowHeight = 66;
+	
 	[self reloadRemoteData];
 }
 
@@ -200,11 +202,6 @@
 	[dateFormat release];
 	
     return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return 66;
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {

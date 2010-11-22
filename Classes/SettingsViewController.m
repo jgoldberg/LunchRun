@@ -26,7 +26,11 @@
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	[dict setObject:[userFullName text] forKey:@"user_name"];
 	[dict setObject:[groupName text] forKey:@"group_name"];
-	[dict setObject:[groupPassword text] forKey:@"group_password"];
+	if (nil != [groupPassword text]) {
+		[dict setObject:[groupPassword text] forKey:@"group_password"];
+	} else {
+		[dict setObject:@"" forKey:@"group_password"];		
+	}
 	[dict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"device_identifier"];
 	
 	SBJsonWriter *writer = [[SBJsonWriter alloc] init];
