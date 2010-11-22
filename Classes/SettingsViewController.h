@@ -24,9 +24,9 @@
 	LRProgressHUD *hud;
 }
 
-- (void) cancelSettings: (id) sender;
-- (void) saveSettings: (id) sender;
-- (void) backgroundClick: (id) sender;
+- (IBAction) cancelSettings: (id) sender;
+- (IBAction) saveSettings: (id) sender;
+- (IBAction) backgroundClick: (id) sender;
 
 @property (nonatomic, retain) RootViewController *parentController;
 @property (nonatomic, retain) IBOutlet UITextField *userFullName;

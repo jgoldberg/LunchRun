@@ -20,6 +20,8 @@
 		C91F45081299BCF300440A84 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C91F45071299BCF300440A84 /* Settings.bundle */; };
 		C91F45FD1299D30000440A84 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F45FB1299D30000440A84 /* SettingsViewController.m */; };
 		C91F45FE1299D30000440A84 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91F45FC1299D30000440A84 /* SettingsView.xib */; };
+		C91F4801129A619B00440A84 /* AddScheduledRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F47FF129A619B00440A84 /* AddScheduledRunViewController.m */; };
+		C91F4802129A619B00440A84 /* AddScheduledRun.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91F4800129A619B00440A84 /* AddScheduledRun.xib */; };
 		C91FF95C1277662800615EAA /* testdata.plist in Resources */ = {isa = PBXBuildFile; fileRef = C91FF95B1277662800615EAA /* testdata.plist */; };
 		C91FF9B612776C4B00615EAA /* ScheduledRunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */; };
 		C91FF9B812776CC100615EAA /* ScheduledRunCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */; };
@@ -68,6 +70,9 @@
 		C91F45FA1299D30000440A84 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		C91F45FB1299D30000440A84 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		C91F45FC1299D30000440A84 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsView.xib; path = Classes/SettingsView.xib; sourceTree = "<group>"; };
+		C91F47FE129A619B00440A84 /* AddScheduledRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddScheduledRunViewController.h; path = ../AddScheduledRunViewController.h; sourceTree = "<group>"; };
+		C91F47FF129A619B00440A84 /* AddScheduledRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddScheduledRunViewController.m; path = ../AddScheduledRunViewController.m; sourceTree = "<group>"; };
+		C91F4800129A619B00440A84 /* AddScheduledRun.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScheduledRun.xib; sourceTree = "<group>"; };
 		C91FF95B1277662800615EAA /* testdata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testdata.plist; sourceTree = "<group>"; };
 		C91FF9B412776C4B00615EAA /* ScheduledRunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRunCell.h; sourceTree = "<group>"; };
 		C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRunCell.m; sourceTree = "<group>"; };
@@ -140,6 +145,8 @@
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				1D3623240D0F684500981E51 /* LunchRunAppDelegate.h */,
 				1D3623250D0F684500981E51 /* LunchRunAppDelegate.m */,
+				C91F47FE129A619B00440A84 /* AddScheduledRunViewController.h */,
+				C91F47FF129A619B00440A84 /* AddScheduledRunViewController.m */,
 				C91FF9B412776C4B00615EAA /* ScheduledRunCell.h */,
 				C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */,
 				C91FFB8E1277F18900615EAA /* ScheduledRunViewController.h */,
@@ -190,6 +197,7 @@
 				C91F43F71299293400440A84 /* HUDBackground.png */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				C91F4800129A619B00440A84 /* AddScheduledRun.xib */,
 				8D1107310486CEB800E47090 /* LunchRun-Info.plist */,
 				C91FF95B1277662800615EAA /* testdata.plist */,
 				C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */,
@@ -339,6 +347,7 @@
 				C91F43F81299293400440A84 /* HUDBackground.png in Resources */,
 				C91F45081299BCF300440A84 /* Settings.bundle in Resources */,
 				C91F45FE1299D30000440A84 /* SettingsView.xib in Resources */,
+				C91F4802129A619B00440A84 /* AddScheduledRun.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +380,7 @@
 				C9B91894129909FC006D121A /* EntityService.m in Sources */,
 				C91F43F31299289A00440A84 /* LRProgressHUD.m in Sources */,
 				C91F45FD1299D30000440A84 /* SettingsViewController.m in Sources */,
+				C91F4801129A619B00440A84 /* AddScheduledRunViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

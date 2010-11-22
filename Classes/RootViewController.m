@@ -97,6 +97,13 @@
 	[controller release];	
 }
 
+- (IBAction) addScheduledRun:(id)sender {
+	AddScheduledRunViewController *controller = [[AddScheduledRunViewController alloc] initWithNibName:@"AddScheduledRun" bundle:nil];
+	controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	[self presentModalViewController:controller animated:YES];
+	
+	[controller release];
+}
 
 - (NSFetchedResultsController *)fetchedResultsController {
 	if (_fetchedResultsController != nil)

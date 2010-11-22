@@ -17,6 +17,7 @@
 #import "EntityService.h"
 #import "LRProgressHUD.h"
 #import "SettingsViewController.h"
+#import "AddScheduledRunViewController.h"
 
 @interface RootViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UINavigationControllerDelegate> {
 	NSFetchedResultsController *_fetchedResultsController;
@@ -25,6 +26,7 @@
 }
 
 - (void) reloadRemoteData;
+- (IBAction) addScheduledRun:(id)sender;
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
