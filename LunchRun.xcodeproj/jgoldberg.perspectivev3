@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -282,13 +284,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>48</integer>
+									<integer>18</integer>
+									<integer>16</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 250}, {373, 914}}</string>
+							<string>{{0, 94}, {373, 914}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,14 +319,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C91FFB1B1277927C00615EAA</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SettingsViewController.m</string>
+								<string>ScheduledRun.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C91FFB1C1277927C00615EAA</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SettingsViewController.m</string>
+										<string>ScheduledRun.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C91F46801299E3FB00440A84</string>
+										<string>C91F4763129A474E00440A84</string>
 										<key>history</key>
 										<array>
 											<string>C91FFB761277971800615EAA</string>
@@ -358,14 +359,10 @@
 											<string>C9C3901C1295046D0036317B</string>
 											<string>C9B917061298D6E4006D121A</string>
 											<string>C9B917ED1298ECE1006D121A</string>
-											<string>C9B917F21298ECE1006D121A</string>
 											<string>C9B91852129900CC006D121A</string>
 											<string>C9B91855129900CC006D121A</string>
 											<string>C9B91857129900CC006D121A</string>
 											<string>C9B91858129900CC006D121A</string>
-											<string>C9B9187512990681006D121A</string>
-											<string>C9B918D4129916B3006D121A</string>
-											<string>C9B9192D129923DA006D121A</string>
 											<string>C9B9192E129923DA006D121A</string>
 											<string>C9B9192F129923DA006D121A</string>
 											<string>C91F440712992A3200440A84</string>
@@ -376,16 +373,19 @@
 											<string>C91F44A3129993A600440A84</string>
 											<string>C91F44BE1299956300440A84</string>
 											<string>C91F44BF1299956300440A84</string>
-											<string>C91F45E21299D00000440A84</string>
 											<string>C91F460E1299D80400440A84</string>
 											<string>C91F460F1299D80400440A84</string>
 											<string>C91F46101299D80400440A84</string>
-											<string>C91F46291299DD4E00440A84</string>
-											<string>C91F462A1299DD4E00440A84</string>
 											<string>C91F46771299E3B300440A84</string>
-											<string>C91F467A1299E3EB00440A84</string>
-											<string>C91F467B1299E3EB00440A84</string>
-											<string>C91F467C1299E3EB00440A84</string>
+											<string>C91F468A129A128D00440A84</string>
+											<string>C91F471E129A27FD00440A84</string>
+											<string>C91F4743129A3DAB00440A84</string>
+											<string>C91F4744129A3DAB00440A84</string>
+											<string>C91F4755129A42EE00440A84</string>
+											<string>C91F4756129A42EE00440A84</string>
+											<string>C91F4760129A474E00440A84</string>
+											<string>C91F4761129A474E00440A84</string>
+											<string>C91F4762129A474E00440A84</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -702,7 +702,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C91F46811299E3FB00440A84</string>
 		<string>C91F443112992ACF00440A84</string>
 		<string>C91F442012992A5900440A84</string>
 		<string>/Users/jgoldberg/Documents/LunchRun/LunchRun.xcodeproj</string>

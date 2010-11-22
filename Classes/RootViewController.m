@@ -13,7 +13,6 @@
 
 @synthesize fetchedResultsController=_fetchedResultsController;
 @synthesize tableView;
-@synthesize hud;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -31,7 +30,7 @@
 	}
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	if ([defaults objectForKey:@"not_configured"] == nil) {
+	if ([defaults objectForKey:@"group_token"] == nil) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Welcome to LunchRun!" 
 														message:@"In order to participate, you must be a member of a group.  Use the info button on the bottom right to create or join a group." 
 													   delegate:nil 
@@ -43,7 +42,8 @@
 		hud = [[LRProgressHUD alloc] initWithLabel:@"Loading"];
 		[hud show];
 		
-		LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/scheduledruns/list" 
+		LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/scheduledruns/list"
+																	  groupToken:[defaults objectForKey:@"group_token"]
 																		delegate:self 
 																	   onSuccess:@selector(onFetchScheduledRunsSuccess:) 
 																	   onFailure:@selector(onFetchScheduledRunsFailure:)];
@@ -60,6 +60,7 @@
 
 - (void) onFetchScheduledRunsFailure: (NSError *) error {
 	NSLog(@"Failure");
+	[hud dismiss];
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LunchRun" 
 													message:@"Sorry!  Could not connect to remote host." 
 												   delegate:nil

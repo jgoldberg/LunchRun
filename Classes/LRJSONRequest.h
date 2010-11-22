@@ -19,7 +19,9 @@
 }
 
 - (id)initWithURL:(NSString *)url delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure;
+- (id)initWithURL:(NSString *)url groupToken:(NSString *)token delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure;
 - (void) performGet;
+- (void) performPost: (NSString *)postData;
 
 @property (nonatomic, retain) NSMutableData *receivedData;
 

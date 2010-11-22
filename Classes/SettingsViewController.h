@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LRJSONRequest.h"
+#import "LRProgressHUD.h"
+#import "SBJsonWriter.h"
 
 
 @interface SettingsViewController : UIViewController {
@@ -15,6 +18,8 @@
 	IBOutlet UITextField *groupPassword;
 	IBOutlet UIScrollView *scrollView;
 	IBOutlet UIView *contentView;
+	BOOL keyboardShown;
+	LRProgressHUD *hud;
 }
 
 - (void) cancelSettings: (id) sender;
