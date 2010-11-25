@@ -23,12 +23,13 @@
 		_onSuccess = onSuccess;
 		_onFailure = onFailure;
 		_url = [url retain];
-		_baseUrl = @"http://localhost:8080";
+		_baseUrl = @"http://ec2-50-16-7-104.compute-1.amazonaws.com";
 	}
 	return self;
 }
 
 - (void) performGet {
+	NSLog(@"HTTP GET");
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",_baseUrl,_url]]];
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 	if (connection) {
@@ -40,6 +41,7 @@
 }
 
 - (void) performPost: (NSString *)postData {
+	NSLog(@"HTTP POST: %@", postData);
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",_baseUrl,_url]]];
 	[request setHTTPMethod:@"POST"];
 	NSData *paramData = [[NSString stringWithFormat:@"%@=%@",@"query",postData] dataUsingEncoding:NSUTF8StringEncoding]; 

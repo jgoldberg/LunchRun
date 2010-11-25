@@ -118,12 +118,63 @@
 	self.menuData = _menuData;
 	[_menuData release];
 		
+	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
+
+	// For testing remote APNS in a simulator env
+	//NSString *testData = [NSString stringWithString:@"blah"];
+	//[self application:[UIApplication sharedApplication] didRegisterForRemoteNotificationsWithDeviceToken:[testData dataUsingEncoding:NSASCIIStringEncoding]];
+	 
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];
 	
 	return YES;
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+	const unsigned *tokenBytes = [deviceToken bytes];
+	NSString *token = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x",
+						  ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
+						  ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
+						  ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
+	
+	NSLog(@"Token: %@", token);
+	
+	LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/owner/apns_register" 
+													   delegate:self 
+													  onSuccess:@selector(registerTokenSuccess:)
+													  onFailure:@selector(registerTokenFailure:)];
+	
+	[[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+	
+	// Reset group if the token is not set
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSNumber *resetGroup = [NSNumber numberWithBool:([defaults objectForKey:@"group_token"] == nil ? YES : NO)];
+	
+	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+	[dict setObject:token forKey:@"apns_token"];
+	[dict setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"device_identifier"];
+	[dict setObject:resetGroup forKey:@"reset_group"];
+	
+	SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+	
+	[request performPost:[writer stringWithObject:dict]];
+	
+	[writer release];
+	[request release];
+	[token release];
+}
+							  
+- (void)registerTokenSuccess:(NSDictionary *)response {
+	NSLog(@"Token successfully registered");
+}
+
+- (void)registerTokenFailure:(NSError *)response {
+	NSLog(@"Error registering APNS token");
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+	NSLog(@"APNS Error: %@", error);
+}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Save data if appropriate
