@@ -22,7 +22,7 @@
 	NSLog(@"Add Order Item");
 
 	WebViewOrderItemViewController *orderItemView = [[WebViewOrderItemViewController alloc] initWithNibName:@"WebViewOrderItemView" bundle:nil];
-	// Set URL
+	// TODO: Set URL
 	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 	[self presentModalViewController:orderItemView animated:YES];
 	[orderItemView release];

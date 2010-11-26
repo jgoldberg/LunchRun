@@ -56,6 +56,7 @@
 		if ([responseMsg isEqualToString:@"success"]) {
 			// Retrieve token
 			NSString *groupToken = [dict objectForKey:@"group_token"];
+			NSString *userToken = [dict objectForKey:@"user_token"];
 			
 			// Store successful settings in DB
 			NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -63,6 +64,7 @@
 			[defaults setObject:[groupName text] forKey:@"group_name"];
 			[defaults setObject:[groupPassword text] forKey:@"group_password"];
 			[defaults setObject:groupToken forKey:@"group_token"];
+			[defaults setObject:userToken forKey:@"user_token"];
 			
 			[parentController reloadRemoteData];
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LunchRun" 

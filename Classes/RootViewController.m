@@ -50,6 +50,7 @@
 		
 		LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/scheduledruns/list"
 														 groupToken:[defaults objectForKey:@"group_token"]
+														  userToken:[defaults objectForKey:@"user_token"]
 														   delegate:self 
 														  onSuccess:@selector(onFetchScheduledRunsSuccess:) 
 														  onFailure:@selector(onFetchScheduledRunsFailure:)];

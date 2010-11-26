@@ -13,8 +13,9 @@
 
 @synthesize receivedData=_receivedData;
 
-- (id)initWithURL:(NSString *)url groupToken:(NSString *)token delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure {
-	[self initWithURL:[NSString stringWithFormat:@"%@?group_token=%@",url,token] delegate:delegate onSuccess:onSuccess onFailure:onFailure];
+- (id)initWithURL:(NSString *)url groupToken:(NSString *)groupToken userToken:(NSString *)userToken delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure {
+	NSString *newUrl = [NSString stringWithFormat:@"%@?group_token=%@&user_token=%@",url,groupToken,userToken];
+	[self initWithURL:newUrl delegate:delegate onSuccess:onSuccess onFailure:onFailure];
 }
 
 - (id)initWithURL:(NSString *)url delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure {
