@@ -32,3 +32,8 @@
 
 @end
 
+
+@interface OrderItem (JSON)
+- (NSDictionary *) serialize;
+- (void)unserialize:(NSDictionary *) dictionary;
+@end

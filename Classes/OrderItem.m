@@ -19,4 +19,14 @@
 @dynamic order;
 @dynamic options;
 
+- (NSDictionary *) serialize {
+	return nil;
+}
+
+- (void)unserialize:(NSDictionary *) dictionary {
+	self.name = [dictionary objectForKey:@"name"];
+	self.quantity = [dictionary objectForKey:@"quantity"];
+	self.instructions = [dictionary objectForKey:@"instructions"];
+}
+
 @end

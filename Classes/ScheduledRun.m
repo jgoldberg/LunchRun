@@ -33,8 +33,10 @@
 	self.destination = [dictionary objectForKey:@"destination"];
 	self.ownerName = [dictionary objectForKey:@"owner"];
 	
-	Order *emptyOrder = [EntityFactory createOrder];
-	self.myOrder = emptyOrder;	
+	Order *order = [EntityFactory createOrder];
+	[order unserialize:[dictionary objectForKey:@"my_order"]];
+	[order setScheduledRun:self];
+	self.myOrder = order;
 	
 	[dateFormat release];
 }

@@ -31,3 +31,8 @@
 
 @end
 
+
+@interface Order (JSON)
+- (NSDictionary *) serialize;
+- (void)unserialize:(NSDictionary *) dictionary;
+@end

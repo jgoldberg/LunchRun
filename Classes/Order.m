@@ -18,4 +18,18 @@
 @dynamic scheduledRun;
 @dynamic orderItems;
 
+- (NSDictionary *) serialize {
+	return nil;
+}
+
+- (void)unserialize:(NSDictionary *) dictionary {
+	NSArray *orderItemSetData = [dictionary objectForKey:@"order_items"];
+	for (NSDictionary *orderItemData in orderItemSetData) {
+		OrderItem *orderItem = [EntityFactory createOrderItem];
+		[orderItem unserialize:orderItemData];
+		[orderItem setOrder:self];
+		[self addOrderItemsObject:orderItem];
+	}
+}
+
 @end
