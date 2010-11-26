@@ -15,6 +15,8 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		C9179A21129F5612001A7AFA /* WebViewOrderItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9179A1F129F5612001A7AFA /* WebViewOrderItemViewController.m */; };
+		C9179A22129F5612001A7AFA /* WebViewOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9179A20129F5612001A7AFA /* WebViewOrderItemView.xib */; };
 		C91F43F31299289A00440A84 /* LRProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F43F21299289A00440A84 /* LRProgressHUD.m */; };
 		C91F43F81299293400440A84 /* HUDBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F43F71299293400440A84 /* HUDBackground.png */; };
 		C91F45081299BCF300440A84 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C91F45071299BCF300440A84 /* Settings.bundle */; };
@@ -63,6 +65,9 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LunchRun-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LunchRun-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C9179A1E129F5612001A7AFA /* WebViewOrderItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewOrderItemViewController.h; sourceTree = "<group>"; };
+		C9179A1F129F5612001A7AFA /* WebViewOrderItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewOrderItemViewController.m; sourceTree = "<group>"; };
+		C9179A20129F5612001A7AFA /* WebViewOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WebViewOrderItemView.xib; path = Classes/WebViewOrderItemView.xib; sourceTree = "<group>"; };
 		C91F43F11299289A00440A84 /* LRProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRProgressHUD.h; sourceTree = "<group>"; };
 		C91F43F21299289A00440A84 /* LRProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRProgressHUD.m; sourceTree = "<group>"; };
 		C91F43F71299293400440A84 /* HUDBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HUDBackground.png; path = Classes/HUDBackground.png; sourceTree = "<group>"; };
@@ -157,6 +162,8 @@
 				C96B121512790F760083BFEB /* OrderItemViewController.m */,
 				C91F45FA1299D30000440A84 /* SettingsViewController.h */,
 				C91F45FB1299D30000440A84 /* SettingsViewController.m */,
+				C9179A1E129F5612001A7AFA /* WebViewOrderItemViewController.h */,
+				C9179A1F129F5612001A7AFA /* WebViewOrderItemViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 				C96B126D127918C70083BFEB /* menudata.plist */,
 				C9643DBF1285223600DA5D09 /* LunchRun.xcdatamodel */,
 				C91F45FC1299D30000440A84 /* SettingsView.xib */,
+				C9179A20129F5612001A7AFA /* WebViewOrderItemView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -348,6 +356,7 @@
 				C91F45081299BCF300440A84 /* Settings.bundle in Resources */,
 				C91F45FE1299D30000440A84 /* SettingsView.xib in Resources */,
 				C91F4802129A619B00440A84 /* AddScheduledRun.xib in Resources */,
+				C9179A22129F5612001A7AFA /* WebViewOrderItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +390,7 @@
 				C91F43F31299289A00440A84 /* LRProgressHUD.m in Sources */,
 				C91F45FD1299D30000440A84 /* SettingsViewController.m in Sources */,
 				C91F4801129A619B00440A84 /* AddScheduledRunViewController.m in Sources */,
+				C9179A21129F5612001A7AFA /* WebViewOrderItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

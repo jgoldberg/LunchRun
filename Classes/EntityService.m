@@ -106,4 +106,17 @@
 	[toBeAdded release];
 }
 
++ (void) syncOrderItems:(NSDictionary *)params {
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [delegate managedObjectContext];
+	
+	OrderItem *orderItem = [EntityFactory createOrderItem];
+	[orderItem setQuantity:[params objectForKey:@"quantity"]];
+	[orderItem setItem:[params objectForKey:@"name"]];
+	NSError *error;
+	if (![context save:&error]) {
+		NSLog(@"Error Saving");
+	}
+}
+
 @end

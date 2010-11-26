@@ -17,5 +17,6 @@
 
 + (NSArray *)findAllScheduledRuns;
 + (void) syncScheduledRuns:(NSArray *)remoteScheduledRuns;
++ (void) syncOrderItems:(NSDictionary *)params;
 
 @end

@@ -10,7 +10,7 @@
 #import "OrderItemViewController.h"
 #import "LunchRunAppDelegate.h"
 #import "OrderItem.h"
-
+#import "WebViewOrderItemViewController.h"
 
 @implementation MyOrderViewController
 
@@ -21,9 +21,17 @@
 - (IBAction) addOrderItem: (id) sender
 {
 	NSLog(@"Add Order Item");
-		
+	
+	/*
 	OrderItemViewController *orderItemView = [[OrderItemViewController alloc] initWithNibName:@"AddOrderItemView" bundle:nil];
 	orderItemView.scheduledRun = scheduledRun;
+	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+	[self presentModalViewController:orderItemView animated:YES];
+	[orderItemView release];
+	 */
+	
+	WebViewOrderItemViewController *orderItemView = [[WebViewOrderItemViewController alloc] initWithNibName:@"WebViewOrderItemView" bundle:nil];
+	// Set URL
 	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 	[self presentModalViewController:orderItemView animated:YES];
 	[orderItemView release];

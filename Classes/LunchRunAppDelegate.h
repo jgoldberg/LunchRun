@@ -16,7 +16,6 @@
 	
     UIWindow *window;
     UINavigationController *navigationController;
-	NSString *currentScheduledRun;
 	NSDictionary *menuData;
 	
 	BOOL alertRunning;
@@ -24,7 +23,6 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
-@property (nonatomic, retain) NSString *currentScheduledRun;
 @property (nonatomic, retain) NSDictionary *menuData;
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

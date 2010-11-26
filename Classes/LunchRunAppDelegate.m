@@ -14,7 +14,6 @@
 
 @synthesize window;
 @synthesize navigationController;
-@synthesize currentScheduledRun;
 @synthesize menuData;
 @synthesize alertRunning;
 
