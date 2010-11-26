@@ -11,7 +11,6 @@
 
 
 @interface ScheduledRunViewController : UIViewController {
-	ScheduledRun *scheduledRun;
 	IBOutlet UITextView *textView;
 }
 

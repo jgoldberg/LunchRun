@@ -60,9 +60,7 @@
 	
 	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
 	
-	OrderItem *newOrderItem = [NSEntityDescription
-							insertNewObjectForEntityForName:@"OrderItem" 
-							inManagedObjectContext:context];
+	OrderItem *newOrderItem = [EntityFactory createOrderItem];
 	
 	NSInteger itemIndex = [itemPickerView selectedRowInComponent:ITEM_COMPONENT];
 	NSInteger quantityIndex = [itemPickerView selectedRowInComponent:QUANTITY_COMPONENT];

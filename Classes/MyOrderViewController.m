@@ -14,22 +14,13 @@
 
 @implementation MyOrderViewController
 
-@synthesize scheduledRun;
 @synthesize tableView;
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 - (IBAction) addOrderItem: (id) sender
 {
 	NSLog(@"Add Order Item");
-	
-	/*
-	OrderItemViewController *orderItemView = [[OrderItemViewController alloc] initWithNibName:@"AddOrderItemView" bundle:nil];
-	orderItemView.scheduledRun = scheduledRun;
-	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-	[self presentModalViewController:orderItemView animated:YES];
-	[orderItemView release];
-	 */
-	
+
 	WebViewOrderItemViewController *orderItemView = [[WebViewOrderItemViewController alloc] initWithNibName:@"WebViewOrderItemView" bundle:nil];
 	// Set URL
 	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
@@ -153,7 +144,6 @@
 	OrderItem *orderItem = [self.fetchedResultsController objectAtIndexPath: indexPath];
 	
 	OrderItemViewController *orderItemView = [[OrderItemViewController alloc] initWithNibName:@"EditOrderItemView" bundle:nil];
-	orderItemView.scheduledRun = scheduledRun;
 	orderItemView.orderItem = orderItem;
 	[orderItemView setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
 	[self presentModalViewController:orderItemView animated:YES];
@@ -219,7 +209,6 @@
 
 - (void)dealloc {
 	[_fetchedResultsController release];
-	[scheduledRun release];
 	[tableView release];
     
 	[super dealloc];

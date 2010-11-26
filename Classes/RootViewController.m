@@ -309,7 +309,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	ScheduledRun *scheduledRun = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	ScheduledRunViewController *scheduledRunViewController = [[ScheduledRunViewController alloc] initWithNibName:@"ScheduledRunView" bundle:nil];
-    scheduledRunViewController.scheduledRun = scheduledRun;
 	[self.navigationController pushViewController:scheduledRunViewController animated:YES];
 	[scheduledRunViewController release];
 }

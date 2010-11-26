@@ -14,26 +14,11 @@
 
 @implementation ScheduledRunViewController
 
-@synthesize scheduledRun;
 @synthesize textView;
 
 - (IBAction) viewMyOrder: (id) sender
-{
-	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
-	if ([self.scheduledRun myOrder] == nil) {
-		NSLog(@"Creating Order");
-		Order *myOrder = [NSEntityDescription insertNewObjectForEntityForName:@"Order" inManagedObjectContext:context];
-		myOrder.myOrder = [NSNumber numberWithBool:TRUE];
-		myOrder.scheduledRun = self.scheduledRun;
-		self.scheduledRun.myOrder = myOrder;
-		NSError *error;
-		if (![context save:&error]) {
-			NSLog(@"Error creating order: %@", [error userInfo]);
-		}
-	}
-	
+{	
 	MyOrderViewController *myOrderViewController = [[MyOrderViewController alloc] initWithNibName:@"MyOrderView" bundle:nil];
-	myOrderViewController.scheduledRun = scheduledRun;
 	[self.navigationController pushViewController:myOrderViewController animated:YES];
 	[myOrderViewController release];
 }
@@ -100,7 +85,6 @@
 
 
 - (void)dealloc {
-	[scheduledRun release];
     [super dealloc];
 }
 
