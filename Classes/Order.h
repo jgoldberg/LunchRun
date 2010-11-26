@@ -2,7 +2,7 @@
 //  Order.h
 //  LunchRun
 //
-//  Created by Jason Goldberg on 11/18/10.
+//  Created by Jason Goldberg on 11/26/10.
 //  Copyright 2010 N/A. All rights reserved.
 //
 
@@ -15,8 +15,8 @@
 {
 }
 
-@property (nonatomic, retain) NSNumber * myOrder;
 @property (nonatomic, retain) NSString * userName;
+@property (nonatomic, retain) NSNumber * myOrder;
 @property (nonatomic, retain) ScheduledRun * scheduledRun;
 @property (nonatomic, retain) NSSet* orderItems;
 

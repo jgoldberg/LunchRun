@@ -2,11 +2,12 @@
 //  ScheduledRun.h
 //  LunchRun
 //
-//  Created by Jason Goldberg on 11/18/10.
+//  Created by Jason Goldberg on 11/26/10.
 //  Copyright 2010 N/A. All rights reserved.
 //
 
 #import <CoreData/CoreData.h>
+#import "EntityFactory.h"
 
 @class Order;
 
@@ -19,17 +20,7 @@
 @property (nonatomic, retain) NSDate * cutoffDate;
 @property (nonatomic, retain) NSString * destination;
 @property (nonatomic, retain) NSString * ownerName;
-@property (nonatomic, retain) NSSet* orders;
 @property (nonatomic, retain) Order * myOrder;
-
-@end
-
-
-@interface ScheduledRun (CoreDataGeneratedAccessors)
-- (void)addOrdersObject:(Order *)value;
-- (void)removeOrdersObject:(Order *)value;
-- (void)addOrders:(NSSet *)value;
-- (void)removeOrders:(NSSet *)value;
 
 @end
 

@@ -2,7 +2,7 @@
 //  ScheduledRun.m
 //  LunchRun
 //
-//  Created by Jason Goldberg on 11/18/10.
+//  Created by Jason Goldberg on 11/26/10.
 //  Copyright 2010 N/A. All rights reserved.
 //
 
@@ -17,7 +17,6 @@
 @dynamic cutoffDate;
 @dynamic destination;
 @dynamic ownerName;
-@dynamic orders;
 @dynamic myOrder;
 
 - (NSDictionary *) serialize {
@@ -33,6 +32,9 @@
 	self.cutoffDate = [dateFormat dateFromString:[dictionary objectForKey:@"cutoff_datetime"]];
 	self.destination = [dictionary objectForKey:@"destination"];
 	self.ownerName = [dictionary objectForKey:@"owner"];
+	
+	Order *emptyOrder = [EntityFactory createOrder];
+	self.myOrder = emptyOrder;	
 	
 	[dateFormat release];
 }

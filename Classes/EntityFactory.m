@@ -19,7 +19,11 @@
 }
 
 + (Order *)createOrder {
-	return nil;	
+	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+	ScheduledRun *newOrder = [NSEntityDescription
+									 insertNewObjectForEntityForName:@"Order" 
+									 inManagedObjectContext:context];
+	return newOrder;
 }
 
 + (OrderItem *)createOrderItem {

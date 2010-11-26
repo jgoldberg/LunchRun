@@ -42,7 +42,9 @@
 							forKey:[pair objectAtIndex:0]]; 
 		}
 		
-		[EntityService syncOrderItems:queryParams];
+		ScheduledRun *scheduledRun = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
+		
+		[EntityService syncOrderItems:queryParams forScheduledRun:scheduledRun];
 		
 		[queryParams release];
 		

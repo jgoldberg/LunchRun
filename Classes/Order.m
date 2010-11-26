@@ -2,7 +2,7 @@
 //  Order.m
 //  LunchRun
 //
-//  Created by Jason Goldberg on 11/18/10.
+//  Created by Jason Goldberg on 11/26/10.
 //  Copyright 2010 N/A. All rights reserved.
 //
 
@@ -13,8 +13,8 @@
 
 @implementation Order 
 
-@dynamic myOrder;
 @dynamic userName;
+@dynamic myOrder;
 @dynamic scheduledRun;
 @dynamic orderItems;
 

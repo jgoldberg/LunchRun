@@ -106,13 +106,14 @@
 	[toBeAdded release];
 }
 
-+ (void) syncOrderItems:(NSDictionary *)params {
++ (void) syncOrderItems:(NSDictionary *)params forScheduledRun:(ScheduledRun *)scheduledRun {
 	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [delegate managedObjectContext];
 	
 	OrderItem *orderItem = [EntityFactory createOrderItem];
 	[orderItem setQuantity:[params objectForKey:@"quantity"]];
-	[orderItem setItem:[params objectForKey:@"name"]];
+	[orderItem setName:[params objectForKey:@"name"]];
+	[orderItem setOrder:[scheduledRun myOrder]];
 	NSError *error;
 	if (![context save:&error]) {
 		NSLog(@"Error Saving");

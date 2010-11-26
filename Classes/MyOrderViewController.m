@@ -65,7 +65,7 @@
     }
 	
 	OrderItem *orderItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	NSString *title = [NSString stringWithFormat:@"%@ %@", orderItem.quantity,orderItem.item];
+	NSString *title = [NSString stringWithFormat:@"%@ %@", orderItem.quantity,orderItem.name];
 	cell.textLabel.text = [NSString stringWithString:title];
 	
     return cell;
@@ -82,7 +82,7 @@
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"OrderItem" inManagedObjectContext:context];
 	[fetchRequest setEntity:entityDescription];
 	
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"item" ascending:YES];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
 	[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 	
 	[fetchRequest setFetchBatchSize:20];

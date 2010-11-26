@@ -17,6 +17,10 @@
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
 		C9179A21129F5612001A7AFA /* WebViewOrderItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9179A1F129F5612001A7AFA /* WebViewOrderItemViewController.m */; };
 		C9179A22129F5612001A7AFA /* WebViewOrderItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9179A20129F5612001A7AFA /* WebViewOrderItemView.xib */; };
+		C9179AD712A01BA6001A7AFA /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C9179AD012A01BA6001A7AFA /* OrderItem.m */; };
+		C9179AD812A01BA6001A7AFA /* ScheduledRun.m in Sources */ = {isa = PBXBuildFile; fileRef = C9179AD212A01BA6001A7AFA /* ScheduledRun.m */; };
+		C9179AD912A01BA6001A7AFA /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = C9179AD412A01BA6001A7AFA /* Order.m */; };
+		C9179ADA12A01BA6001A7AFA /* OrderItemOption.m in Sources */ = {isa = PBXBuildFile; fileRef = C9179AD612A01BA6001A7AFA /* OrderItemOption.m */; };
 		C91F43F31299289A00440A84 /* LRProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F43F21299289A00440A84 /* LRProgressHUD.m */; };
 		C91F43F81299293400440A84 /* HUDBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F43F71299293400440A84 /* HUDBackground.png */; };
 		C91F45081299BCF300440A84 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C91F45071299BCF300440A84 /* Settings.bundle */; };
@@ -41,9 +45,6 @@
 		C9B916731298CABD006D121A /* LRJSONRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B916721298CABD006D121A /* LRJSONRequest.m */; };
 		C9B918061298FC4D006D121A /* EntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B918051298FC4D006D121A /* EntityFactory.m */; };
 		C9B91894129909FC006D121A /* EntityService.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B91893129909FC006D121A /* EntityService.m */; };
-		C9C38FE31294FF230036317B /* ScheduledRun.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C38FDE1294FF230036317B /* ScheduledRun.m */; };
-		C9C38FE41294FF230036317B /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C38FE01294FF230036317B /* Order.m */; };
-		C9C38FE51294FF230036317B /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C38FE21294FF230036317B /* OrderItem.m */; };
 		C9F0310B1296440B0054671D /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F031021296440B0054671D /* NSObject+SBJSON.m */; };
 		C9F0310C1296440B0054671D /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F031041296440B0054671D /* NSString+SBJSON.m */; };
 		C9F0310D1296440B0054671D /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F031061296440B0054671D /* SBJsonBase.m */; };
@@ -68,6 +69,14 @@
 		C9179A1E129F5612001A7AFA /* WebViewOrderItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewOrderItemViewController.h; sourceTree = "<group>"; };
 		C9179A1F129F5612001A7AFA /* WebViewOrderItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewOrderItemViewController.m; sourceTree = "<group>"; };
 		C9179A20129F5612001A7AFA /* WebViewOrderItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WebViewOrderItemView.xib; path = Classes/WebViewOrderItemView.xib; sourceTree = "<group>"; };
+		C9179ACF12A01BA6001A7AFA /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItem.h; sourceTree = "<group>"; };
+		C9179AD012A01BA6001A7AFA /* OrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItem.m; sourceTree = "<group>"; };
+		C9179AD112A01BA6001A7AFA /* ScheduledRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRun.h; sourceTree = "<group>"; };
+		C9179AD212A01BA6001A7AFA /* ScheduledRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRun.m; sourceTree = "<group>"; };
+		C9179AD312A01BA6001A7AFA /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		C9179AD412A01BA6001A7AFA /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		C9179AD512A01BA6001A7AFA /* OrderItemOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemOption.h; sourceTree = "<group>"; };
+		C9179AD612A01BA6001A7AFA /* OrderItemOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemOption.m; sourceTree = "<group>"; };
 		C91F43F11299289A00440A84 /* LRProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRProgressHUD.h; sourceTree = "<group>"; };
 		C91F43F21299289A00440A84 /* LRProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRProgressHUD.m; sourceTree = "<group>"; };
 		C91F43F71299293400440A84 /* HUDBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HUDBackground.png; path = Classes/HUDBackground.png; sourceTree = "<group>"; };
@@ -104,12 +113,6 @@
 		C9B918051298FC4D006D121A /* EntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityFactory.m; sourceTree = "<group>"; };
 		C9B91892129909FC006D121A /* EntityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityService.h; sourceTree = "<group>"; };
 		C9B91893129909FC006D121A /* EntityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityService.m; sourceTree = "<group>"; };
-		C9C38FDD1294FF230036317B /* ScheduledRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRun.h; sourceTree = "<group>"; };
-		C9C38FDE1294FF230036317B /* ScheduledRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRun.m; sourceTree = "<group>"; };
-		C9C38FDF1294FF230036317B /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
-		C9C38FE01294FF230036317B /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
-		C9C38FE11294FF230036317B /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItem.h; sourceTree = "<group>"; };
-		C9C38FE21294FF230036317B /* OrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItem.m; sourceTree = "<group>"; };
 		C9F031001296440B0054671D /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		C9F031011296440B0054671D /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		C9F031021296440B0054671D /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -245,12 +248,14 @@
 		C9643DD11285257B00DA5D09 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C9C38FDD1294FF230036317B /* ScheduledRun.h */,
-				C9C38FDE1294FF230036317B /* ScheduledRun.m */,
-				C9C38FDF1294FF230036317B /* Order.h */,
-				C9C38FE01294FF230036317B /* Order.m */,
-				C9C38FE11294FF230036317B /* OrderItem.h */,
-				C9C38FE21294FF230036317B /* OrderItem.m */,
+				C9179ACF12A01BA6001A7AFA /* OrderItem.h */,
+				C9179AD012A01BA6001A7AFA /* OrderItem.m */,
+				C9179AD112A01BA6001A7AFA /* ScheduledRun.h */,
+				C9179AD212A01BA6001A7AFA /* ScheduledRun.m */,
+				C9179AD312A01BA6001A7AFA /* Order.h */,
+				C9179AD412A01BA6001A7AFA /* Order.m */,
+				C9179AD512A01BA6001A7AFA /* OrderItemOption.h */,
+				C9179AD612A01BA6001A7AFA /* OrderItemOption.m */,
 				C9B918041298FC4D006D121A /* EntityFactory.h */,
 				C9B918051298FC4D006D121A /* EntityFactory.m */,
 				C9B91892129909FC006D121A /* EntityService.h */,
@@ -376,9 +381,6 @@
 				C96B11CC127907560083BFEB /* MyOrderViewController.m in Sources */,
 				C96B121612790F760083BFEB /* OrderItemViewController.m in Sources */,
 				C9643DC01285223600DA5D09 /* LunchRun.xcdatamodel in Sources */,
-				C9C38FE31294FF230036317B /* ScheduledRun.m in Sources */,
-				C9C38FE41294FF230036317B /* Order.m in Sources */,
-				C9C38FE51294FF230036317B /* OrderItem.m in Sources */,
 				C9F0310B1296440B0054671D /* NSObject+SBJSON.m in Sources */,
 				C9F0310C1296440B0054671D /* NSString+SBJSON.m in Sources */,
 				C9F0310D1296440B0054671D /* SBJsonBase.m in Sources */,
@@ -391,6 +393,10 @@
 				C91F45FD1299D30000440A84 /* SettingsViewController.m in Sources */,
 				C91F4801129A619B00440A84 /* AddScheduledRunViewController.m in Sources */,
 				C9179A21129F5612001A7AFA /* WebViewOrderItemViewController.m in Sources */,
+				C9179AD712A01BA6001A7AFA /* OrderItem.m in Sources */,
+				C9179AD812A01BA6001A7AFA /* ScheduledRun.m in Sources */,
+				C9179AD912A01BA6001A7AFA /* Order.m in Sources */,
+				C9179ADA12A01BA6001A7AFA /* OrderItemOption.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

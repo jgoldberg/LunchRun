@@ -8,16 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ScheduledRun.h"
 
 @interface LunchRunAppDelegate : NSObject <UIApplicationDelegate,UINavigationControllerDelegate> {
+    // Core Data
 	NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
 	
+	// UI
     UIWindow *window;
     UINavigationController *navigationController;
 	NSDictionary *menuData;
 	
+	// Model
+	ScheduledRun *currentScheduledRun;
+	
+	// Modal State
 	BOOL alertRunning;
 }
 
@@ -28,6 +35,8 @@
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (nonatomic, retain) ScheduledRun *currentScheduledRun;
 
 @property (nonatomic, getter = isAlertRunning) BOOL alertRunning;
 

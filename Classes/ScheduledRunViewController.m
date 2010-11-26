@@ -39,6 +39,7 @@
 }
 
 - (IBAction) sendOrder: (id) sender {
+	/*
 	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
 	[context refreshObject:scheduledRun mergeChanges:YES];
 	
@@ -51,6 +52,7 @@
 	} else {
 		[textView setText:[NSString stringWithFormat:@"Order Exists: %d %d %@", [scheduledRun.orders count], [scheduledRun.myOrder.orderItems count], [writer stringWithObject:d ]]];
 	}
+	 */
 }
 
 /*

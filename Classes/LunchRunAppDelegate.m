@@ -15,6 +15,7 @@
 @synthesize window;
 @synthesize navigationController;
 @synthesize menuData;
+@synthesize currentScheduledRun;
 @synthesize alertRunning;
 
 #pragma mark -

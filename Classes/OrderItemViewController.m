@@ -70,7 +70,7 @@
 	NSString *quantity = (NSString *)[currentQuantities objectAtIndex:quantityIndex];
 	NSString *item = (NSString *)[currentItems objectAtIndex:itemIndex];
 	
-	newOrderItem.item = [item copy];
+	newOrderItem.name = [item copy];
 	newOrderItem.quantity = [quantity copy];
 	newOrderItem.order = [scheduledRun myOrder];
 	
@@ -96,7 +96,7 @@
 		NSString *quantity = (NSString *)[currentQuantities objectAtIndex:quantityIndex];
 		NSString *item = (NSString *)[currentItems objectAtIndex:itemIndex];
 		
-		self.orderItem.item = [item copy];
+		self.orderItem.name = [item copy];
 		self.orderItem.quantity = [quantity copy];
 		
 		NSError *error;
@@ -237,10 +237,10 @@
 			NSString *menuName = [menuEntry objectForKey:@"name"];
 			NSArray *menuQuantities = [menuEntry objectForKey:@"quantity_options"];
 			
-			if ([menuName isEqualToString:[orderItem item]]) {
+			if ([menuName isEqualToString:[orderItem name]]) {
 				self.currentQuantities = menuQuantities != nil ? menuQuantities : [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",nil];;
 				
-				NSInteger itemIndex = [currentItems indexOfObject:[orderItem item]];
+				NSInteger itemIndex = [currentItems indexOfObject:[orderItem name]];
 				NSInteger quantityIndex = [currentQuantities indexOfObject:[orderItem quantity]];
 				
 				[itemPickerView selectRow: itemIndex inComponent:ITEM_COMPONENT animated:TRUE];
