@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -283,13 +283,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>72</integer>
-									<integer>60</integer>
+									<integer>46</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 397}, {373, 914}}</string>
+							<string>{{0, 481}, {373, 914}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -305,6 +305,8 @@
 							<string>MainColumn</string>
 							<real>373</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>1 55 1676 973 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -315,12 +317,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C91FFB1B1277927C00615EAA</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>EntityService.m</string>
+								<string>ScheduledRunViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C91FFB1C1277927C00615EAA</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>EntityService.m</string>
+										<string>ScheduledRunViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9179E6B12A16CBC001A7AFA</string>
+										<string>C9179EA912A17BFF001A7AFA</string>
 										<key>history</key>
 										<array>
 											<string>C9643E611288388500DA5D09</string>
@@ -363,7 +367,6 @@
 											<string>C9179B9912A022F4001A7AFA</string>
 											<string>C9179B9A12A022F4001A7AFA</string>
 											<string>C9179BEF12A02807001A7AFA</string>
-											<string>C9179C4212A02DB4001A7AFA</string>
 											<string>C9179C4412A02DB4001A7AFA</string>
 											<string>C9179C4512A02DB4001A7AFA</string>
 											<string>C9179C7112A037A4001A7AFA</string>
@@ -391,7 +394,9 @@
 											<string>C9179E4412A16327001A7AFA</string>
 											<string>C9179E5312A163FE001A7AFA</string>
 											<string>C9179E5412A163FE001A7AFA</string>
-											<string>C9179E5C12A16568001A7AFA</string>
+											<string>C9179E7312A1761A001A7AFA</string>
+											<string>C9179E9512A17B37001A7AFA</string>
+											<string>C9179EA612A17BF7001A7AFA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -406,6 +411,8 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1281, 693}}</string>
+								<key>RubberWindowFrame</key>
+								<string>1 55 1676 973 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -445,6 +452,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1281, 207}}</string>
+										<key>RubberWindowFrame</key>
+										<string>1 55 1676 973 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -566,8 +575,6 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1676, 298}}</string>
-						<key>RubberWindowFrame</key>
-						<string>1 55 1676 973 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -644,11 +651,7 @@
 							</array>
 							<key>Frame</key>
 							<string>{{818, 0}, {858, 305}}</string>
-							<key>RubberWindowFrame</key>
-							<string>1 55 1676 973 0 0 1680 1028 </string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>1 55 1676 973 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -712,7 +715,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C9179E6C12A16CBC001A7AFA</string>
+		<string>C9179EAA12A17BFF001A7AFA</string>
 		<string>C9179CC412A06FCF001A7AFA</string>
 		<string>C9179B1512A01D5D001A7AFA</string>
 		<string>C9179B1612A01D5D001A7AFA</string>

@@ -16,6 +16,7 @@
 
 - (IBAction) viewMyOrder: (id) sender;
 - (IBAction) sendOrder: (id) sender;
+- (IBAction) dismissKeyboard: (id) sender;
 
 @property (nonatomic, retain) ScheduledRun *scheduledRun;
 @property (nonatomic, retain) IBOutlet UITextView *textView;
