@@ -11,6 +11,7 @@
 #import "LunchRunAppDelegate.h"
 #import "OrderItem.h"
 #import "WebViewOrderItemViewController.h"
+#import "OrderItemCell.h"
 
 @implementation MyOrderViewController
 
@@ -28,6 +29,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleClose) name:@"OrderItemClose" object:nil];
 	
 	[tableView setEditing:YES animated:YES];
+	tableView.rowHeight = 88;
 	
 	[super viewDidLoad];
 	
@@ -71,14 +73,17 @@
     
     static NSString *CellIdentifier = @"OrderItem";
     
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    OrderItemCell *cell = (OrderItemCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"OrderItemCell" owner:self options:nil];
+		cell = [nib objectAtIndex:0];
     }
 	
 	OrderItem *orderItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	NSString *title = [NSString stringWithFormat:@"%@ %@", orderItem.quantity,orderItem.name];
-	cell.textLabel.text = [NSString stringWithString:title];
+	cell.name.text = [NSString stringWithString:title];
+	
+	NSLog(@"-- Cell Created At %d", [indexPath row]);
 	
     return cell;
 }

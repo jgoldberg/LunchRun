@@ -55,7 +55,7 @@
 									<object class="IBUILabel" id="981511123">
 										<reference key="NSNextResponder" ref="773322366"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{13, 3}, {193, 21}}</string>
+										<string key="NSFrame">{{4, 3}, {193, 21}}</string>
 										<reference key="NSSuperview" ref="773322366"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -79,7 +79,7 @@
 									<object class="IBUILabel" id="807448329">
 										<reference key="NSNextResponder" ref="773322366"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{13, 26}, {287, 21}}</string>
+										<string key="NSFrame">{{20, 23}, {287, 21}}</string>
 										<reference key="NSSuperview" ref="773322366"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -100,7 +100,7 @@
 									<object class="IBUILabel" id="256105565">
 										<reference key="NSNextResponder" ref="773322366"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{13, 41}, {287, 21}}</string>
+										<string key="NSFrame">{{20, 38}, {287, 21}}</string>
 										<reference key="NSSuperview" ref="773322366"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -117,7 +117,7 @@
 									<object class="IBUILabel" id="749171146">
 										<reference key="NSNextResponder" ref="773322366"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{13, 56}, {287, 21}}</string>
+										<string key="NSFrame">{{20, 53}, {287, 21}}</string>
 										<reference key="NSSuperview" ref="773322366"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClipsSubviews">YES</bool>
@@ -171,6 +171,38 @@
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">name</string>
+						<reference key="source" ref="206084444"/>
+						<reference key="destination" ref="981511123"/>
+					</object>
+					<int key="connectionID">10</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">note1</string>
+						<reference key="source" ref="206084444"/>
+						<reference key="destination" ref="807448329"/>
+					</object>
+					<int key="connectionID">11</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">note2</string>
+						<reference key="source" ref="206084444"/>
+						<reference key="destination" ref="256105565"/>
+					</object>
+					<int key="connectionID">12</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">note3</string>
+						<reference key="source" ref="206084444"/>
+						<reference key="destination" ref="749171146"/>
+					</object>
+					<int key="connectionID">13</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -206,9 +238,9 @@
 						<reference key="object" ref="773322366"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="256105565"/>
 							<reference ref="981511123"/>
 							<reference ref="807448329"/>
+							<reference ref="256105565"/>
 							<reference ref="749171146"/>
 						</object>
 						<reference key="parent" ref="206084444"/>
@@ -253,7 +285,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIResponder</string>
 					<string>OrderItemCell</string>
-					<string>{{485, 501}, {320, 80}}</string>
+					<string>{{473, 550}, {320, 80}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -278,7 +310,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">9</int>
+			<int key="maxID">13</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

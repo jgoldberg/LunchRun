@@ -220,13 +220,13 @@
 				C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */,
 				C91FFB911277F19500615EAA /* ScheduledRunView.xib */,
 				C96B11CD1279076C0083BFEB /* MyOrderView.xib */,
+				C9179DA212A087E3001A7AFA /* OrderItemCell.xib */,
 				C96B121712790F880083BFEB /* AddOrderItemView.xib */,
 				C96B121912790F930083BFEB /* EditOrderItemView.xib */,
 				C96B126D127918C70083BFEB /* menudata.plist */,
 				C9643DBF1285223600DA5D09 /* LunchRun.xcdatamodel */,
 				C91F45FC1299D30000440A84 /* SettingsView.xib */,
 				C9179A20129F5612001A7AFA /* WebViewOrderItemView.xib */,
-				C9179DA212A087E3001A7AFA /* OrderItemCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
