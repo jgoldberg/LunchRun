@@ -109,11 +109,32 @@
 + (void) syncOrderItems:(NSDictionary *)params forScheduledRun:(ScheduledRun *)scheduledRun {
 	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [delegate managedObjectContext];
-	
+		
+	// Create Order Item
 	OrderItem *orderItem = [EntityFactory createOrderItem];
 	[orderItem setQuantity:[params objectForKey:@"quantity"]];
 	[orderItem setName:[params objectForKey:@"name"]];
+	[orderItem setInstructions:[params objectForKey:@"instructions"]];
 	[orderItem setOrder:[scheduledRun myOrder]];
+	
+	// Find Dynamic Options
+	for (NSString *key in [params allKeys]) {
+		if ([key hasSuffix:@"_key"]) {
+			// Get Label
+			NSString *label = [params objectForKey:key];
+			// Get Value
+			NSRange range = {0,[key length] - 4};
+			NSString *valueKey = [NSString stringWithFormat:@"%@_value",[key substringWithRange:range]];
+			NSString *value = [params objectForKey:valueKey];
+			
+			// Create Option
+			OrderItemOption *newOption = [EntityFactory createOrderItemOption];
+			newOption.optionKey = label;
+			newOption.optionValue = value;
+			[orderItem addOptionsObject:newOption];
+		}
+	}
+	
 	NSError *error;
 	if (![context save:&error]) {
 		NSLog(@"Error Saving");

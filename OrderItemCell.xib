@@ -86,7 +86,7 @@
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<string key="IBUIText">Type: Moist</string>
+										<string key="IBUIText"/>
 										<object class="NSFont" key="IBUIFont" id="1036840010">
 											<string key="NSName">Helvetica</string>
 											<double key="NSSize">12</double>
@@ -107,7 +107,7 @@
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<string key="IBUIText">Meats: Brisket, Sausage</string>
+										<string key="IBUIText"/>
 										<reference key="IBUIFont" ref="1036840010"/>
 										<reference key="IBUITextColor" ref="870009461"/>
 										<nil key="IBUIHighlightedColor"/>
@@ -124,7 +124,7 @@
 										<int key="IBUIContentMode">7</int>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<string key="IBUIText">Note: Easy on the Sauce</string>
+										<string key="IBUIText"/>
 										<reference key="IBUIFont" ref="1036840010"/>
 										<reference key="IBUITextColor" ref="870009461"/>
 										<nil key="IBUIHighlightedColor"/>

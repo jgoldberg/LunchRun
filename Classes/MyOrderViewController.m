@@ -79,11 +79,23 @@
 		cell = [nib objectAtIndex:0];
     }
 	
+	NSArray *labelList = [NSArray arrayWithObjects:cell.note1, cell.note2, cell.note3, nil];
+	
 	OrderItem *orderItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	NSString *title = [NSString stringWithFormat:@"%@ %@", orderItem.quantity,orderItem.name];
 	cell.name.text = [NSString stringWithString:title];
 	
-	NSLog(@"-- Cell Created At %d", [indexPath row]);
+	int counter = 0;
+	for (OrderItemOption *option in [orderItem options]) {
+		if (counter < ([labelList count] - 1)) {
+			UILabel *label = (UILabel *)[labelList objectAtIndex:counter];
+			label.text = [NSString stringWithFormat:@"%@: %@", [option optionKey], [option optionValue]];
+			
+			counter++;
+		}
+	}
+	UILabel *label = (UILabel *)[labelList objectAtIndex:counter];
+	label.text = [NSString stringWithFormat:@"Note: %@", orderItem.instructions];
 	
     return cell;
 }

@@ -34,4 +34,12 @@
 	return newOrderItem;
 }
 
++ (OrderItemOption *) createOrderItemOption {
+	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+	OrderItemOption *newOrderItemOption = [NSEntityDescription
+							   insertNewObjectForEntityForName:@"OrderItemOption" 
+							   inManagedObjectContext:context];
+	return newOrderItemOption;
+}
+
 @end

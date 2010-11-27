@@ -10,6 +10,7 @@
 #import "ScheduledRun.h"
 #import "Order.h"
 #import "OrderItem.h"
+#import "OrderItemOption.h"
 
 @interface EntityFactory : NSObject {
 	
@@ -18,5 +19,6 @@
 + (ScheduledRun *) createScheduledRun;
 + (Order *) createOrder;
 + (OrderItem *) createOrderItem;
++ (OrderItemOption *) createOrderItemOption;
 
 @end
