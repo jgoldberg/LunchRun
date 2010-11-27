@@ -38,8 +38,13 @@
 		for (NSString *component in components) {
 			NSArray *pair = [component componentsSeparatedByString:@"="];
 			
-			[queryParams setObject:[[pair objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding: NSMacOSRomanStringEncoding]
-							forKey:[pair objectAtIndex:0]]; 
+			NSString *key = [[pair objectAtIndex:0] stringByReplacingPercentEscapesUsingEncoding: NSMacOSRomanStringEncoding];
+			NSString *value = [[pair objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding: NSMacOSRomanStringEncoding];
+			
+			key = [key stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+			value = [value stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+			
+			[queryParams setObject:value forKey:key]; 
 		}
 		
 		ScheduledRun *scheduledRun = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
