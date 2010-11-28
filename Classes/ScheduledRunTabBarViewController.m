@@ -33,7 +33,10 @@
 		}
 		controller = scheduledRunViewController;
 	} else if (item == myGroupTabBarItem) {
-
+		if (nil == myGroupTableViewController) {
+			myGroupTableViewController = [[MyGroupTableViewController alloc] initWithNibName:@"MyGroupTableView" bundle:nil];
+		}
+		controller = myGroupTableViewController;
 	} else if (item == orderSummaryTabBarItem) {
 		
 	} else {

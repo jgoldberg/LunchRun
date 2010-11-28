@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ScheduledRunViewController.h"
+#import "MyGroupTableViewController.h"
 
 
 @interface ScheduledRunTabBarViewController : UIViewController <UITabBarDelegate> {
@@ -20,6 +21,7 @@
 	
 	UIViewController *selectedController;
 	ScheduledRunViewController *scheduledRunViewController;
+	MyGroupTableViewController *myGroupTableViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UITabBar *tabBar;

@@ -58,6 +58,8 @@
 		C9F8AE5B12A2E4DC00250C1A /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AE5A12A2E4DC00250C1A /* 112-group.png */; };
 		C9F8AE5F12A2E55900250C1A /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AE5E12A2E55900250C1A /* 179-notepad.png */; };
 		C9F8AE6312A2E5AC00250C1A /* 48-fork-and-knife.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AE6212A2E5AC00250C1A /* 48-fork-and-knife.png */; };
+		C9F8AEFC12A2F69D00250C1A /* MyGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8AEFA12A2F69D00250C1A /* MyGroupTableViewController.m */; };
+		C9F8AEFD12A2F69D00250C1A /* MyGroupTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AEFB12A2F69D00250C1A /* MyGroupTableView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +144,9 @@
 		C9F8AE5A12A2E4DC00250C1A /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		C9F8AE5E12A2E55900250C1A /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
 		C9F8AE6212A2E5AC00250C1A /* 48-fork-and-knife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "48-fork-and-knife.png"; sourceTree = "<group>"; };
+		C9F8AEF912A2F69D00250C1A /* MyGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroupTableViewController.h; sourceTree = "<group>"; };
+		C9F8AEFA12A2F69D00250C1A /* MyGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGroupTableViewController.m; sourceTree = "<group>"; };
+		C9F8AEFB12A2F69D00250C1A /* MyGroupTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MyGroupTableView.xib; path = Classes/MyGroupTableView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +184,8 @@
 				C9F8AD2512A2AEE500250C1A /* ScheduledRunTabBarViewController.m */,
 				C91FFB8E1277F18900615EAA /* ScheduledRunViewController.h */,
 				C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */,
+				C9F8AEF912A2F69D00250C1A /* MyGroupTableViewController.h */,
+				C9F8AEFA12A2F69D00250C1A /* MyGroupTableViewController.m */,
 				C96B11CA127907560083BFEB /* MyOrderViewController.h */,
 				C96B11CB127907560083BFEB /* MyOrderViewController.m */,
 				C9179D9F12A087CB001A7AFA /* OrderItemCell.h */,
@@ -235,6 +242,7 @@
 				C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */,
 				C9F8AD2612A2AEE500250C1A /* ScheduledRunTabBarView.xib */,
 				C91FFB911277F19500615EAA /* ScheduledRunView.xib */,
+				C9F8AEFB12A2F69D00250C1A /* MyGroupTableView.xib */,
 				C96B11CD1279076C0083BFEB /* MyOrderView.xib */,
 				C9179DA212A087E3001A7AFA /* OrderItemCell.xib */,
 				C96B121712790F880083BFEB /* AddOrderItemView.xib */,
@@ -404,6 +412,7 @@
 				C9F8AE5B12A2E4DC00250C1A /* 112-group.png in Resources */,
 				C9F8AE5F12A2E55900250C1A /* 179-notepad.png in Resources */,
 				C9F8AE6312A2E5AC00250C1A /* 48-fork-and-knife.png in Resources */,
+				C9F8AEFD12A2F69D00250C1A /* MyGroupTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +450,7 @@
 				C9179ADA12A01BA6001A7AFA /* OrderItemOption.m in Sources */,
 				C9179DA112A087CB001A7AFA /* OrderItemCell.m in Sources */,
 				C9F8AD2712A2AEE500250C1A /* ScheduledRunTabBarViewController.m in Sources */,
+				C9F8AEFC12A2F69D00250C1A /* MyGroupTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
