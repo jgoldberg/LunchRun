@@ -72,9 +72,11 @@
 	NSString *userToken = [defaults objectForKey:@"user_token"];
 	
 	ScheduledRun *scheduledRun = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
-	NSDictionary *myOrderData = [[scheduledRun myOrder] serialize];
-	
+
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+	[dict setObject:[scheduledRun scheduledRunID] forKey:@"scheduled_run_id"];
+	
+	NSDictionary *myOrderData = [[scheduledRun myOrder] serialize];
 	[dict setObject:myOrderData forKey:@"my_order"];
 	
 	SBJsonWriter *writer = [[SBJsonWriter alloc] init];
@@ -82,7 +84,7 @@
 	if (actionSheet.tag == SUBMIT_ORDER_TAG) {
 		[dict setObject:@"submit" forKey:@"action"];
 		NSString *postData = [writer stringWithObject:dict];
-		LRJSONRequest *submitRequest = [[LRJSONRequest alloc] initWithURL:@"/services/save_order" 
+		LRJSONRequest *submitRequest = [[LRJSONRequest alloc] initWithURL:@"/services/orders/save_order" 
 															   groupToken:groupToken 
 																userToken:userToken 
 																 delegate:self 
@@ -94,7 +96,7 @@
 	else if (actionSheet.tag == CANCEL_ORDER_TAG) {
 		[dict setObject:@"cancel" forKey:@"action"];
 		NSString *postData = [writer stringWithObject:dict];
-		LRJSONRequest *submitRequest = [[LRJSONRequest alloc] initWithURL:@"/services/save_order" 
+		LRJSONRequest *submitRequest = [[LRJSONRequest alloc] initWithURL:@"/services/orders/save_order" 
 															   groupToken:groupToken 
 																userToken:userToken 
 																 delegate:self 
