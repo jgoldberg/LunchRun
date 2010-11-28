@@ -241,7 +241,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	ScheduledRun *scheduledRun = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	[(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] setCurrentScheduledRun:scheduledRun];
-	ScheduledRunViewController *scheduledRunViewController = [[ScheduledRunViewController alloc] initWithNibName:@"ScheduledRunView" bundle:nil];
+	ScheduledRunTabBarViewController *scheduledRunViewController = [[ScheduledRunTabBarViewController alloc] initWithNibName:@"ScheduledRunTabBarView" bundle:nil];
+	[self.navigationController setToolbarHidden:TRUE];
 	[self.navigationController pushViewController:scheduledRunViewController animated:YES];
 	[scheduledRunViewController release];
 }

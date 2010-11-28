@@ -52,6 +52,12 @@
 		C9F0310D1296440B0054671D /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F031061296440B0054671D /* SBJsonBase.m */; };
 		C9F0310E1296440B0054671D /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F031081296440B0054671D /* SBJsonParser.m */; };
 		C9F0310F1296440B0054671D /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F0310A1296440B0054671D /* SBJsonWriter.m */; };
+		C9F8AD2712A2AEE500250C1A /* ScheduledRunTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8AD2512A2AEE500250C1A /* ScheduledRunTabBarViewController.m */; };
+		C9F8AD2812A2AEE500250C1A /* ScheduledRunTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AD2612A2AEE500250C1A /* ScheduledRunTabBarView.xib */; };
+		C9F8AE5712A2E48800250C1A /* 80-shopping-cart.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AE5612A2E48800250C1A /* 80-shopping-cart.png */; };
+		C9F8AE5B12A2E4DC00250C1A /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AE5A12A2E4DC00250C1A /* 112-group.png */; };
+		C9F8AE5F12A2E55900250C1A /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AE5E12A2E55900250C1A /* 179-notepad.png */; };
+		C9F8AE6312A2E5AC00250C1A /* 48-fork-and-knife.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AE6212A2E5AC00250C1A /* 48-fork-and-knife.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +135,13 @@
 		C9F031081296440B0054671D /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		C9F031091296440B0054671D /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		C9F0310A1296440B0054671D /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		C9F8AD2412A2AEE500250C1A /* ScheduledRunTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRunTabBarViewController.h; sourceTree = "<group>"; };
+		C9F8AD2512A2AEE500250C1A /* ScheduledRunTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRunTabBarViewController.m; sourceTree = "<group>"; };
+		C9F8AD2612A2AEE500250C1A /* ScheduledRunTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ScheduledRunTabBarView.xib; path = Classes/ScheduledRunTabBarView.xib; sourceTree = "<group>"; };
+		C9F8AE5612A2E48800250C1A /* 80-shopping-cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "80-shopping-cart.png"; sourceTree = "<group>"; };
+		C9F8AE5A12A2E4DC00250C1A /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
+		C9F8AE5E12A2E55900250C1A /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
+		C9F8AE6212A2E5AC00250C1A /* 48-fork-and-knife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "48-fork-and-knife.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +175,8 @@
 				C91F47FF129A619B00440A84 /* AddScheduledRunViewController.m */,
 				C91FF9B412776C4B00615EAA /* ScheduledRunCell.h */,
 				C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */,
+				C9F8AD2412A2AEE500250C1A /* ScheduledRunTabBarViewController.h */,
+				C9F8AD2512A2AEE500250C1A /* ScheduledRunTabBarViewController.m */,
 				C91FFB8E1277F18900615EAA /* ScheduledRunViewController.h */,
 				C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */,
 				C96B11CA127907560083BFEB /* MyOrderViewController.h */,
@@ -191,6 +206,7 @@
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				C9F8AE5312A2E45400250C1A /* Images */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -211,13 +227,13 @@
 			isa = PBXGroup;
 			children = (
 				C91F45071299BCF300440A84 /* Settings.bundle */,
-				C91F43F71299293400440A84 /* HUDBackground.png */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				C91F4800129A619B00440A84 /* AddScheduledRun.xib */,
 				8D1107310486CEB800E47090 /* LunchRun-Info.plist */,
 				C91FF95B1277662800615EAA /* testdata.plist */,
 				C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */,
+				C9F8AD2612A2AEE500250C1A /* ScheduledRunTabBarView.xib */,
 				C91FFB911277F19500615EAA /* ScheduledRunView.xib */,
 				C96B11CD1279076C0083BFEB /* MyOrderView.xib */,
 				C9179DA212A087E3001A7AFA /* OrderItemCell.xib */,
@@ -307,6 +323,18 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
+		C9F8AE5312A2E45400250C1A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C91F43F71299293400440A84 /* HUDBackground.png */,
+				C9F8AE6212A2E5AC00250C1A /* 48-fork-and-knife.png */,
+				C9F8AE5E12A2E55900250C1A /* 179-notepad.png */,
+				C9F8AE5A12A2E4DC00250C1A /* 112-group.png */,
+				C9F8AE5612A2E48800250C1A /* 80-shopping-cart.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,6 +399,11 @@
 				C91F4802129A619B00440A84 /* AddScheduledRun.xib in Resources */,
 				C9179A22129F5612001A7AFA /* WebViewOrderItemView.xib in Resources */,
 				C9179DA312A087E3001A7AFA /* OrderItemCell.xib in Resources */,
+				C9F8AD2812A2AEE500250C1A /* ScheduledRunTabBarView.xib in Resources */,
+				C9F8AE5712A2E48800250C1A /* 80-shopping-cart.png in Resources */,
+				C9F8AE5B12A2E4DC00250C1A /* 112-group.png in Resources */,
+				C9F8AE5F12A2E55900250C1A /* 179-notepad.png in Resources */,
+				C9F8AE6312A2E5AC00250C1A /* 48-fork-and-knife.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +440,7 @@
 				C9179AD912A01BA6001A7AFA /* Order.m in Sources */,
 				C9179ADA12A01BA6001A7AFA /* OrderItemOption.m in Sources */,
 				C9179DA112A087CB001A7AFA /* OrderItemCell.m in Sources */,
+				C9F8AD2712A2AEE500250C1A /* ScheduledRunTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

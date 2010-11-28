@@ -12,6 +12,7 @@
 #import "JSON.h"
 #import "LRJSONRequest.h"
 #import "LunchRunAppDelegate.h"
+#import "ScheduledRunTabBarViewController.h"
 
 #define SUBMIT_ORDER_TAG 10
 #define CANCEL_ORDER_TAG 20
@@ -31,7 +32,8 @@
 - (IBAction) viewMyOrder: (id) sender
 {	
 	MyOrderViewController *myOrderViewController = [[MyOrderViewController alloc] initWithNibName:@"MyOrderView" bundle:nil];
-	[self.navigationController pushViewController:myOrderViewController animated:YES];
+	UINavigationController *navController = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] navigationController];
+	[navController pushViewController:myOrderViewController animated:YES];
 	[myOrderViewController release];
 }
 

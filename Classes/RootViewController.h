@@ -18,6 +18,7 @@
 #import "LRProgressHUD.h"
 #import "SettingsViewController.h"
 #import "AddScheduledRunViewController.h"
+#import "ScheduledRunTabBarViewController.h"
 
 @interface RootViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UINavigationControllerDelegate> {
 	NSFetchedResultsController *_fetchedResultsController;
