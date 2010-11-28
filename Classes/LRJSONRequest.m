@@ -72,9 +72,6 @@
 {
     NSLog(@"Connection failed! Error - %@ %@", [error localizedDescription], [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
 	
-    [connection release];
-    [self.receivedData release];
-	
 	[_delegate performSelector:_onFailure withObject:error];
 }
 
@@ -91,7 +88,6 @@
 	
 	[parser release];
 	[response release];
-	
     [connection release];
 }
 

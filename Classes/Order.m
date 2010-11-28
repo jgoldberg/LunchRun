@@ -19,7 +19,13 @@
 @dynamic orderItems;
 
 - (NSDictionary *) serialize {
-	return nil;
+	NSMutableArray *orderItemArray = [[NSMutableArray alloc] initWithCapacity:[self.orderItems count]];
+	int counter = 0;
+	for (OrderItem *orderItem in self.orderItems) {
+		[orderItemArray insertObject:[orderItem serialize] atIndex:counter++];
+	}
+	return [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:orderItemArray, nil] 
+									   forKeys:[NSArray arrayWithObjects:@"order_items", nil]];
 }
 
 - (void)unserialize:(NSDictionary *) dictionary {

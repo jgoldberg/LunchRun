@@ -19,4 +19,7 @@
 @end
 
 
-
+@interface OrderItemOption (JSON)
+- (NSDictionary *) serialize;
+- (void)unserialize:(NSDictionary *) dictionary;
+@end

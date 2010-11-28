@@ -10,15 +10,19 @@
 #import "ScheduledRun.h"
 
 
-@interface ScheduledRunViewController : UIViewController {
+@interface ScheduledRunViewController : UIViewController <UIActionSheetDelegate>{
 	IBOutlet UITextView *textView;
+	IBOutlet UILabel *orderStatus;
+	IBOutlet UIButton *sendButton;
 }
 
 - (IBAction) viewMyOrder: (id) sender;
 - (IBAction) sendOrder: (id) sender;
+- (IBAction) cancelOrder: (id) sender;
 - (IBAction) dismissKeyboard: (id) sender;
 
-@property (nonatomic, retain) ScheduledRun *scheduledRun;
 @property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, retain) IBOutlet UILabel *orderStatus;
+@property (nonatomic, retain) IBOutlet UIButton *sendButton;
 
 @end
