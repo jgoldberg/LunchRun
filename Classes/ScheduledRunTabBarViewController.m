@@ -22,6 +22,11 @@
 	[self.view insertSubview:scheduledRunViewController.view atIndex:0];
 }
 
+- (void)setSelectedIndex:(UITabBarItem *)tabBarItem {
+	[tabBar setSelectedItem:tabBarItem];
+	[self tabBar:tabBar didSelectItem:tabBarItem];
+}
+
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
 	NSLog(@"Tab Bar Item Selected");
 	[selectedController.view removeFromSuperview];

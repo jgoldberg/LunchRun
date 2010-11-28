@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSNumber * myOrder;
 @property (nonatomic, retain) ScheduledRun * scheduledRun;
 @property (nonatomic, retain) NSSet* orderItems;
+@property (nonatomic, retain) NSString * orderStatus;
 
 @end
 

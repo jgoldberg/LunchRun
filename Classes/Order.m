@@ -17,6 +17,11 @@
 @dynamic myOrder;
 @dynamic scheduledRun;
 @dynamic orderItems;
+@dynamic orderStatus;
+
+- (void)awakeFromInsert {
+	self.orderStatus = @"Draft";
+}
 
 - (NSDictionary *) serialize {
 	NSMutableArray *orderItemArray = [[NSMutableArray alloc] initWithCapacity:[self.orderItems count]];

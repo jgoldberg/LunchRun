@@ -26,7 +26,10 @@
 - (void)viewDidLoad {	
 	[super viewDidLoad];
 	
-	orderStatus.text = @"Draft";
+	hud = [[LRProgressHUD alloc] initWithLabel:@"Loading"];
+	
+	ScheduledRun *scheduledRun = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
+	orderStatus.text = [[scheduledRun myOrder] orderStatus];
 }
 
 - (IBAction) viewMyOrder: (id) sender
@@ -63,6 +66,7 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate];
 	NSLog(@"Button Index: %d", buttonIndex);
 	
 	if (buttonIndex != 0) {
@@ -73,7 +77,8 @@
 	NSString *groupToken = [defaults objectForKey:@"group_token"];
 	NSString *userToken = [defaults objectForKey:@"user_token"];
 	
-	ScheduledRun *scheduledRun = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
+	ScheduledRun *scheduledRun = [delegate currentScheduledRun];
+	scheduledRun.myOrder.orderStatus = actionSheet.tag == SUBMIT_ORDER_TAG ? @"Submitted" : @"Canceled";
 
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	[dict setObject:[scheduledRun scheduledRunID] forKey:@"scheduled_run_id"];
@@ -83,7 +88,9 @@
 	
 	SBJsonWriter *writer = [[SBJsonWriter alloc] init];
 	
+	[hud show];
 	if (actionSheet.tag == SUBMIT_ORDER_TAG) {
+		
 		[dict setObject:@"submit" forKey:@"action"];
 		NSString *postData = [writer stringWithObject:dict];
 		LRJSONRequest *submitRequest = [[LRJSONRequest alloc] initWithURL:@"/services/orders/save_order" 
@@ -112,21 +119,58 @@
 }
 
 - (void) onSubmitOrderSuccess: (NSDictionary *) response {
+	[hud dismiss];
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate];
+	orderStatus.text = @"Submitted";
+	ScheduledRun *scheduledRun = [delegate currentScheduledRun];
+	scheduledRun.myOrder.orderStatus = @"Submitted";
+	NSManagedObjectContext *context = [delegate managedObjectContext];
 	
+	NSError *error;
+	if (![context save:&error]) {
+		NSLog(@"Error Saving");
+	}
+	
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"LunchRun" 
+														message:@"Your order was successfully submitted." 
+													   delegate:nil 
+											  cancelButtonTitle:@"OK" 
+											  otherButtonTitles:nil];
+	[alertView show];
+	[alertView release];
+	ScheduledRunTabBarViewController *tabController = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] scheduledRunTabBarViewController];
+	[tabController setSelectedIndex:[tabController myGroupTabBarItem]];
 }
 
 - (void) onSubmitOrderFailure: (NSError *) error {
-	
+	[hud dismiss];
 }
 
 - (void) onCancelOrderSuccess: (NSDictionary *) response {
+	[hud dismiss];
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate];
+	orderStatus.text = @"Canceled";
+	ScheduledRun *scheduledRun = [delegate currentScheduledRun];
+	scheduledRun.myOrder.orderStatus = @"Canceled";
+	NSManagedObjectContext *context = [delegate managedObjectContext];
 	
+	NSError *error;
+	if (![context save:&error]) {
+		NSLog(@"Error Saving");
+	}
+		  
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"LunchRun" 
+														message:@"Your order was successfully canceled. Note: You can still re-submit your order if you wish." 
+													   delegate:nil 
+											  cancelButtonTitle:@"OK" 
+											  otherButtonTitles:nil];
+	[alertView show];
+	[alertView release];
 }
 
 - (void) onCancelOrderFailure: (NSError *) error {
-	
+	[hud dismiss];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

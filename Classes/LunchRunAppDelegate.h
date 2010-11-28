@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "ScheduledRun.h"
+#import "ScheduledRunTabBarViewController.h"
 
 @interface LunchRunAppDelegate : NSObject <UIApplicationDelegate,UINavigationControllerDelegate> {
     // Core Data
@@ -19,6 +20,7 @@
 	// UI
     UIWindow *window;
     UINavigationController *navigationController;
+	ScheduledRunTabBarViewController *scheduledRunTabBarViewController;
 	NSDictionary *menuData;
 	
 	// Model
@@ -30,6 +32,7 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+@property (nonatomic, retain) ScheduledRunTabBarViewController *scheduledRunTabBarViewController;
 @property (nonatomic, retain) NSDictionary *menuData;
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

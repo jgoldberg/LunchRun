@@ -24,6 +24,8 @@
 	MyGroupTableViewController *myGroupTableViewController;
 }
 
+- (void)setSelectedIndex:(UITabBarItem *)tabBarItem;
+
 @property (nonatomic, retain) IBOutlet UITabBar *tabBar;
 @property (nonatomic, retain) IBOutlet UITabBarItem *myOrderTabBarItem;
 @property (nonatomic, retain) IBOutlet UITabBarItem *myGroupTabBarItem;

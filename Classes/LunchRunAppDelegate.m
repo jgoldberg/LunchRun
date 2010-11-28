@@ -14,6 +14,7 @@
 
 @synthesize window;
 @synthesize navigationController;
+@synthesize scheduledRunTabBarViewController;
 @synthesize menuData;
 @synthesize currentScheduledRun;
 @synthesize alertRunning;

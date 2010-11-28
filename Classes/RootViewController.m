@@ -242,6 +242,7 @@
 	ScheduledRun *scheduledRun = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	[(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] setCurrentScheduledRun:scheduledRun];
 	ScheduledRunTabBarViewController *scheduledRunViewController = [[ScheduledRunTabBarViewController alloc] initWithNibName:@"ScheduledRunTabBarView" bundle:nil];
+	[(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] setScheduledRunTabBarViewController:scheduledRunViewController];
 	[self.navigationController setToolbarHidden:TRUE];
 	[self.navigationController pushViewController:scheduledRunViewController animated:YES];
 	[scheduledRunViewController release];

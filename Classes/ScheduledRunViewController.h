@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ScheduledRun.h"
 
+@class LRProgressHUD;
 
 @interface ScheduledRunViewController : UIViewController <UIActionSheetDelegate>{
 	IBOutlet UITextView *textView;
 	IBOutlet UILabel *orderStatus;
 	IBOutlet UIButton *sendButton;
+	LRProgressHUD *hud;
 }
 
 - (IBAction) viewMyOrder: (id) sender;
