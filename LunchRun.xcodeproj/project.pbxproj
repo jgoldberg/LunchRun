@@ -162,6 +162,7 @@
 		C9F8B0E412A32D9200250C1A /* SearchDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDestinationViewController.h; sourceTree = "<group>"; };
 		C9F8B0E512A32D9200250C1A /* SearchDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDestinationViewController.m; sourceTree = "<group>"; };
 		C9F8B0E612A32D9200250C1A /* SearchDestinationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchDestinationView.xib; path = Classes/SearchDestinationView.xib; sourceTree = "<group>"; };
+		C9F8B1C912A34FDE00250C1A /* SearchDestinationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDestinationDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B917031298D5EF006D121A /* JSONRequestDelegate.h */,
+				C9F8B1C912A34FDE00250C1A /* SearchDestinationDelegate.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";

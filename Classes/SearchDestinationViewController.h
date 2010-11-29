@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SearchDestinationDelegate.h"
 
 @interface SearchDestinationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>{
 	IBOutlet UISearchBar *searchBar;
@@ -15,10 +15,12 @@
 	NSTimer *timer;
 	NSString *lastSearch;
 	NSArray *searchResults;
+	id<SearchDestinationDelegate> delegate;
 }
 
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *searchResults;
+@property (nonatomic, retain) id<SearchDestinationDelegate> delegate;
 
 @end

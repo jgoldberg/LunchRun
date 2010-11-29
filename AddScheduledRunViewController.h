@@ -7,19 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchDestinationDelegate.h"
 
-
-@interface AddScheduledRunViewController : UIViewController {
+@interface AddScheduledRunViewController : UIViewController <SearchDestinationDelegate, UIActionSheetDelegate> {
 	IBOutlet UIScrollView *scrollView;
 	IBOutlet UIView *contentView;
+	IBOutlet UIButton *destinationButton;
+	IBOutlet UIButton *dateButton;
+	IBOutlet UITextField *cutoffText;
+	IBOutlet UIDatePicker *datePicker;
+	NSDictionary *destination;
 }
 
 - (IBAction) cancelForm: (id) sender;
 - (IBAction) saveForm: (id) sender;
 - (IBAction) backgroundClick: (id) sender;
 - (IBAction) showDestinationSearch: (id) sender;
+- (IBAction) chooseDate: (id) sender;
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIView *contentView;
+@property (nonatomic, retain) IBOutlet UIButton *destinationButton;
+@property (nonatomic, retain) IBOutlet UIButton *dateButton;
+@property (nonatomic, retain) IBOutlet UITextField *cutoffText;
+@property (nonatomic, retain) IBOutlet UIDatePicker *datePicker;
+@property (nonatomic, retain) NSDictionary *destination;
 
 @end

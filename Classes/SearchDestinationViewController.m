@@ -14,6 +14,7 @@
 
 @synthesize searchBar, tableView;
 @synthesize searchResults;
+@synthesize delegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,7 +32,7 @@
 	if (timer != nil) {
 		[timer invalidate];
 	}
-	timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(doSearch:) userInfo:nil repeats:NO];
+	timer = [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(doSearch:) userInfo:nil repeats:NO];
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
@@ -94,7 +95,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	
+	[delegate setDestinationFromSearch:[searchResults objectAtIndex:[indexPath row]]];
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
