@@ -43,9 +43,15 @@
 		}
 		controller = myGroupTableViewController;
 	} else if (item == orderSummaryTabBarItem) {
-		
+		if (nil == orderSummaryViewController) {
+			orderSummaryViewController = [[OrderSummaryViewController alloc] initWithNibName:@"OrderSummaryView" bundle:nil];
+		}
+		controller = orderSummaryViewController;		
 	} else {
-
+		if (nil == destinationInfoViewController) {
+			destinationInfoViewController = [[DestinationInfoViewController alloc] initWithNibName:@"DestinationInfoView" bundle:nil];
+		}
+		controller = destinationInfoViewController;
 	}
 	
 	selectedController = controller;

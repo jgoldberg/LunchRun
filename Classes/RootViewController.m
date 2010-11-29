@@ -90,6 +90,8 @@
 	
 	NSArray *tabBarItems = [NSArray arrayWithObjects:refreshButton,fixed,infoItem,nil];
 	[self setToolbarItems:tabBarItems];
+	
+	[_navigationController setToolbarHidden:FALSE animated:TRUE];
 }
 
 - (void) onShowSettings: (id)sender {
@@ -102,7 +104,7 @@
 }
 
 - (IBAction) addScheduledRun:(id)sender {
-	AddScheduledRunViewController *controller = [[AddScheduledRunViewController alloc] initWithNibName:@"AddScheduledRun" bundle:nil];
+	AddScheduledRunViewController *controller = [[AddScheduledRunViewController alloc] initWithNibName:@"AddScheduledRunView" bundle:nil];
 	controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:controller animated:YES];
 	

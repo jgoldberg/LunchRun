@@ -7,7 +7,7 @@
 //
 
 #import "AddScheduledRunViewController.h"
-
+#import "SearchDestinationViewController.h"
 
 @implementation AddScheduledRunViewController
 
@@ -31,6 +31,13 @@
 
 - (IBAction) backgroundClick: (id) sender {
 	
+}
+
+- (IBAction) showDestinationSearch: (id) sender {
+	SearchDestinationViewController *searchViewController = [[SearchDestinationViewController alloc] initWithNibName:@"SearchDestinationView" bundle:nil];
+	[searchViewController setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+	[self presentModalViewController:searchViewController animated:YES];
+	[searchViewController release];
 }
 
 - (void)didReceiveMemoryWarning {

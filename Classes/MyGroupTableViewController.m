@@ -51,8 +51,8 @@
 		UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 		if (cell == nil) {
 			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-			[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		}
+		[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 		cell.textLabel.text = [submittedOrders objectAtIndex:[indexPath row]];
 		return cell;
 	} else if ([indexPath section] == UNSUBMITTED_SECTION) {

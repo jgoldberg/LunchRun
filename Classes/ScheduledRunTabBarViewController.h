@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ScheduledRunViewController.h"
 #import "MyGroupTableViewController.h"
+#import "OrderSummaryViewController.h"
+#import "DestinationInfoViewController.h"
 
 
 @interface ScheduledRunTabBarViewController : UIViewController <UITabBarDelegate> {
@@ -22,6 +24,8 @@
 	UIViewController *selectedController;
 	ScheduledRunViewController *scheduledRunViewController;
 	MyGroupTableViewController *myGroupTableViewController;
+	OrderSummaryViewController *orderSummaryViewController;
+	DestinationInfoViewController *destinationInfoViewController;
 }
 
 - (void)setSelectedIndex:(UITabBarItem *)tabBarItem;

@@ -29,7 +29,7 @@
 		C91F45FD1299D30000440A84 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F45FB1299D30000440A84 /* SettingsViewController.m */; };
 		C91F45FE1299D30000440A84 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91F45FC1299D30000440A84 /* SettingsView.xib */; };
 		C91F4801129A619B00440A84 /* AddScheduledRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91F47FF129A619B00440A84 /* AddScheduledRunViewController.m */; };
-		C91F4802129A619B00440A84 /* AddScheduledRun.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91F4800129A619B00440A84 /* AddScheduledRun.xib */; };
+		C91F4802129A619B00440A84 /* AddScheduledRunView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91F4800129A619B00440A84 /* AddScheduledRunView.xib */; };
 		C91FF95C1277662800615EAA /* testdata.plist in Resources */ = {isa = PBXBuildFile; fileRef = C91FF95B1277662800615EAA /* testdata.plist */; };
 		C91FF9B612776C4B00615EAA /* ScheduledRunCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */; };
 		C91FF9B812776CC100615EAA /* ScheduledRunCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */; };
@@ -60,6 +60,12 @@
 		C9F8AE6312A2E5AC00250C1A /* 48-fork-and-knife.png in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AE6212A2E5AC00250C1A /* 48-fork-and-knife.png */; };
 		C9F8AEFC12A2F69D00250C1A /* MyGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8AEFA12A2F69D00250C1A /* MyGroupTableViewController.m */; };
 		C9F8AEFD12A2F69D00250C1A /* MyGroupTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8AEFB12A2F69D00250C1A /* MyGroupTableView.xib */; };
+		C9F8B0BE12A324C400250C1A /* OrderSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B0BC12A324C400250C1A /* OrderSummaryViewController.m */; };
+		C9F8B0BF12A324C400250C1A /* OrderSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8B0BD12A324C400250C1A /* OrderSummaryView.xib */; };
+		C9F8B0C312A3251000250C1A /* DestinationInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B0C112A3251000250C1A /* DestinationInfoViewController.m */; };
+		C9F8B0C412A3251000250C1A /* DestinationInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8B0C212A3251000250C1A /* DestinationInfoView.xib */; };
+		C9F8B0E712A32D9200250C1A /* SearchDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B0E512A32D9200250C1A /* SearchDestinationViewController.m */; };
+		C9F8B0E812A32D9200250C1A /* SearchDestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8B0E612A32D9200250C1A /* SearchDestinationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,7 +105,7 @@
 		C91F45FC1299D30000440A84 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsView.xib; path = Classes/SettingsView.xib; sourceTree = "<group>"; };
 		C91F47FE129A619B00440A84 /* AddScheduledRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddScheduledRunViewController.h; path = ../AddScheduledRunViewController.h; sourceTree = "<group>"; };
 		C91F47FF129A619B00440A84 /* AddScheduledRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddScheduledRunViewController.m; path = ../AddScheduledRunViewController.m; sourceTree = "<group>"; };
-		C91F4800129A619B00440A84 /* AddScheduledRun.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScheduledRun.xib; sourceTree = "<group>"; };
+		C91F4800129A619B00440A84 /* AddScheduledRunView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScheduledRunView.xib; sourceTree = "<group>"; };
 		C91FF95B1277662800615EAA /* testdata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testdata.plist; sourceTree = "<group>"; };
 		C91FF9B412776C4B00615EAA /* ScheduledRunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRunCell.h; sourceTree = "<group>"; };
 		C91FF9B512776C4B00615EAA /* ScheduledRunCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRunCell.m; sourceTree = "<group>"; };
@@ -147,6 +153,15 @@
 		C9F8AEF912A2F69D00250C1A /* MyGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroupTableViewController.h; sourceTree = "<group>"; };
 		C9F8AEFA12A2F69D00250C1A /* MyGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGroupTableViewController.m; sourceTree = "<group>"; };
 		C9F8AEFB12A2F69D00250C1A /* MyGroupTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MyGroupTableView.xib; path = Classes/MyGroupTableView.xib; sourceTree = "<group>"; };
+		C9F8B0BB12A324C400250C1A /* OrderSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderSummaryViewController.h; sourceTree = "<group>"; };
+		C9F8B0BC12A324C400250C1A /* OrderSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderSummaryViewController.m; sourceTree = "<group>"; };
+		C9F8B0BD12A324C400250C1A /* OrderSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OrderSummaryView.xib; path = Classes/OrderSummaryView.xib; sourceTree = "<group>"; };
+		C9F8B0C012A3251000250C1A /* DestinationInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationInfoViewController.h; sourceTree = "<group>"; };
+		C9F8B0C112A3251000250C1A /* DestinationInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationInfoViewController.m; sourceTree = "<group>"; };
+		C9F8B0C212A3251000250C1A /* DestinationInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DestinationInfoView.xib; path = Classes/DestinationInfoView.xib; sourceTree = "<group>"; };
+		C9F8B0E412A32D9200250C1A /* SearchDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDestinationViewController.h; sourceTree = "<group>"; };
+		C9F8B0E512A32D9200250C1A /* SearchDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDestinationViewController.m; sourceTree = "<group>"; };
+		C9F8B0E612A32D9200250C1A /* SearchDestinationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SearchDestinationView.xib; path = Classes/SearchDestinationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +201,10 @@
 				C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */,
 				C9F8AEF912A2F69D00250C1A /* MyGroupTableViewController.h */,
 				C9F8AEFA12A2F69D00250C1A /* MyGroupTableViewController.m */,
+				C9F8B0BB12A324C400250C1A /* OrderSummaryViewController.h */,
+				C9F8B0BC12A324C400250C1A /* OrderSummaryViewController.m */,
+				C9F8B0C012A3251000250C1A /* DestinationInfoViewController.h */,
+				C9F8B0C112A3251000250C1A /* DestinationInfoViewController.m */,
 				C96B11CA127907560083BFEB /* MyOrderViewController.h */,
 				C96B11CB127907560083BFEB /* MyOrderViewController.m */,
 				C9179D9F12A087CB001A7AFA /* OrderItemCell.h */,
@@ -196,6 +215,8 @@
 				C91F45FB1299D30000440A84 /* SettingsViewController.m */,
 				C9179A1E129F5612001A7AFA /* WebViewOrderItemViewController.h */,
 				C9179A1F129F5612001A7AFA /* WebViewOrderItemViewController.m */,
+				C9F8B0E412A32D9200250C1A /* SearchDestinationViewController.h */,
+				C9F8B0E512A32D9200250C1A /* SearchDestinationViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -236,13 +257,15 @@
 				C91F45071299BCF300440A84 /* Settings.bundle */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
-				C91F4800129A619B00440A84 /* AddScheduledRun.xib */,
+				C91F4800129A619B00440A84 /* AddScheduledRunView.xib */,
 				8D1107310486CEB800E47090 /* LunchRun-Info.plist */,
 				C91FF95B1277662800615EAA /* testdata.plist */,
 				C91FF9B712776CC100615EAA /* ScheduledRunCell.xib */,
 				C9F8AD2612A2AEE500250C1A /* ScheduledRunTabBarView.xib */,
 				C91FFB911277F19500615EAA /* ScheduledRunView.xib */,
 				C9F8AEFB12A2F69D00250C1A /* MyGroupTableView.xib */,
+				C9F8B0BD12A324C400250C1A /* OrderSummaryView.xib */,
+				C9F8B0C212A3251000250C1A /* DestinationInfoView.xib */,
 				C96B11CD1279076C0083BFEB /* MyOrderView.xib */,
 				C9179DA212A087E3001A7AFA /* OrderItemCell.xib */,
 				C96B121712790F880083BFEB /* AddOrderItemView.xib */,
@@ -251,6 +274,7 @@
 				C9643DBF1285223600DA5D09 /* LunchRun.xcdatamodel */,
 				C91F45FC1299D30000440A84 /* SettingsView.xib */,
 				C9179A20129F5612001A7AFA /* WebViewOrderItemView.xib */,
+				C9F8B0E612A32D9200250C1A /* SearchDestinationView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -404,7 +428,7 @@
 				C91F43F81299293400440A84 /* HUDBackground.png in Resources */,
 				C91F45081299BCF300440A84 /* Settings.bundle in Resources */,
 				C91F45FE1299D30000440A84 /* SettingsView.xib in Resources */,
-				C91F4802129A619B00440A84 /* AddScheduledRun.xib in Resources */,
+				C91F4802129A619B00440A84 /* AddScheduledRunView.xib in Resources */,
 				C9179A22129F5612001A7AFA /* WebViewOrderItemView.xib in Resources */,
 				C9179DA312A087E3001A7AFA /* OrderItemCell.xib in Resources */,
 				C9F8AD2812A2AEE500250C1A /* ScheduledRunTabBarView.xib in Resources */,
@@ -413,6 +437,9 @@
 				C9F8AE5F12A2E55900250C1A /* 179-notepad.png in Resources */,
 				C9F8AE6312A2E5AC00250C1A /* 48-fork-and-knife.png in Resources */,
 				C9F8AEFD12A2F69D00250C1A /* MyGroupTableView.xib in Resources */,
+				C9F8B0BF12A324C400250C1A /* OrderSummaryView.xib in Resources */,
+				C9F8B0C412A3251000250C1A /* DestinationInfoView.xib in Resources */,
+				C9F8B0E812A32D9200250C1A /* SearchDestinationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +478,9 @@
 				C9179DA112A087CB001A7AFA /* OrderItemCell.m in Sources */,
 				C9F8AD2712A2AEE500250C1A /* ScheduledRunTabBarViewController.m in Sources */,
 				C9F8AEFC12A2F69D00250C1A /* MyGroupTableViewController.m in Sources */,
+				C9F8B0BE12A324C400250C1A /* OrderSummaryViewController.m in Sources */,
+				C9F8B0C312A3251000250C1A /* DestinationInfoViewController.m in Sources */,
+				C9F8B0E712A32D9200250C1A /* SearchDestinationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

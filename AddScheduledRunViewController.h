@@ -17,6 +17,7 @@
 - (IBAction) cancelForm: (id) sender;
 - (IBAction) saveForm: (id) sender;
 - (IBAction) backgroundClick: (id) sender;
+- (IBAction) showDestinationSearch: (id) sender;
 
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIView *contentView;
