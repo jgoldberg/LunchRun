@@ -25,7 +25,7 @@
 
 - (void)unserialize:(NSDictionary *) dictionary {
 	NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-	[dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+	[dateFormat setDateFormat:@"MM/dd/y HH:mm"];
 	
 	self.scheduledRunID = [dictionary objectForKey:@"scheduled_run_id"];
 	self.isOpen = [dictionary objectForKey:@"is_open"];

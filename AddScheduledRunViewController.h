@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SearchDestinationDelegate.h"
+#import "CreateModalDelegate.h"
 
 @interface AddScheduledRunViewController : UIViewController <SearchDestinationDelegate, UIActionSheetDelegate> {
+	id<CreateModalDelegate> delegate;
 	IBOutlet UIScrollView *scrollView;
 	IBOutlet UIView *contentView;
 	IBOutlet UIButton *destinationButton;
@@ -25,6 +27,7 @@
 - (IBAction) showDestinationSearch: (id) sender;
 - (IBAction) chooseDate: (id) sender;
 
+@property (nonatomic, retain) id<CreateModalDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet UIView *contentView;
 @property (nonatomic, retain) IBOutlet UIButton *destinationButton;

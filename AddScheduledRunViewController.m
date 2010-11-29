@@ -8,11 +8,14 @@
 
 #import "AddScheduledRunViewController.h"
 #import "SearchDestinationViewController.h"
+#import "LRJSONRequest.h"
+#import "SBJsonWriter.h"
 
 #define DATE_PICKER 10
 
 @implementation AddScheduledRunViewController
 
+@synthesize delegate;
 @synthesize scrollView;
 @synthesize contentView;
 @synthesize destinationButton;
@@ -33,7 +36,31 @@
 }
 
 - (IBAction) saveForm: (id) sender {
-	[self dismissModalViewControllerAnimated:YES];
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"MM/dd/y HH:mm"];
+	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *groupToken = [defaults objectForKey:@"group_token"];
+	NSString *userToken = [defaults objectForKey:@"user_token"];
+	
+	NSString *destinationID = [destination objectForKey:@"destination_id"];
+	NSString *cutoffDate = [formatter stringFromDate:[datePicker date]];
+	NSString *cutoffCount = [cutoffText text];
+	
+	NSDictionary *scheduledRunDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:destinationID,cutoffDate,cutoffCount,nil]
+																 forKeys:[NSArray arrayWithObjects:@"destination_id",@"cutoff_datetime",@"cutoff_count",nil]];
+	
+	SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+	
+	LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/scheduledruns/create" 
+													 groupToken:groupToken 
+													  userToken:userToken 
+													   delegate:self 
+													  onSuccess:@selector(onCreateSuccess:) 
+													  onFailure:@selector(onCreateFailure:)];
+	[request performPost:[writer stringWithObject:scheduledRunDict]];
+	[writer release];
+	[formatter release];
 }
 
 - (IBAction) backgroundClick: (id) sender {
@@ -60,6 +87,23 @@
 	[searchViewController release];
 }
 
+- (void) onCreateSuccess:(NSDictionary*)response {
+	[self dismissModalViewControllerAnimated:YES];
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"LunchRun" 
+														message:@"Your Lunch Run was successfully created!" 
+													   delegate:nil
+											  cancelButtonTitle:@"OK" 
+											  otherButtonTitles:nil];
+	[alertView show];
+	[alertView release];
+	[delegate didCreateWithModal];
+}
+
+- (void) onCreateFailure:(NSError*)error {
+	
+}
+																		
+
 - (void) setDestinationFromSearch:(NSDictionary*)dest {
 	[self.destinationButton setTitle:[dest objectForKey:@"name"] forState:UIControlStateNormal];
 	self.destination = dest;
@@ -84,7 +128,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"MM/dd/YYYY h:mm a"];
+        [formatter setDateFormat:@"MM/dd/y hh:mm a"];
         
         NSDate *selectedDate = [self.datePicker date];
         [self.dateButton setTitle:[formatter stringFromDate:selectedDate] forState:UIControlStateNormal];

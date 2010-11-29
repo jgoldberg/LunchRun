@@ -20,7 +20,7 @@
 #import "AddScheduledRunViewController.h"
 #import "ScheduledRunTabBarViewController.h"
 
-@interface RootViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UINavigationControllerDelegate> {
+@interface RootViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, UINavigationControllerDelegate, CreateModalDelegate> {
 	NSFetchedResultsController *_fetchedResultsController;
 	IBOutlet UITableView *tableView;
 	LRProgressHUD *hud;

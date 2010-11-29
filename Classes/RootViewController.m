@@ -105,10 +105,14 @@
 
 - (IBAction) addScheduledRun:(id)sender {
 	AddScheduledRunViewController *controller = [[AddScheduledRunViewController alloc] initWithNibName:@"AddScheduledRunView" bundle:nil];
+	controller.delegate = self;
 	controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	[self presentModalViewController:controller animated:YES];
-	
 	[controller release];
+}
+
+- (void) didCreateWithModal {
+	[self reloadRemoteData];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
