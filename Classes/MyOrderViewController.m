@@ -54,6 +54,7 @@
 - (void)handleClose
 {
 	NSLog(@"Closed!");
+	
 }
 
 // Customize the number of sections in the table view.
@@ -108,13 +109,16 @@
 	NSManagedObjectContext *context = [delegate managedObjectContext];
 	
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	[fetchRequest setFetchBatchSize:20];
+	
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"OrderItem" inManagedObjectContext:context];
 	[fetchRequest setEntity:entityDescription];
 	
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
 	[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 	
-	[fetchRequest setFetchBatchSize:20];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"order.scheduledRun.scheduledRunID == %d",[[[delegate currentScheduledRun] scheduledRunID] intValue]];
+	[fetchRequest setPredicate:predicate];
 	
 	NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
 																				 managedObjectContext:context 
@@ -127,11 +131,12 @@
 }
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	NSLog(@"dwillChange");
     [self.tableView beginUpdates];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
-	
+	NSLog(@"didChange");
     switch(type) {
 			
         case NSFetchedResultsChangeInsert:
@@ -156,7 +161,7 @@
 
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-	
+	NSLog(@"didChangeSection");	
     switch(type) {
 			
         case NSFetchedResultsChangeInsert:
@@ -171,7 +176,7 @@
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-	NSLog(@"Data Changed!");
+	NSLog(@"Data Did Change!");
 	[self.tableView endUpdates];
 }
 

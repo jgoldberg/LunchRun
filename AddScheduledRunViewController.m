@@ -125,6 +125,16 @@
 	[[subviews objectAtIndex:2] setFrame:CGRectMake(20, 295, 280, 46)];
 }
 
+- (void)didPresentActionSheet:(UIActionSheet *)actionSheet {
+	// Normalize Date to 11:00 PM
+	NSDateComponents *dateComponent = [[NSCalendar currentCalendar] components:NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
+	[dateComponent setHour:12];
+	[dateComponent setMinute:0];
+	NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:dateComponent];
+	
+	[self.datePicker setDate:date animated:YES];
+}
+
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
