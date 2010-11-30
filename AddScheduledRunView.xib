@@ -73,7 +73,7 @@
 					<object class="IBUIButton" id="575604796">
 						<reference key="NSNextResponder" ref="881573090"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 108}, {280, 37}}</string>
+						<string key="NSFrame">{{20, 32}, {280, 37}}</string>
 						<reference key="NSSuperview" ref="881573090"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -95,7 +95,7 @@
 					<object class="IBUILabel" id="774567452">
 						<reference key="NSNextResponder" ref="881573090"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 79}, {86, 21}}</string>
+						<string key="NSFrame">{{20, 3}, {86, 21}}</string>
 						<reference key="NSSuperview" ref="881573090"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -155,7 +155,7 @@
 					<object class="IBUILabel" id="48362626">
 						<reference key="NSNextResponder" ref="881573090"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 5}, {130, 21}}</string>
+						<string key="NSFrame">{{20, 77}, {130, 21}}</string>
 						<reference key="NSSuperview" ref="881573090"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -171,7 +171,7 @@
 					<object class="IBUIButton" id="1035649853">
 						<reference key="NSNextResponder" ref="881573090"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{265, 111}, {29, 31}}</string>
+						<string key="NSFrame">{{265, 35}, {29, 31}}</string>
 						<reference key="NSSuperview" ref="881573090"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -189,7 +189,7 @@
 					<object class="IBUIButton" id="65006630">
 						<reference key="NSNextResponder" ref="881573090"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 34}, {280, 37}}</string>
+						<string key="NSFrame">{{20, 106}, {280, 37}}</string>
 						<reference key="NSSuperview" ref="881573090"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -211,7 +211,7 @@
 					<object class="IBUIButton" id="526212671">
 						<reference key="NSNextResponder" ref="881573090"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{265, 37}, {29, 31}}</string>
+						<string key="NSFrame">{{265, 109}, {29, 31}}</string>
 						<reference key="NSSuperview" ref="881573090"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -392,6 +392,15 @@
 					</object>
 					<int key="connectionID">35</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">chooseDate:</string>
+						<reference key="source" ref="526212671"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">36</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -436,15 +445,15 @@
 						<reference key="object" ref="881573090"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="774567452"/>
 							<reference ref="727241333"/>
 							<reference ref="138204684"/>
-							<reference ref="575604796"/>
 							<reference ref="48362626"/>
-							<reference ref="1035649853"/>
 							<reference ref="65006630"/>
 							<reference ref="526212671"/>
 							<reference ref="918027493"/>
+							<reference ref="575604796"/>
+							<reference ref="774567452"/>
+							<reference ref="1035649853"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -586,7 +595,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">35</int>
+			<int key="maxID">36</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -621,6 +630,7 @@
 							<string>cutoffText</string>
 							<string>dateButton</string>
 							<string>datePicker</string>
+							<string>delegate</string>
 							<string>destinationButton</string>
 							<string>scrollView</string>
 						</object>
@@ -630,6 +640,7 @@
 							<string>UITextField</string>
 							<string>UIButton</string>
 							<string>UIDatePicker</string>
+							<string>id</string>
 							<string>UIButton</string>
 							<string>UIScrollView</string>
 						</object>

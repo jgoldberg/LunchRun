@@ -11,10 +11,11 @@
 
 @class LRProgressHUD;
 
-@interface ScheduledRunViewController : UIViewController <UIActionSheetDelegate>{
+@interface ScheduledRunViewController : UIViewController <UIActionSheetDelegate, UITabBarDelegate>{
 	IBOutlet UITextView *textView;
 	IBOutlet UILabel *orderStatus;
 	IBOutlet UIButton *sendButton;
+	IBOutlet UIButton *cancelButton;
 	LRProgressHUD *hud;
 }
 
@@ -26,5 +27,6 @@
 @property (nonatomic, retain) IBOutlet UITextView *textView;
 @property (nonatomic, retain) IBOutlet UILabel *orderStatus;
 @property (nonatomic, retain) IBOutlet UIButton *sendButton;
+@property (nonatomic, retain) IBOutlet UIButton *cancelButton;
 
 @end

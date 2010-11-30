@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -284,13 +284,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>58</integer>
+									<integer>50</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 433}, {373, 914}}</string>
+							<string>{{0, 605}, {373, 914}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -306,6 +306,8 @@
 							<string>MainColumn</string>
 							<real>373</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>4 55 1676 973 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -316,12 +318,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C91FFB1B1277927C00615EAA</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MyOrderViewController.m</string>
+								<string>ScheduledRunViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C91FFB1C1277927C00615EAA</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MyOrderViewController.m</string>
+										<string>ScheduledRunViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9713D8D12A4B84100A78020</string>
+										<string>C9713DDF12A4CF1C00A78020</string>
 										<key>history</key>
 										<array>
 											<string>C9643E611288388500DA5D09</string>
@@ -372,39 +376,39 @@
 											<string>C9F8AFF512A30A7E00250C1A</string>
 											<string>C9F8B06C12A31C4D00250C1A</string>
 											<string>C9F8B06D12A31C4D00250C1A</string>
-											<string>C9F8B0A212A3236000250C1A</string>
 											<string>C9F8B0C812A3262500250C1A</string>
 											<string>C9F8B0C912A3262500250C1A</string>
 											<string>C9F8B0CA12A3262500250C1A</string>
 											<string>C9F8B0CC12A3262500250C1A</string>
 											<string>C9F8B0CD12A3262500250C1A</string>
-											<string>C9F8B0CE12A3262500250C1A</string>
-											<string>C9F8B0DC12A3273500250C1A</string>
 											<string>C9F8B0DD12A3273500250C1A</string>
 											<string>C9F8B10312A333FD00250C1A</string>
-											<string>C9F8B10512A333FD00250C1A</string>
 											<string>C9F8B18D12A34A3F00250C1A</string>
 											<string>C9F8B1E312A3510300250C1A</string>
 											<string>C9F8B2CB12A3685600250C1A</string>
 											<string>C9F8B2CE12A3685600250C1A</string>
 											<string>C9F8B30D12A36B8900250C1A</string>
-											<string>C9F8B30E12A36B8900250C1A</string>
 											<string>C9F8B31D12A36CEB00250C1A</string>
 											<string>C9F8B31E12A36CEB00250C1A</string>
 											<string>C9F8B31F12A36CEB00250C1A</string>
 											<string>C9F8B32012A36CEB00250C1A</string>
-											<string>C9F8B38B12A413B000250C1A</string>
 											<string>C9F8B38D12A413B000250C1A</string>
 											<string>C9F8B38E12A413B000250C1A</string>
 											<string>C9F8B39712A414A800250C1A</string>
 											<string>C9F8B3B012A4157B00250C1A</string>
 											<string>C9398D0F12A4193600042B87</string>
-											<string>C9398D2F12A41B5300042B87</string>
 											<string>C9713D7112A4B6C600A78020</string>
 											<string>C9713D7212A4B6C600A78020</string>
 											<string>C9713D7712A4B70500A78020</string>
 											<string>C9713D8112A4B7AA00A78020</string>
-											<string>C9713D8212A4B7AA00A78020</string>
+											<string>C9713DC212A4CE2200A78020</string>
+											<string>C9713DC312A4CE2200A78020</string>
+											<string>C9713DC412A4CE2200A78020</string>
+											<string>C9713DC512A4CE2200A78020</string>
+											<string>C9713DC712A4CE2200A78020</string>
+											<string>C9713DDC12A4CF1C00A78020</string>
+											<string>C9713DDD12A4CF1C00A78020</string>
+											<string>C9713DDE12A4CF1C00A78020</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -419,6 +423,8 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1281, 677}}</string>
+								<key>RubberWindowFrame</key>
+								<string>4 55 1676 973 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -442,6 +448,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1281, 223}}</string>
+										<key>RubberWindowFrame</key>
+										<string>4 55 1676 973 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -579,8 +587,6 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1676, 284}}</string>
-						<key>RubberWindowFrame</key>
-						<string>4 55 1676 973 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -657,11 +663,7 @@
 							</array>
 							<key>Frame</key>
 							<string>{{818, 0}, {858, 311}}</string>
-							<key>RubberWindowFrame</key>
-							<string>4 55 1676 973 0 0 1680 1028 </string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>4 55 1676 973 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -725,7 +727,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C9713D8E12A4B84100A78020</string>
+		<string>C9713DE012A4CF1C00A78020</string>
+		<string>C9643E521288370800DA5D09</string>
 		<string>C9713D5C12A47F9C00A78020</string>
 		<string>C9713D5912A47C4800A78020</string>
 		<string>/Users/jgoldberg/Documents/LunchRun/LunchRun.xcodeproj</string>
@@ -1455,7 +1458,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CA6456E063B45B4001379D8</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Class Browser - NSManagedObjectContext</string>
+								<string>Class Browser - UITableView</string>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
@@ -1507,7 +1510,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>C9643E521288370800DA5D09</string>
-				<string>C9398D3F12A4208B00042B87</string>
+				<string>C9713DAD12A4CA9700A78020</string>
 				<string>1CA6456E063B45B4001379D8</string>
 			</array>
 			<key>ToolbarConfiguration</key>

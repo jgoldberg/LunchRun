@@ -126,7 +126,7 @@
 }
 
 - (void)didPresentActionSheet:(UIActionSheet *)actionSheet {
-	// Normalize Date to 11:00 PM
+	// Normalize Date to 12:00 PM
 	NSDateComponents *dateComponent = [[NSCalendar currentCalendar] components:NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
 	[dateComponent setHour:12];
 	[dateComponent setMinute:0];

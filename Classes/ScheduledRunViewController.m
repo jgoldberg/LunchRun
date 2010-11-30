@@ -22,14 +22,31 @@
 @synthesize textView;
 @synthesize orderStatus;
 @synthesize sendButton;
+@synthesize cancelButton;
 
 - (void)viewDidLoad {	
 	[super viewDidLoad];
 	
 	hud = [[LRProgressHUD alloc] initWithLabel:@"Loading"];
 	
+	[self tabBar:nil didSelectItem:nil];
+	
 	ScheduledRun *scheduledRun = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
 	orderStatus.text = [[scheduledRun myOrder] orderStatus];
+}
+
+- (void) tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate];
+	Order *myOrder = [[delegate currentScheduledRun] myOrder];
+	if ([myOrder.orderItems count] == 0) {
+		[sendButton setAlpha:.5];
+		[sendButton	setEnabled:FALSE];
+	}
+	
+	if ([myOrder.orderStatus isEqualToString:@"Draft"]) {
+		[cancelButton setAlpha:.5];
+		[cancelButton setEnabled:FALSE];
+	}
 }
 
 - (IBAction) viewMyOrder: (id) sender

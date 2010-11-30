@@ -21,7 +21,7 @@
 	IBOutlet UITabBarItem *destinationTabBarItem;
 	IBOutlet UIView *contentView;
 	
-	UIViewController *selectedController;
+	UIViewController<UITabBarDelegate> *selectedController;
 	ScheduledRunViewController *scheduledRunViewController;
 	MyGroupTableViewController *myGroupTableViewController;
 	OrderSummaryViewController *orderSummaryViewController;

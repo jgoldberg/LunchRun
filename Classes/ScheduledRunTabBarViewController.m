@@ -55,6 +55,9 @@
 	}
 	
 	selectedController = controller;
+	if ([selectedController conformsToProtocol:@protocol(UITabBarDelegate)]) {
+		[selectedController tabBar:tabBar didSelectItem:item];
+	}
 	[self.view insertSubview:controller.view atIndex:0];
 }
 
