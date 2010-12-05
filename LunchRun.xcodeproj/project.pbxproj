@@ -36,6 +36,10 @@
 		C91FFA6012777DC100615EAA /* LRTimeRemaining.m in Sources */ = {isa = PBXBuildFile; fileRef = C91FFA5F12777DC100615EAA /* LRTimeRemaining.m */; };
 		C91FFB901277F18900615EAA /* ScheduledRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */; };
 		C91FFB921277F19500615EAA /* ScheduledRunView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C91FFB911277F19500615EAA /* ScheduledRunView.xib */; };
+		C93F463B12AB4ADC006CFF26 /* OrderItemSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F463A12AB4ADC006CFF26 /* OrderItemSummaryCell.m */; };
+		C93F463E12AB4B35006CFF26 /* OrderItemSummaryTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93F463D12AB4B35006CFF26 /* OrderItemSummaryTitleCell.xib */; };
+		C93F464612AB5278006CFF26 /* OrderItemSummaryTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C93F464512AB5278006CFF26 /* OrderItemSummaryTitleCell.m */; };
+		C93F464812AB52A1006CFF26 /* OrderItemSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93F464712AB52A1006CFF26 /* OrderItemSummaryCell.xib */; };
 		C9643DC01285223600DA5D09 /* LunchRun.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C9643DBF1285223600DA5D09 /* LunchRun.xcdatamodel */; };
 		C9643DF1128527B900DA5D09 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9643DF0128527B900DA5D09 /* CoreData.framework */; };
 		C96B11CC127907560083BFEB /* MyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96B11CB127907560083BFEB /* MyOrderViewController.m */; };
@@ -115,6 +119,12 @@
 		C91FFB8E1277F18900615EAA /* ScheduledRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRunViewController.h; sourceTree = "<group>"; };
 		C91FFB8F1277F18900615EAA /* ScheduledRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduledRunViewController.m; sourceTree = "<group>"; };
 		C91FFB911277F19500615EAA /* ScheduledRunView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduledRunView.xib; sourceTree = "<group>"; };
+		C93F463912AB4ADC006CFF26 /* OrderItemSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemSummaryCell.h; sourceTree = "<group>"; };
+		C93F463A12AB4ADC006CFF26 /* OrderItemSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemSummaryCell.m; sourceTree = "<group>"; };
+		C93F463D12AB4B35006CFF26 /* OrderItemSummaryTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderItemSummaryTitleCell.xib; sourceTree = "<group>"; };
+		C93F464412AB5278006CFF26 /* OrderItemSummaryTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemSummaryTitleCell.h; sourceTree = "<group>"; };
+		C93F464512AB5278006CFF26 /* OrderItemSummaryTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemSummaryTitleCell.m; sourceTree = "<group>"; };
+		C93F464712AB52A1006CFF26 /* OrderItemSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderItemSummaryCell.xib; sourceTree = "<group>"; };
 		C9643DBF1285223600DA5D09 /* LunchRun.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = LunchRun.xcdatamodel; sourceTree = "<group>"; };
 		C9643DF0128527B900DA5D09 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C96B11CA127907560083BFEB /* MyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderViewController.h; sourceTree = "<group>"; };
@@ -205,6 +215,10 @@
 				C9F8AEFA12A2F69D00250C1A /* MyGroupTableViewController.m */,
 				C9F8B0BB12A324C400250C1A /* OrderSummaryViewController.h */,
 				C9F8B0BC12A324C400250C1A /* OrderSummaryViewController.m */,
+				C93F463912AB4ADC006CFF26 /* OrderItemSummaryCell.h */,
+				C93F463A12AB4ADC006CFF26 /* OrderItemSummaryCell.m */,
+				C93F464412AB5278006CFF26 /* OrderItemSummaryTitleCell.h */,
+				C93F464512AB5278006CFF26 /* OrderItemSummaryTitleCell.m */,
 				C9F8B0C012A3251000250C1A /* DestinationInfoViewController.h */,
 				C9F8B0C112A3251000250C1A /* DestinationInfoViewController.m */,
 				C96B11CA127907560083BFEB /* MyOrderViewController.h */,
@@ -277,6 +291,8 @@
 				C91F45FC1299D30000440A84 /* SettingsView.xib */,
 				C9179A20129F5612001A7AFA /* WebViewOrderItemView.xib */,
 				C9F8B0E612A32D9200250C1A /* SearchDestinationView.xib */,
+				C93F463D12AB4B35006CFF26 /* OrderItemSummaryTitleCell.xib */,
+				C93F464712AB52A1006CFF26 /* OrderItemSummaryCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -444,6 +460,8 @@
 				C9F8B0BF12A324C400250C1A /* OrderSummaryView.xib in Resources */,
 				C9F8B0C412A3251000250C1A /* DestinationInfoView.xib in Resources */,
 				C9F8B0E812A32D9200250C1A /* SearchDestinationView.xib in Resources */,
+				C93F463E12AB4B35006CFF26 /* OrderItemSummaryTitleCell.xib in Resources */,
+				C93F464812AB52A1006CFF26 /* OrderItemSummaryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +503,8 @@
 				C9F8B0BE12A324C400250C1A /* OrderSummaryViewController.m in Sources */,
 				C9F8B0C312A3251000250C1A /* DestinationInfoViewController.m in Sources */,
 				C9F8B0E712A32D9200250C1A /* SearchDestinationViewController.m in Sources */,
+				C93F463B12AB4ADC006CFF26 /* OrderItemSummaryCell.m in Sources */,
+				C93F464612AB5278006CFF26 /* OrderItemSummaryTitleCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

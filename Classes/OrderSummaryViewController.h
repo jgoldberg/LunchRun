@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface OrderSummaryViewController : UIViewController {
-
+@interface OrderSummaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+	IBOutlet UITableView *tableView;
 }
 
 @end

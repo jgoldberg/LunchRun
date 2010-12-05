@@ -290,7 +290,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 605}, {373, 914}}</string>
+							<string>{{0, 0}, {373, 914}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -337,7 +337,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9713DDF12A4CF1C00A78020</string>
+										<string>C93F462C12AACF64006CFF26</string>
 										<key>history</key>
 										<array>
 											<string>C9643E611288388500DA5D09</string>
@@ -408,7 +408,7 @@
 											<string>C9713DC712A4CE2200A78020</string>
 											<string>C9713DDC12A4CF1C00A78020</string>
 											<string>C9713DDD12A4CF1C00A78020</string>
-											<string>C9713DDE12A4CF1C00A78020</string>
+											<string>C9713DDF12A4CF1C00A78020</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -422,18 +422,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1281, 677}}</string>
+								<string>{{0, 0}, {1281, 671}}</string>
 								<key>RubberWindowFrame</key>
 								<string>4 55 1676 973 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>677pt</string>
+							<string>671pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>250pt</string>
+							<string>256pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -447,7 +447,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1281, 223}}</string>
+										<string>{{10, 27}, {1281, 229}}</string>
 										<key>RubberWindowFrame</key>
 										<string>4 55 1676 973 0 0 1680 1028 </string>
 									</dict>
@@ -531,11 +531,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C9713D5012A47C4800A78020</string>
+				<string>C93F462D12AACF64006CFF26</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>C9713D5112A47C4800A78020</string>
+				<string>C93F462E12AACF64006CFF26</string>
 				<string>C91FFB1B1277927C00615EAA</string>
-				<string>C9713D5212A47C4800A78020</string>
+				<string>C93F462F12AACF64006CFF26</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -727,10 +727,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C9713DE012A4CF1C00A78020</string>
-		<string>C9643E521288370800DA5D09</string>
-		<string>C9713D5C12A47F9C00A78020</string>
-		<string>C9713D5912A47C4800A78020</string>
 		<string>/Users/jgoldberg/Documents/LunchRun/LunchRun.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
