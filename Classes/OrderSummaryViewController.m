@@ -7,46 +7,82 @@
 //
 
 #import "OrderSummaryViewController.h"
+#import "OrderItemSummaryTitleCell.h"
+#import "OrderItemSummaryCell.h"
 
+#define TITLE_ROW 0
 
 @implementation OrderSummaryViewController
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
+@synthesize tableView;
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-*/
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)_tableView {
+    return 1;
 }
-*/
+
+- (NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
+	return 3;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *CellIdentifier = @"OrderSummary";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (nil == cell) {
+		if ([indexPath row] == TITLE_ROW) {
+			NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"OrderItemSummaryTitleCell" owner:self options:nil];
+			cell = [nib objectAtIndex:0];
+		} else {
+			NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"OrderItemSummaryCell" owner:self options:nil];
+			cell = [nib objectAtIndex:0];
+		}
+	}
+	
+	if ([indexPath row] == TITLE_ROW) {
+		OrderItemSummaryTitleCell *titleCell = (OrderItemSummaryTitleCell*)cell;
+		titleCell.nameLabel.text = @"Two Meat Plate";
+		titleCell.quantityLabel.text = @"Qty: 2";
+	} else {
+		OrderItemSummaryCell *summaryCell = (OrderItemSummaryCell*)cell;
+		summaryCell.userLabel.text = @"Jason Goldberg";
+		summaryCell.quantityLabel.text = @"Qty: 1";
+		summaryCell.options1Label.text = @"Brisket (Moist), Sausage, Extra Sauce";
+		summaryCell.options2Label.text = @"Extra Sauce";
+	}
+	
+	return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"Select");
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	if ([cell selectionStyle] != UITableViewCellAccessoryCheckmark) {
+		[cell setSelectionStyle:UITableViewCellAccessoryCheckmark];
+	} else {
+		[cell setSelectionStyle:UITableViewCellAccessoryNone];
+	}
+
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if ([indexPath row] == TITLE_ROW) {
+		return 54;
+	} else {
+		return 64;
+	}
+}
+
 
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 
