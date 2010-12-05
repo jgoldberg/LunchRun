@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MapKit/MapKit.h>
 
 @interface DestinationInfoViewController : UIViewController {
-
+	IBOutlet MKMapView *mapView;
 }
+
+@property (nonatomic, retain) MKMapView *mapView;
 
 @end

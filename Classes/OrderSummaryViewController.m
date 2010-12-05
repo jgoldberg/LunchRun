@@ -58,14 +58,16 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"Select");
+	NSLog(@"Select %d", [indexPath row]);
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	if ([cell selectionStyle] != UITableViewCellAccessoryCheckmark) {
-		[cell setSelectionStyle:UITableViewCellAccessoryCheckmark];
-	} else {
-		[cell setSelectionStyle:UITableViewCellAccessoryNone];
+	if ([indexPath row] != TITLE_ROW) {
+		if ([cell accessoryType] != UITableViewCellAccessoryCheckmark) {
+			[cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+		} else {
+			[cell setAccessoryType:UITableViewCellAccessoryNone];
+		}
 	}
-
+	[cell setSelected:NO animated:YES];
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

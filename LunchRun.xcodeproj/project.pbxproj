@@ -51,6 +51,7 @@
 		C9B916731298CABD006D121A /* LRJSONRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B916721298CABD006D121A /* LRJSONRequest.m */; };
 		C9B918061298FC4D006D121A /* EntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B918051298FC4D006D121A /* EntityFactory.m */; };
 		C9B91894129909FC006D121A /* EntityService.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B91893129909FC006D121A /* EntityService.m */; };
+		C9EBB2C712AB73FA005CEAEA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9EBB2C612AB73FA005CEAEA /* MapKit.framework */; };
 		C9F0310B1296440B0054671D /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F031021296440B0054671D /* NSObject+SBJSON.m */; };
 		C9F0310C1296440B0054671D /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F031041296440B0054671D /* NSString+SBJSON.m */; };
 		C9F0310D1296440B0054671D /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F031061296440B0054671D /* SBJsonBase.m */; };
@@ -142,6 +143,7 @@
 		C9B918051298FC4D006D121A /* EntityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityFactory.m; sourceTree = "<group>"; };
 		C9B91892129909FC006D121A /* EntityService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityService.h; sourceTree = "<group>"; };
 		C9B91893129909FC006D121A /* EntityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityService.m; sourceTree = "<group>"; };
+		C9EBB2C612AB73FA005CEAEA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C9F031001296440B0054671D /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		C9F031011296440B0054671D /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		C9F031021296440B0054671D /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				C9643DF1128527B900DA5D09 /* CoreData.framework in Frameworks */,
+				C9EBB2C712AB73FA005CEAEA /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +257,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				C9EBB2C612AB73FA005CEAEA /* MapKit.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -281,6 +285,8 @@
 				C91FFB911277F19500615EAA /* ScheduledRunView.xib */,
 				C9F8AEFB12A2F69D00250C1A /* MyGroupTableView.xib */,
 				C9F8B0BD12A324C400250C1A /* OrderSummaryView.xib */,
+				C93F463D12AB4B35006CFF26 /* OrderItemSummaryTitleCell.xib */,
+				C93F464712AB52A1006CFF26 /* OrderItemSummaryCell.xib */,
 				C9F8B0C212A3251000250C1A /* DestinationInfoView.xib */,
 				C96B11CD1279076C0083BFEB /* MyOrderView.xib */,
 				C9179DA212A087E3001A7AFA /* OrderItemCell.xib */,
@@ -291,8 +297,6 @@
 				C91F45FC1299D30000440A84 /* SettingsView.xib */,
 				C9179A20129F5612001A7AFA /* WebViewOrderItemView.xib */,
 				C9F8B0E612A32D9200250C1A /* SearchDestinationView.xib */,
-				C93F463D12AB4B35006CFF26 /* OrderItemSummaryTitleCell.xib */,
-				C93F464712AB52A1006CFF26 /* OrderItemSummaryCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

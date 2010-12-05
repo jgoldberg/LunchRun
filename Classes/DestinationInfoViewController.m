@@ -11,30 +11,26 @@
 
 @implementation DestinationInfoViewController
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-*/
+	
+	CLLocationDegrees lat = (CLLocationDegrees)37.0625;
+	CLLocationDegrees lon = (CLLocationDegrees)-95.677068;
+	CLLocationCoordinate2D coord;
+	coord.latitude = lat;
+	coord.longitude = lon;
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	MKCoordinateSpan span;
+	span.latitudeDelta = 1;
+	span.longitudeDelta = 1;
+	
+	MKCoordinateRegion region;
+	region.center = coord;
+	region.span = span;
+	
+	[mapView setRegion:region];
+	[mapView setCenterCoordinate:coord animated:YES];
 }
-*/
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
