@@ -18,14 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	expandedSectionIndex = nil;
+	rowCount = [[NSMutableArray alloc] initWithCapacity:2];
+	for (NSInteger i=0; i<2; i++) {
+		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
+	}
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)_tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
-	return 3;
+	NSLog(@"Row Count");
+	return [(NSNumber *)[rowCount objectAtIndex:section] intValue];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -45,7 +51,7 @@
 	if ([indexPath row] == TITLE_ROW) {
 		OrderItemSummaryTitleCell *titleCell = (OrderItemSummaryTitleCell*)cell;
 		titleCell.nameLabel.text = @"Two Meat Plate";
-		titleCell.quantityLabel.text = @"Qty: 2";
+		titleCell.quantityLabel.text = @"2";
 	} else {
 		OrderItemSummaryCell *summaryCell = (OrderItemSummaryCell*)cell;
 		summaryCell.userLabel.text = @"Jason Goldberg";
@@ -67,12 +73,42 @@
 			[cell setAccessoryType:UITableViewCellAccessoryNone];
 		}
 	}
+	else {
+		NSLog(@"0");
+		[tableView beginUpdates];
+
+		if (nil != expandedSectionIndex) {
+			expandedSectionIndex = indexPath;
+		}
+		NSInteger rowsInSection = [[rowCount objectAtIndex:[expandedSectionIndex section]] intValue];
+		if (1 != rowsInSection) {
+			NSLog(@"A");
+			NSMutableArray *indexesToDelete = [[NSMutableArray alloc] initWithCapacity:rowsInSection];
+		    for (NSInteger i=1; i<rowsInSection; i++) {
+				[indexesToDelete addObject:[NSIndexPath indexPathForRow:i inSection:[expandedSectionIndex section]]];
+			}
+			[rowCount replaceObjectAtIndex:[expandedSectionIndex section] withObject:[NSNumber numberWithInt:1]];
+			[tableView deleteRowsAtIndexPaths:indexesToDelete withRowAnimation:UITableViewRowAnimationTop];
+		}
+		NSLog(@"B");
+		if (1 == rowsInSection) {
+			NSLog(@"C");
+			NSMutableArray *indexesToAdd = [[NSMutableArray alloc] initWithCapacity:2];
+			for (NSInteger i=1; i<=2; i++) {
+				[indexesToAdd addObject:[NSIndexPath indexPathForRow:i inSection:[indexPath section]]];
+			}
+			[rowCount replaceObjectAtIndex:[indexPath section] withObject:[NSNumber numberWithInt:3]];
+			[tableView insertRowsAtIndexPaths:indexesToAdd withRowAnimation:UITableViewRowAnimationTop];
+		}
+		expandedSectionIndex = [NSIndexPath indexPathForRow:[indexPath row] inSection:[indexPath section]];
+		[tableView endUpdates];
+	}
 	[cell setSelected:NO animated:YES];
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if ([indexPath row] == TITLE_ROW) {
-		return 54;
+		return 46;
 	} else {
 		return 64;
 	}

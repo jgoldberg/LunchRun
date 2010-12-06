@@ -24,8 +24,8 @@
 		_onSuccess = onSuccess;
 		_onFailure = onFailure;
 		_url = [url retain];
-		//_baseUrl = @"http://ec2-50-16-7-104.compute-1.amazonaws.com";
-		_baseUrl = @"http://localhost:8080";
+		_baseUrl = @"http://ec2-50-16-7-104.compute-1.amazonaws.com";
+		//_baseUrl = @"http://localhost:8080";
 	}
 	return self;
 }

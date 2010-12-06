@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	//NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-50-16-7-104.compute-1.amazonaws.com/destination/franklins_bbq"]];
-	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8080/destination/franklins_bbq"]];
+	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://ec2-50-16-7-104.compute-1.amazonaws.com/destination/franklins_bbq"]];
+	//NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:8080/destination/franklins_bbq"]];
 	[webView loadRequest:request];
 	[request release];
 }

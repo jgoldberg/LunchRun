@@ -11,6 +11,8 @@
 
 @interface OrderSummaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 	IBOutlet UITableView *tableView;
+	NSIndexPath *expandedSectionIndex;
+	NSMutableArray *rowCount;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
