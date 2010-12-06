@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-
-@interface OrderSummaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface OrderSummaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
 	IBOutlet UITableView *tableView;
 	NSIndexPath *expandedSectionIndex;
 	NSMutableArray *rowCount;
+	
+	NSFetchedResultsController *_fetchedResultsController;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end

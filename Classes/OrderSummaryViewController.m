@@ -20,14 +20,10 @@
 @implementation OrderSummaryViewController
 
 @synthesize tableView;
+@synthesize fetchedResultsController=_fetchedResultsController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	expandedSectionIndex = nil;
-	rowCount = [[NSMutableArray alloc] initWithCapacity:10];
-	for (NSInteger i=0; i<10; i++) {
-		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
-	}
 	
 	// Create Test Data
 	// Run only once
@@ -71,10 +67,26 @@
 	}
 	
 	*/
+	
+	NSError *error;
+	if (![self.fetchedResultsController performFetch:&error]) {
+		NSLog(@"Unresolved error %@: %@", error, [error userInfo]);
+		exit(-1);
+	}
+
+	NSInteger sectionCount = [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects];
+	NSLog(@"Section Count: %d", sectionCount);
+	
+	expandedSectionIndex = nil;
+	rowCount = [[NSMutableArray alloc] initWithCapacity:sectionCount];
+	for (NSInteger i=0; i<sectionCount; i++) {
+		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
+	}
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)_tableView {
-    return 10;
+    // Yes, we're abusing fetchedResultsController to do the accordian style tableview
+	return [[[self.fetchedResultsController sections] objectAtIndex:0] numberOfObjects];
 }
 
 - (NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
@@ -111,7 +123,7 @@
 	return cell;
 }
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void) tableView:(UITableView *)tView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSLog(@"Select %d", [indexPath row]);
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 	if ([indexPath row] != TITLE_ROW) {
@@ -122,7 +134,7 @@
 		}
 	}
 	else {
-		NSLog(@"0");
+		// Lot's of complex logic for the accordian view
 		[tableView beginUpdates];
 
 		if (nil != expandedSectionIndex) {
@@ -130,7 +142,6 @@
 		}
 		NSInteger rowsInSection = [[rowCount objectAtIndex:[expandedSectionIndex section]] intValue];
 		if (1 != rowsInSection) {
-			NSLog(@"A");
 			NSMutableArray *indexesToDelete = [[NSMutableArray alloc] initWithCapacity:rowsInSection];
 		    for (NSInteger i=1; i<rowsInSection; i++) {
 				[indexesToDelete addObject:[NSIndexPath indexPathForRow:i inSection:[expandedSectionIndex section]]];
@@ -138,14 +149,16 @@
 			[rowCount replaceObjectAtIndex:[expandedSectionIndex section] withObject:[NSNumber numberWithInt:1]];
 			[tableView deleteRowsAtIndexPaths:indexesToDelete withRowAnimation:UITableViewRowAnimationTop];
 		}
-		NSLog(@"B");
 		if (1 == rowsInSection) {
-			NSLog(@"C");
+			// Lookup row count from row object, not section
+			OrderSummary *orderSummary = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:[indexPath section] inSection:0]];
+			NSInteger addRowCount = [orderSummary.items count] + 1;
+			NSLog(@"addRowCount: %d", addRowCount);
 			NSMutableArray *indexesToAdd = [[NSMutableArray alloc] initWithCapacity:2];
-			for (NSInteger i=1; i<=2; i++) {
+			for (NSInteger i=1; i<addRowCount; i++) {
 				[indexesToAdd addObject:[NSIndexPath indexPathForRow:i inSection:[indexPath section]]];
 			}
-			[rowCount replaceObjectAtIndex:[indexPath section] withObject:[NSNumber numberWithInt:3]];
+			[rowCount replaceObjectAtIndex:[indexPath section] withObject:[NSNumber numberWithInt:addRowCount]];
 			[tableView insertRowsAtIndexPaths:indexesToAdd withRowAnimation:UITableViewRowAnimationTop];
 		}
 		expandedSectionIndex = [NSIndexPath indexPathForRow:[indexPath row] inSection:[indexPath section]];
@@ -160,6 +173,36 @@
 	} else {
 		return 64;
 	}
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+	if (_fetchedResultsController != nil)
+		return _fetchedResultsController;
+	
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate *)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [delegate managedObjectContext];
+	
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+	
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"OrderSummary" inManagedObjectContext:context];
+	[fetchRequest setEntity:entityDescription];
+	
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order_summary_id" ascending:YES];
+	[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"scheduled_run.scheduledRunID == %d",[[[delegate currentScheduledRun] scheduledRunID] intValue]];
+	[fetchRequest setPredicate:predicate];
+	
+	[fetchRequest setFetchBatchSize:20];
+	
+	NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
+																				 managedObjectContext:context 
+																				   sectionNameKeyPath:nil 
+																							cacheName:nil/*@"Root"*/];
+	[controller setDelegate:self];
+	_fetchedResultsController = controller;
+	
+	return _fetchedResultsController;	
 }
 
 
