@@ -19,14 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	expandedSectionIndex = nil;
-	rowCount = [[NSMutableArray alloc] initWithCapacity:2];
-	for (NSInteger i=0; i<2; i++) {
+	rowCount = [[NSMutableArray alloc] initWithCapacity:10];
+	for (NSInteger i=0; i<10; i++) {
 		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
 	}
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)_tableView {
-    return 2;
+    return 10;
 }
 
 - (NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
