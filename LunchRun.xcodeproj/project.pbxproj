@@ -72,8 +72,8 @@
 		C9F8B0E712A32D9200250C1A /* SearchDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F8B0E512A32D9200250C1A /* SearchDestinationViewController.m */; };
 		C9F8B0E812A32D9200250C1A /* SearchDestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9F8B0E612A32D9200250C1A /* SearchDestinationView.xib */; };
 		C9FCAFA712ACA29300157279 /* OwnerSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCAFA312ACA29300157279 /* OwnerSummary.m */; };
-		C9FCAFBE12ACA32000157279 /* OrderItemSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCAFBD12ACA32000157279 /* OrderItemSummary.m */; };
 		C9FCAFD112ACA3F700157279 /* OrderSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCAFD012ACA3F700157279 /* OrderSummary.m */; };
+		C9FCB00712ACAADD00157279 /* OrderItemSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCB00612ACAADD00157279 /* OrderItemSummary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -181,10 +181,10 @@
 		C9F8B2C612A3665E00250C1A /* CreateModalDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateModalDelegate.h; sourceTree = "<group>"; };
 		C9FCAFA212ACA29300157279 /* OwnerSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnerSummary.h; sourceTree = "<group>"; };
 		C9FCAFA312ACA29300157279 /* OwnerSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnerSummary.m; sourceTree = "<group>"; };
-		C9FCAFBC12ACA32000157279 /* OrderItemSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemSummary.h; sourceTree = "<group>"; };
-		C9FCAFBD12ACA32000157279 /* OrderItemSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemSummary.m; sourceTree = "<group>"; };
 		C9FCAFCF12ACA3F700157279 /* OrderSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderSummary.h; sourceTree = "<group>"; };
 		C9FCAFD012ACA3F700157279 /* OrderSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderSummary.m; sourceTree = "<group>"; };
+		C9FCB00512ACAADD00157279 /* OrderItemSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemSummary.h; sourceTree = "<group>"; };
+		C9FCB00612ACAADD00157279 /* OrderItemSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemSummary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,12 +343,12 @@
 				C9179AD412A01BA6001A7AFA /* Order.m */,
 				C9179AD512A01BA6001A7AFA /* OrderItemOption.h */,
 				C9179AD612A01BA6001A7AFA /* OrderItemOption.m */,
-				C9FCAFBC12ACA32000157279 /* OrderItemSummary.h */,
-				C9FCAFBD12ACA32000157279 /* OrderItemSummary.m */,
 				C9FCAFA212ACA29300157279 /* OwnerSummary.h */,
 				C9FCAFA312ACA29300157279 /* OwnerSummary.m */,
 				C9FCAFCF12ACA3F700157279 /* OrderSummary.h */,
 				C9FCAFD012ACA3F700157279 /* OrderSummary.m */,
+				C9FCB00512ACAADD00157279 /* OrderItemSummary.h */,
+				C9FCB00612ACAADD00157279 /* OrderItemSummary.m */,
 				C9B918041298FC4D006D121A /* EntityFactory.h */,
 				C9B918051298FC4D006D121A /* EntityFactory.m */,
 				C9B91892129909FC006D121A /* EntityService.h */,
@@ -525,8 +525,8 @@
 				C93F463B12AB4ADC006CFF26 /* OrderItemSummaryCell.m in Sources */,
 				C93F464612AB5278006CFF26 /* OrderItemSummaryTitleCell.m in Sources */,
 				C9FCAFA712ACA29300157279 /* OwnerSummary.m in Sources */,
-				C9FCAFBE12ACA32000157279 /* OrderItemSummary.m in Sources */,
 				C9FCAFD112ACA3F700157279 /* OrderSummary.m in Sources */,
+				C9FCB00712ACAADD00157279 /* OrderItemSummary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

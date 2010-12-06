@@ -9,6 +9,11 @@
 #import "OrderSummaryViewController.h"
 #import "OrderItemSummaryTitleCell.h"
 #import "OrderItemSummaryCell.h"
+#import "OrderSummary.h"
+#import "OwnerSummary.h"
+#import "OrderItemSummary.h"
+#import "EntityFactory.h"
+#import "LunchRunAppDelegate.h"
 
 #define TITLE_ROW 0
 
@@ -23,6 +28,49 @@
 	for (NSInteger i=0; i<10; i++) {
 		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
 	}
+	
+	// Create Test Data
+	// Run only once
+	/*
+	OwnerSummary *owner = [EntityFactory createOwnerSummary];
+	owner.owner_id = @"1";
+	owner.owner_name = @"Jason Goldberg";
+	
+	OrderSummary *order = [EntityFactory createOrderSummary];
+	order.order_summary_id = @"1";
+	order.name = @"Two Meat Plate";
+	order.total_quantity = @"3";
+	order.scheduled_run = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
+	
+	OrderItemSummary *orderItem = [EntityFactory createOrderItemSummary];
+	orderItem.name = @"Two Meat Plate";
+	orderItem.notes = @"Brisket, Sausage";
+	orderItem.quantity = @"1";
+	orderItem.owner = owner;
+	
+	OrderItemSummary *orderItemTwo = [EntityFactory createOrderItemSummary];
+	orderItemTwo.name = @"Two Meat Plate";
+	orderItemTwo.notes = @"Ribs, Sausage";
+	orderItemTwo.quantity = @"1";
+	orderItemTwo.owner = owner;
+	
+	OrderItemSummary *orderItemThree = [EntityFactory createOrderItemSummary];
+	orderItemThree.name = @"Two Meat Plate";
+	orderItemThree.notes = @"Pulled Pork, Ribs";
+	orderItemThree.quantity = @"1";
+	orderItemThree.owner = owner;
+	
+	[order addItemsObject:orderItem];
+	[order addItemsObject:orderItemTwo];
+	[order addItemsObject:orderItemThree];
+	
+	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+	NSError *error;
+	if (![context save:&error]) {
+		NSLog(@"CoreData Error");
+	}
+	
+	*/
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)_tableView {

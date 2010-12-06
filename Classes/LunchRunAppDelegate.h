@@ -14,8 +14,7 @@
 @interface LunchRunAppDelegate : NSObject <UIApplicationDelegate,UINavigationControllerDelegate> {
     // Core Data
 	NSManagedObjectModel *managedObjectModel;
-    NSManagedObjectContext *managedObjectContext; // Used for core changes
-	NSManagedObjectContext *summaryManagedObjectContext; // Used for summary data
+    NSManagedObjectContext *managedObjectContext;
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
 	
 	// UI
@@ -38,7 +37,6 @@
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain, readonly) NSManagedObjectContext *summaryManagedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (nonatomic, retain) ScheduledRun *currentScheduledRun;
