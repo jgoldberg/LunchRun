@@ -74,6 +74,7 @@
 		C9FCAFA712ACA29300157279 /* OwnerSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCAFA312ACA29300157279 /* OwnerSummary.m */; };
 		C9FCAFD112ACA3F700157279 /* OrderSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCAFD012ACA3F700157279 /* OrderSummary.m */; };
 		C9FCB00712ACAADD00157279 /* OrderItemSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCB00612ACAADD00157279 /* OrderItemSummary.m */; };
+		C9FCB09812ACBA3B00157279 /* NSArray+Set.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FCB09712ACBA3B00157279 /* NSArray+Set.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,6 +186,8 @@
 		C9FCAFD012ACA3F700157279 /* OrderSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderSummary.m; sourceTree = "<group>"; };
 		C9FCB00512ACAADD00157279 /* OrderItemSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemSummary.h; sourceTree = "<group>"; };
 		C9FCB00612ACAADD00157279 /* OrderItemSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemSummary.m; sourceTree = "<group>"; };
+		C9FCB09612ACBA3B00157279 /* NSArray+Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Set.h"; sourceTree = "<group>"; };
+		C9FCB09712ACBA3B00157279 /* NSArray+Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Set.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +331,8 @@
 				C91F43F21299289A00440A84 /* LRProgressHUD.m */,
 				C91FFA5E12777DC100615EAA /* LRTimeRemaining.h */,
 				C91FFA5F12777DC100615EAA /* LRTimeRemaining.m */,
+				C9FCB09612ACBA3B00157279 /* NSArray+Set.h */,
+				C9FCB09712ACBA3B00157279 /* NSArray+Set.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				C9FCAFA712ACA29300157279 /* OwnerSummary.m in Sources */,
 				C9FCAFD112ACA3F700157279 /* OrderSummary.m in Sources */,
 				C9FCB00712ACAADD00157279 /* OrderItemSummary.m in Sources */,
+				C9FCB09812ACBA3B00157279 /* NSArray+Set.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

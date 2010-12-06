@@ -14,6 +14,7 @@
 #import "OrderItemSummary.h"
 #import "EntityFactory.h"
 #import "LunchRunAppDelegate.h"
+#import "NSArray+Set.h"
 
 #define TITLE_ROW 0
 
@@ -61,8 +62,8 @@
 	[order addItemsObject:orderItemThree];
 	
 	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
-	NSError *error;
-	if (![context save:&error]) {
+	NSError *err;
+	if (![context save:&err]) {
 		NSLog(@"CoreData Error");
 	}
 	
@@ -97,7 +98,7 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *CellIdentifier = @"OrderSummary";
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (nil == cell) {
 		if ([indexPath row] == TITLE_ROW) {
 			NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"OrderItemSummaryTitleCell" owner:self options:nil];
@@ -108,16 +109,19 @@
 		}
 	}
 	
-	if ([indexPath row] == TITLE_ROW) {
+	OrderSummary *orderSummary = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:[indexPath section] inSection:0]];
+	if ([indexPath row] == TITLE_ROW) {		
 		OrderItemSummaryTitleCell *titleCell = (OrderItemSummaryTitleCell*)cell;
-		titleCell.nameLabel.text = @"Two Meat Plate";
-		titleCell.quantityLabel.text = @"2";
+		titleCell.nameLabel.text = [orderSummary name];
+		titleCell.quantityLabel.text = [orderSummary total_quantity];
 	} else {
+		OrderItemSummary *orderItemSummary = [[NSArray arrayByOrderingSet:orderSummary.items byKey:@"notes" ascending:YES] objectAtIndex:([indexPath row] - 1)];
+		NSLog(@"Quantity: %@, Owner: %@", [orderItemSummary quantity], [orderItemSummary owner]);
 		OrderItemSummaryCell *summaryCell = (OrderItemSummaryCell*)cell;
-		summaryCell.userLabel.text = @"Jason Goldberg";
-		summaryCell.quantityLabel.text = @"Qty: 1";
-		summaryCell.options1Label.text = @"Brisket (Moist), Sausage, Extra Sauce";
-		summaryCell.options2Label.text = @"Extra Sauce";
+		summaryCell.userLabel.text = [orderItemSummary.owner owner_name];
+		summaryCell.quantityLabel.text = [NSString stringWithFormat:@"Qty: %@",[orderItemSummary quantity]];
+		summaryCell.options1Label.text = [orderItemSummary notes];
+		summaryCell.options2Label.text = @"Extra Sauce"; // TODO
 	}
 	
 	return cell;

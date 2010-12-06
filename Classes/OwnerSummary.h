@@ -16,7 +16,7 @@
 
 @property (nonatomic, retain) NSString * owner_id;
 @property (nonatomic, retain) NSString * owner_name;
-@property (nonatomic, retain) OrderItemSummary * items;
+@property (nonatomic, retain) NSSet * items;
 
 @end
 
