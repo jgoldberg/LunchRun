@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-
-@interface MyGroupTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface MyGroupTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {
 	IBOutlet UITableView *tableView;
 	NSArray *submittedOrders;
 	NSArray *unsubmittedOrders;
+	
+	NSFetchedResultsController *_fetchedResultsController;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end

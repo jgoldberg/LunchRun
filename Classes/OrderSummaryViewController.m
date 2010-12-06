@@ -30,8 +30,12 @@
 	// Run only once
 	/*
 	OwnerSummary *owner = [EntityFactory createOwnerSummary];
-	owner.owner_id = @"1";
-	owner.owner_name = @"Jason Goldberg";
+	owner.owner_id = @"3";
+	owner.owner_name = @"Ian Goldberg";
+	
+	OwnerSummary *ownerOne = [EntityFactory createOwnerSummary];
+	ownerOne.owner_id = @"3";
+	ownerOne.owner_name = @"Jason Goldberg";
 	
 	OrderSummary *order = [EntityFactory createOrderSummary];
 	order.order_summary_id = @"1";
@@ -57,6 +61,13 @@
 	orderItemThree.quantity = @"1";
 	orderItemThree.owner = owner;
 	
+	[owner addItemsObject:orderItem];
+	[owner addItemsObject:orderItemTwo];
+	[owner addItemsObject:orderItemThree];
+
+	[owner fillHasOrders];
+	[ownerOne fillHasOrders];
+	
 	[order addItemsObject:orderItem];
 	[order addItemsObject:orderItemTwo];
 	[order addItemsObject:orderItemThree];
@@ -66,7 +77,6 @@
 	if (![context save:&err]) {
 		NSLog(@"CoreData Error");
 	}
-	
 	*/
 	
 	NSError *error;
@@ -116,7 +126,7 @@
 		titleCell.quantityLabel.text = [orderSummary total_quantity];
 	} else {
 		OrderItemSummary *orderItemSummary = [[NSArray arrayByOrderingSet:orderSummary.items byKey:@"notes" ascending:YES] objectAtIndex:([indexPath row] - 1)];
-		NSLog(@"Quantity: %@, Owner: %@", [orderItemSummary quantity], [orderItemSummary owner]);
+		NSLog(@"Quantity: %@, Owner: %@", [orderItemSummary quantity], [orderItemSummary.owner valueForKey:@"hasOrders"]);
 		OrderItemSummaryCell *summaryCell = (OrderItemSummaryCell*)cell;
 		summaryCell.userLabel.text = [orderItemSummary.owner owner_name];
 		summaryCell.quantityLabel.text = [NSString stringWithFormat:@"Qty: %@",[orderItemSummary quantity]];

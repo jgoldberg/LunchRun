@@ -7,13 +7,21 @@
 //
 
 #import "OwnerSummary.h"
-
 #import "OrderItemSummary.h"
+
+#define SUBMITTED_SECTION @"Submitted Order"
+#define UNSUBMITTED_SECTION @"No Submitted Order"
 
 @implementation OwnerSummary 
 
 @dynamic owner_id;
 @dynamic owner_name;
 @dynamic items;
+@dynamic hasOrders;
+
+- (void) fillHasOrders {
+	NSLog(@"setHasOrders count: %d", [self.items count]);
+	self.hasOrders = [self.items count] != 0 ? SUBMITTED_SECTION : UNSUBMITTED_SECTION;
+}
 
 @end

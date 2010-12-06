@@ -14,11 +14,19 @@
 {
 }
 
+- (void) fillHasOrders;
+
 @property (nonatomic, retain) NSString * owner_id;
 @property (nonatomic, retain) NSString * owner_name;
+@property (nonatomic, retain) NSString * hasOrders;
 @property (nonatomic, retain) NSSet * items;
 
 @end
 
+@interface OwnerSummary (CoreDataGeneratedAccessors)
+- (void)addItemsObject:(OrderItemSummary *)value;
+- (void)removeItemsObject:(OrderItemSummary *)value;
+- (void)addItems:(NSSet *)value;
+- (void)removeItems:(NSSet *)value;
 
-
+@end
