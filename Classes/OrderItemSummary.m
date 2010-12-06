@@ -8,15 +8,13 @@
 
 #import "OrderItemSummary.h"
 
-#import "OrderItemSummary.h"
-#import "ScheduledRun.h"
+#import "OwnerSummary.h"
 
 @implementation OrderItemSummary 
 
-@dynamic total_quantity;
+@dynamic quantity;
+@dynamic notes;
 @dynamic name;
-@dynamic order_summary_id;
-@dynamic items;
-@dynamic scheduled_run;
+@dynamic owner;
 
 @end
