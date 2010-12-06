@@ -1,4 +1,4 @@
-build/*
+build
 *.pbxuser
 *.perspective
 *.perspectivev3
