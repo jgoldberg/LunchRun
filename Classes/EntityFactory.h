@@ -11,6 +11,9 @@
 #import "Order.h"
 #import "OrderItem.h"
 #import "OrderItemOption.h"
+#import "OwnerSummary.h"
+#import "OrderItemSummary.h"
+#import "OrderSummary.h"
 
 @interface EntityFactory : NSObject {
 	
@@ -20,5 +23,8 @@
 + (Order *) createOrder;
 + (OrderItem *) createOrderItem;
 + (OrderItemOption *) createOrderItemOption;
++ (OrderSummary *) createOrderSummary;
++ (OrderItemSummary *) createOrderItemSummary;
++ (OwnerSummary *) createOwnerSummary;
 
 @end

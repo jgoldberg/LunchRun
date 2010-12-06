@@ -7,11 +7,12 @@
 //
 
 #import "EntityFactory.h"
+#import "LunchRunAppDelegate.h"
 
 @implementation EntityFactory
 
 + (ScheduledRun *)createScheduledRun {
-	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	ScheduledRun *newScheduledRun = [NSEntityDescription
 							   insertNewObjectForEntityForName:@"ScheduledRun" 
 							   inManagedObjectContext:context];
@@ -19,15 +20,15 @@
 }
 
 + (Order *)createOrder {
-	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
-	ScheduledRun *newOrder = [NSEntityDescription
+	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+	Order *newOrder = [NSEntityDescription
 									 insertNewObjectForEntityForName:@"Order" 
 									 inManagedObjectContext:context];
 	return newOrder;
 }
 
 + (OrderItem *)createOrderItem {
-	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	OrderItem *newOrderItem = [NSEntityDescription
 									 insertNewObjectForEntityForName:@"OrderItem" 
 									 inManagedObjectContext:context];
@@ -35,11 +36,35 @@
 }
 
 + (OrderItemOption *) createOrderItemOption {
-	NSManagedObjectContext *context = [[[UIApplication sharedApplication] delegate] managedObjectContext];
+	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
 	OrderItemOption *newOrderItemOption = [NSEntityDescription
 							   insertNewObjectForEntityForName:@"OrderItemOption" 
 							   inManagedObjectContext:context];
 	return newOrderItemOption;
+}
+
++ (OrderSummary *) createOrderSummary {
+	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] summaryManagedObjectContext];
+	OrderSummary *newOrderSummary = [NSEntityDescription
+										   insertNewObjectForEntityForName:@"OrderSummary" 
+										   inManagedObjectContext:context];
+	return newOrderSummary;
+}
+
++ (OrderItemSummary *) createOrderItemSummary {
+	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] summaryManagedObjectContext];
+	OrderItemSummary *newOrderItemSummary = [NSEntityDescription
+										   insertNewObjectForEntityForName:@"OrderItemSummary" 
+										   inManagedObjectContext:context];
+	return newOrderItemSummary;
+}
+
++ (OwnerSummary *) createOwnerSummary {
+	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] summaryManagedObjectContext];
+	OwnerSummary *newOwnerSummary = [NSEntityDescription
+										   insertNewObjectForEntityForName:@"OwnerSummary" 
+										   inManagedObjectContext:context];
+	return newOwnerSummary;
 }
 
 @end

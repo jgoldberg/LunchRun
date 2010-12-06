@@ -51,6 +51,21 @@
     return managedObjectContext;
 }
 
+- (NSManagedObjectContext *) summaryManagedObjectContext {
+	
+    if (summaryManagedObjectContext != nil) {
+        return summaryManagedObjectContext;
+    }
+	
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil) {
+        summaryManagedObjectContext = [[NSManagedObjectContext alloc] init];
+        [summaryManagedObjectContext setPersistentStoreCoordinator: coordinator];
+		[summaryManagedObjectContext setRetainsRegisteredObjects:YES];
+    }
+    return summaryManagedObjectContext;
+}
+
 
 /**
  Returns the managed object model for the application.
