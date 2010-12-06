@@ -98,8 +98,8 @@
 		C9179AD412A01BA6001A7AFA /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		C9179AD512A01BA6001A7AFA /* OrderItemOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemOption.h; sourceTree = "<group>"; };
 		C9179AD612A01BA6001A7AFA /* OrderItemOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemOption.m; sourceTree = "<group>"; };
-		C9179D9F12A087CB001A7AFA /* OrderItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderItemCell.h; path = ../OrderItemCell.h; sourceTree = "<group>"; };
-		C9179DA012A087CB001A7AFA /* OrderItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderItemCell.m; path = ../OrderItemCell.m; sourceTree = "<group>"; };
+		C9179D9F12A087CB001A7AFA /* OrderItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderItemCell.h; sourceTree = "<group>"; };
+		C9179DA012A087CB001A7AFA /* OrderItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderItemCell.m; sourceTree = "<group>"; };
 		C9179DA212A087E3001A7AFA /* OrderItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderItemCell.xib; sourceTree = "<group>"; };
 		C91F43F11299289A00440A84 /* LRProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRProgressHUD.h; sourceTree = "<group>"; };
 		C91F43F21299289A00440A84 /* LRProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRProgressHUD.m; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 		C91F45FA1299D30000440A84 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		C91F45FB1299D30000440A84 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		C91F45FC1299D30000440A84 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingsView.xib; path = Classes/SettingsView.xib; sourceTree = "<group>"; };
-		C91F47FE129A619B00440A84 /* AddScheduledRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddScheduledRunViewController.h; path = ../AddScheduledRunViewController.h; sourceTree = "<group>"; };
-		C91F47FF129A619B00440A84 /* AddScheduledRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddScheduledRunViewController.m; path = ../AddScheduledRunViewController.m; sourceTree = "<group>"; };
+		C91F47FE129A619B00440A84 /* AddScheduledRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddScheduledRunViewController.h; sourceTree = "<group>"; };
+		C91F47FF129A619B00440A84 /* AddScheduledRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddScheduledRunViewController.m; sourceTree = "<group>"; };
 		C91F4800129A619B00440A84 /* AddScheduledRunView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScheduledRunView.xib; sourceTree = "<group>"; };
 		C91FF95B1277662800615EAA /* testdata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testdata.plist; sourceTree = "<group>"; };
 		C91FF9B412776C4B00615EAA /* ScheduledRunCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduledRunCell.h; sourceTree = "<group>"; };
