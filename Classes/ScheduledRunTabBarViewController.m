@@ -61,6 +61,14 @@
 	[self.view insertSubview:controller.view atIndex:0];
 }
 
+- (void)navigationController:(UINavigationController *)_navigationController willShowViewController:(UIViewController *)_viewController animated:(BOOL)animated {
+	NSLog(@"Tab Bar willShowViewController");
+	if ([selectedController conformsToProtocol:@protocol(UINavigationControllerDelegate)]) {
+		id<UINavigationControllerDelegate> *delegate = (id<UINavigationControllerDelegate> *)selectedController;
+		[delegate navigationController:_navigationController willShowViewController:_viewController animated:animated];
+	}
+}
+
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];

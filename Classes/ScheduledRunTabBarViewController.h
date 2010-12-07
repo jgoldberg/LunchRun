@@ -13,7 +13,7 @@
 #import "DestinationInfoViewController.h"
 
 
-@interface ScheduledRunTabBarViewController : UIViewController <UITabBarDelegate> {
+@interface ScheduledRunTabBarViewController : UIViewController <UITabBarDelegate, UINavigationControllerDelegate> {
 	IBOutlet UITabBar *tabBar;
 	IBOutlet UITabBarItem *myOrderTabBarItem;
 	IBOutlet UITabBarItem *myGroupTabBarItem;

@@ -24,7 +24,9 @@
 #pragma mark UINavigationControllerDelegate
 
 - (void)navigationController:(UINavigationController *)_navigationController willShowViewController:(UIViewController *)_viewController animated:(BOOL)animated {
+	NSLog(@"LunchRunAppDelegate willShowViewController");
 	if ([_viewController conformsToProtocol:@protocol(UINavigationControllerDelegate)]) {
+		NSLog(@"LunchRunAppDelegate willShowViewController: delegate found");
 		id<UINavigationControllerDelegate> *delegate = (id<UINavigationControllerDelegate> *)_viewController;
 		[delegate navigationController:_navigationController willShowViewController:_viewController animated:animated];
 	}

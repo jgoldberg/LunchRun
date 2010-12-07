@@ -11,7 +11,7 @@
 
 @class LRProgressHUD;
 
-@interface ScheduledRunViewController : UIViewController <UIActionSheetDelegate, UITabBarDelegate>{
+@interface ScheduledRunViewController : UIViewController <UIActionSheetDelegate, UITabBarDelegate, UINavigationControllerDelegate>{
 	IBOutlet UITextView *textView;
 	IBOutlet UILabel *orderStatus;
 	IBOutlet UIButton *sendButton;

@@ -194,6 +194,11 @@
 	[hud dismiss];
 }
 
+- (void)navigationController:(UINavigationController *)_navigationController willShowViewController:(UIViewController *)_viewController animated:(BOOL)animated {
+	NSLog(@"Viewing ScheduledRunView");
+	// TODO: refresh the buttons
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
