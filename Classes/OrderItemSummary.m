@@ -14,6 +14,7 @@
 
 @dynamic quantity;
 @dynamic notes;
+@dynamic instructions;
 @dynamic name;
 @dynamic owner;
 

@@ -165,7 +165,7 @@
 		summaryCell.userLabel.text = [orderItemSummary.owner owner_name];
 		summaryCell.quantityLabel.text = [NSString stringWithFormat:@"Qty: %@",[orderItemSummary quantity]];
 		summaryCell.options1Label.text = [orderItemSummary notes];
-		summaryCell.options2Label.text = @"Extra Sauce"; // TODO
+		summaryCell.options2Label.text = [orderItemSummary instructions];
 	}
 	
 	return cell;

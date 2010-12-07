@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * quantity;
 @property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * instructions;
 @property (nonatomic, retain) OwnerSummary * owner;
 
 @end

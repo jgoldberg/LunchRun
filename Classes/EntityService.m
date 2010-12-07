@@ -266,7 +266,8 @@
 		
 		OrderItemSummary *orderItem = [EntityFactory createOrderItemSummary];
 		orderItem.name = [itemData objectForKey:@"name"];
-		orderItem.notes = [itemData objectForKey:@"instructions"];
+		orderItem.notes = [itemData objectForKey:@"notes"];
+		orderItem.instructions = [itemData objectForKey:@"instructions"];
 		orderItem.quantity = [NSString stringWithFormat:@"%1.2f",[[itemData objectForKey:@"quantity"] floatValue]];
 		orderItem.owner = owner;
 		[owner addItemsObject:orderItem];

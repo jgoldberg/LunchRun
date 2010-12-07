@@ -64,7 +64,15 @@
 
 - (void) performPost: (NSString *)postData {
 	NSLog(@"HTTP POST: %@", postData);
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",_baseUrl,_url]]];
+	
+	NSString *url;
+	if (nil != _paramString) {
+		url = [NSString stringWithFormat:@"%@%@?%@",_baseUrl,_url,_paramString];
+	} else {
+		url = [NSString stringWithFormat:@"%@%@",_baseUrl,_url];
+	}
+	
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
 	[request setHTTPMethod:@"POST"];
 	NSData *paramData = [[NSString stringWithFormat:@"%@=%@",@"query",postData] dataUsingEncoding:NSUTF8StringEncoding]; 
 	[request setHTTPBody: paramData];
