@@ -15,6 +15,8 @@
 #import "EntityFactory.h"
 #import "LunchRunAppDelegate.h"
 #import "NSArray+Set.h"
+#import "LRJSONRequest.h"
+#import "EntityService.h"
 
 #define TITLE_ROW 0
 
@@ -25,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate];
 	
 	// Create Test Data
 	// Run only once
@@ -32,10 +36,12 @@
 	OwnerSummary *owner = [EntityFactory createOwnerSummary];
 	owner.owner_id = @"3";
 	owner.owner_name = @"Ian Goldberg";
+	owner.scheduled_run = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
 	
 	OwnerSummary *ownerOne = [EntityFactory createOwnerSummary];
 	ownerOne.owner_id = @"3";
 	ownerOne.owner_name = @"Jason Goldberg";
+	ownerOne.scheduled_run = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
 	
 	OrderSummary *order = [EntityFactory createOrderSummary];
 	order.order_summary_id = @"1";
@@ -72,7 +78,7 @@
 	[order addItemsObject:orderItemTwo];
 	[order addItemsObject:orderItemThree];
 	
-	NSManagedObjectContext *context = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+	NSManagedObjectContext *context = [delegate managedObjectContext];
 	NSError *err;
 	if (![context save:&err]) {
 		NSLog(@"CoreData Error");
@@ -93,6 +99,26 @@
 	for (NSInteger i=0; i<sectionCount; i++) {
 		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
 	}
+	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *paramString = [NSString stringWithFormat:@"scheduled_run_id=%@",[[delegate currentScheduledRun] scheduledRunID]];
+	LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/orders/summarize"
+													 groupToken:[defaults objectForKey:@"group_token"]
+													  userToken:[defaults objectForKey:@"user_token"]
+													   delegate:self 
+													  onSuccess:@selector(summaryDataSuccess:)
+													  onFailure:@selector(summaryDataFailure:)];
+	[request performGet:paramString];
+}
+
+- (void) summaryDataSuccess:(NSDictionary*)response {
+	NSLog(@"Success");
+	[EntityService syncOrderSummary:response];
+	[tableView reloadData];
+}
+
+- (void) summaryDataFailure:(NSError*)error {
+	NSLog(@"Failure");	
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)_tableView {
