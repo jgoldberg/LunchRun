@@ -8,6 +8,8 @@
 
 #import "EntityService.h"
 
+#define SUBMITTED_SECTION @"Submitted Order"
+#define UNSUBMITTED_SECTION @"No Submitted Order"
 
 @implementation EntityService
 
@@ -170,7 +172,9 @@
 		OrderSummary *orderSummary = [orderArray objectAtIndex:i];
 		for (OrderItemSummary *orderItem in [orderSummary items]) {
 			[results addObject:orderItem];
-			[results addObject:[orderItem owner]];
+			if (nil != [orderItem owner]) {
+				[results addObject:[orderItem owner]];
+			}
 		}
 	}
 
@@ -209,8 +213,71 @@
 	}
 }
 
-+ (void) syncOrderSummary:(NSDictionary *)params {
++ (NSInteger) syncOrderSummary:(NSDictionary *)params {
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [delegate managedObjectContext];
+	
 	[EntityService removeAllSummaryObjects];
+	
+	//
+	// Owners
+	//
+	NSDictionary *ownersData = [params objectForKey:@"owners"];
+	NSMutableDictionary *createdOwners = [[NSMutableDictionary alloc] initWithCapacity:[ownersData count]];
+	for (NSString *key in ownersData) {
+		NSDictionary *ownerData = [ownersData objectForKey:key];
+		
+		OwnerSummary *newOwner = [EntityFactory createOwnerSummary];
+		newOwner.owner_id = key;
+		newOwner.owner_name = [ownerData objectForKey:@"owner_name"];
+		newOwner.hasOrders = [ownerData objectForKey:@"has_orders"] ? SUBMITTED_SECTION : UNSUBMITTED_SECTION;
+		newOwner.scheduled_run = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
+		
+		// Store since we will need to lookup in a bit...
+		[createdOwners setObject:newOwner forKey:key];
+	}
+	
+	//
+	// Orders
+	//
+	NSDictionary *ordersData = [params objectForKey:@"orders"];
+	NSMutableDictionary *createdOrders = [[NSMutableDictionary alloc] initWithCapacity:[ordersData count]];
+	for (NSString *key in ordersData) {
+		NSDictionary *orderData = [ordersData objectForKey:key];
+		
+		OrderSummary *newOrder = [EntityFactory createOrderSummary];
+		newOrder.order_summary_id = [NSString stringWithFormat:@"%d",[[orderData objectForKey:@"index"] intValue]];
+		newOrder.name = key;
+		newOrder.total_quantity = [NSString stringWithFormat:@"%1.2f",[[orderData objectForKey:@"total_quantity"] floatValue]];
+		newOrder.scheduled_run = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
+		
+		// Store since we will need to lookup in a bit...
+		[createdOrders setObject:newOrder forKey:key];
+	}
+	
+	//
+	// Order Items
+	//
+	NSArray *itemsArray = [params objectForKey:@"items"];
+	for (NSDictionary *itemData in itemsArray) {
+		OwnerSummary *owner = [createdOwners objectForKey:[itemData objectForKey:@"owner_id"]];
+		OrderSummary *order = [createdOrders objectForKey:[itemData objectForKey:@"name"]]; // Lookup by name since order is merged by name
+		
+		OrderItemSummary *orderItem = [EntityFactory createOrderItemSummary];
+		orderItem.name = [itemData objectForKey:@"name"];
+		orderItem.notes = [itemData objectForKey:@"instructions"];
+		orderItem.quantity = [NSString stringWithFormat:@"%1.2f",[[itemData objectForKey:@"quantity"] floatValue]];
+		orderItem.owner = owner;
+		[owner addItemsObject:orderItem];
+		[order addItemsObject:orderItem];
+	}
+	
+	NSError *error;
+	if (![context save:&error]) {
+		NSLog(@"Error saving order summary");
+	}
+	
+	return [createdOrders count];
 }
 
 @end
