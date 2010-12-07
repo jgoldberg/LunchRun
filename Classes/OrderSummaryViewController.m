@@ -113,7 +113,12 @@
 
 - (void) summaryDataSuccess:(NSDictionary*)response {
 	NSLog(@"Success");
-	[EntityService syncOrderSummary:response];
+	NSInteger sectionCount = [EntityService syncOrderSummary:response];
+	[rowCount release];
+	rowCount = [[NSMutableArray alloc] initWithCapacity:sectionCount];
+	for (NSInteger i=0; i<sectionCount; i++) {
+		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
+	}
 	[tableView reloadData];
 }
 
