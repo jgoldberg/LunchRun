@@ -91,9 +91,7 @@
 	NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"owner_name" ascending:YES];
 	[fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor,sortDescriptor2,nil]];
 	
-	// TODO
-	//NSPredicate *predicate = [NSPredicate predicateWithFormat:@"scheduled_run.scheduledRunID == %d",[[[delegate currentScheduledRun] scheduledRunID] intValue]];
-	//[fetchRequest setPredicate:predicate];
+	[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"scheduled_run.scheduledRunID == %d",[[[delegate currentScheduledRun] scheduledRunID] intValue]]];
 	
 	[fetchRequest setFetchBatchSize:20];
 	
