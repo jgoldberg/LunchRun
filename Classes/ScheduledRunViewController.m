@@ -13,6 +13,7 @@
 #import "LRJSONRequest.h"
 #import "LunchRunAppDelegate.h"
 #import "ScheduledRunTabBarViewController.h"
+#import "EntityService.h"
 
 #define SUBMIT_ORDER_TAG 10
 #define CANCEL_ORDER_TAG 20
@@ -147,6 +148,10 @@
 	if (![context save:&error]) {
 		NSLog(@"Error Saving");
 	}
+	
+	NSDictionary *orderSummary = [response objectForKey:@"summary"];
+	[EntityService syncOrderSummary:orderSummary];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"SummaryContextDidSave" object:nil];
 	
 	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"LunchRun" 
 														message:@"Your order was successfully submitted." 

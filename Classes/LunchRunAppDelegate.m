@@ -17,6 +17,7 @@
 @synthesize scheduledRunTabBarViewController;
 @synthesize menuData;
 @synthesize currentScheduledRun;
+@synthesize summaryDataLoaded;
 @synthesize alertRunning;
 
 #pragma mark -
@@ -118,7 +119,9 @@
 	NSDictionary *_menuData = [[NSDictionary alloc] initWithContentsOfFile:path];
 	self.menuData = _menuData;
 	[_menuData release];
-		
+	
+	self.summaryDataLoaded = FALSE;
+	
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
 
 	// For testing remote APNS in a simulator env

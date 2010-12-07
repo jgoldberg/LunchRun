@@ -8,6 +8,8 @@
 
 #import "MyGroupTableViewController.h"
 #import "LunchRunAppDelegate.h"
+#import "EntityService.h"
+#import "LRJSONRequest.h"
 
 #define SUBMITTED_SECTION @"Submitted Order"
 #define UNSUBMITTED_SECTION @"No Submitted Order"
@@ -18,15 +20,49 @@
 @synthesize fetchedResultsController=_fetchedResultsController;
 
 - (void)viewDidLoad {
-	submittedOrders = [[NSArray arrayWithObjects:@"Jason Goldberg", @"Alex Goldberg", nil] retain];
-	unsubmittedOrders = [[NSArray arrayWithObjects:@"Diana Goldberg", @"Brad Goldberg", nil] retain];
     [super viewDidLoad];
+	
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate];
 	
 	NSError *error;
 	if (![self.fetchedResultsController performFetch:&error]) {
 		NSLog(@"Unresolved error %@: %@", error, [error userInfo]);
 		exit(-1);
 	}
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(contextDidSave)
+                                                 name:@"SummaryContextDidSave" object:nil];
+	
+	if (![delegate isSummaryDataLoaded]) {
+		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		NSString *paramString = [NSString stringWithFormat:@"scheduled_run_id=%@",[[delegate currentScheduledRun] scheduledRunID]];
+		LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/orders/summarize"
+														 groupToken:[defaults objectForKey:@"group_token"]
+														  userToken:[defaults objectForKey:@"user_token"]
+														   delegate:self 
+														  onSuccess:@selector(onSummaryDataSuccess:)
+														  onFailure:@selector(onSummaryDataFailure:)];
+		[request performGet:paramString];
+	}
+}
+
+- (void) onSummaryDataSuccess:(NSDictionary*)response {
+	NSLog(@"Success");
+	[EntityService syncOrderSummary:response];
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"SummaryContextDidSave" object:nil];
+}
+
+- (void) onSummaryDataFailure:(NSError*)error {
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	NSLog(@"Failure");	
+}
+
+- (void)contextDidSave
+{
+	[tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

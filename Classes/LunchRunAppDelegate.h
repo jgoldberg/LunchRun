@@ -25,6 +25,7 @@
 	
 	// Model
 	ScheduledRun *currentScheduledRun;
+	BOOL summaryDataLoaded;
 	
 	// Modal State
 	BOOL alertRunning;
@@ -40,7 +41,7 @@
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 @property (nonatomic, retain) ScheduledRun *currentScheduledRun;
-
+@property (nonatomic, getter = isSummaryDataLoaded) BOOL summaryDataLoaded;
 @property (nonatomic, getter = isAlertRunning) BOOL alertRunning;
 
 @end

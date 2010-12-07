@@ -11,8 +11,6 @@
 
 @interface MyGroupTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate> {
 	IBOutlet UITableView *tableView;
-	NSArray *submittedOrders;
-	NSArray *unsubmittedOrders;
 	
 	NSFetchedResultsController *_fetchedResultsController;
 }

@@ -278,7 +278,7 @@
 	if (![context save:&error]) {
 		NSLog(@"Error saving order summary");
 	}
-	
+	[delegate setSummaryDataLoaded:TRUE];
 	return [createdOrders count];
 }
 

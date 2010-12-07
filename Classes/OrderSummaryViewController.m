@@ -100,33 +100,48 @@
 		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
 	}
 	
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	NSString *paramString = [NSString stringWithFormat:@"scheduled_run_id=%@",[[delegate currentScheduledRun] scheduledRunID]];
-	LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/orders/summarize"
-													 groupToken:[defaults objectForKey:@"group_token"]
-													  userToken:[defaults objectForKey:@"user_token"]
-													   delegate:self 
-													  onSuccess:@selector(summaryDataSuccess:)
-													  onFailure:@selector(summaryDataFailure:)];
-	[request performGet:paramString];
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+											 selector:@selector(contextDidSave)
+                                                 name:@"SummaryContextDidSave" object:nil];
+	
+	// Shoud only fetch if it wasn't loaded before
+	if (![delegate isSummaryDataLoaded]) {
+		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+		NSString *paramString = [NSString stringWithFormat:@"scheduled_run_id=%@",[[delegate currentScheduledRun] scheduledRunID]];
+		LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/orders/summarize"
+														 groupToken:[defaults objectForKey:@"group_token"]
+														  userToken:[defaults objectForKey:@"user_token"]
+														   delegate:self 
+														  onSuccess:@selector(onSummaryDataSuccess:)
+														  onFailure:@selector(onSummaryDataFailure:)];
+		[request performGet:paramString];
+	}
 }
 
-- (void) summaryDataSuccess:(NSDictionary*)response {
+- (void) onSummaryDataSuccess:(NSDictionary*)response {
 	NSLog(@"Success");
-	NSInteger sectionCount = [EntityService syncOrderSummary:response];
+	[EntityService syncOrderSummary:response];
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"SummaryContextDidSave" object:nil];
+}
+
+- (void) onSummaryDataFailure:(NSError*)error {
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	NSLog(@"Failure");	
+}
+
+- (void)contextDidSave
+{
+	NSLog(@"Context Did Save");
+	NSInteger sectionCount = [self numberOfSectionsInTableView:tableView];
+	NSLog(@"Order Summary Received Section Count: %d",sectionCount);
 	[rowCount release];
 	rowCount = [[NSMutableArray alloc] initWithCapacity:sectionCount];
 	for (NSInteger i=0; i<sectionCount; i++) {
 		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
 	}
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	[tableView reloadData];
-}
-
-- (void) summaryDataFailure:(NSError*)error {
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-	NSLog(@"Failure");	
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)_tableView {
