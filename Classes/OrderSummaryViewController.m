@@ -100,6 +100,7 @@
 		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
 	}
 	
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *paramString = [NSString stringWithFormat:@"scheduled_run_id=%@",[[delegate currentScheduledRun] scheduledRunID]];
 	LRJSONRequest *request = [[LRJSONRequest alloc] initWithURL:@"/services/orders/summarize"
@@ -119,10 +120,12 @@
 	for (NSInteger i=0; i<sectionCount; i++) {
 		[rowCount insertObject:[NSNumber numberWithInt:1] atIndex:i];
 	}
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	[tableView reloadData];
 }
 
 - (void) summaryDataFailure:(NSError*)error {
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	NSLog(@"Failure");	
 }
 
