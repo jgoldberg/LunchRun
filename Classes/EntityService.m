@@ -228,9 +228,10 @@
 		NSDictionary *ownerData = [ownersData objectForKey:key];
 		
 		OwnerSummary *newOwner = [EntityFactory createOwnerSummary];
+		BOOL hasOrders = [[ownerData objectForKey:@"has_orders"] boolValue];
 		newOwner.owner_id = key;
 		newOwner.owner_name = [ownerData objectForKey:@"owner_name"];
-		newOwner.hasOrders = [ownerData objectForKey:@"has_orders"] ? SUBMITTED_SECTION : UNSUBMITTED_SECTION;
+		newOwner.hasOrders = hasOrders ? SUBMITTED_SECTION : UNSUBMITTED_SECTION;
 		newOwner.scheduled_run = [(LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate] currentScheduledRun];
 		
 		// Store since we will need to lookup in a bit...
