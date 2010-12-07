@@ -18,6 +18,7 @@
 @dynamic owner_name;
 @dynamic items;
 @dynamic hasOrders;
+@dynamic scheduled_run;
 
 - (void) fillHasOrders {
 	NSLog(@"setHasOrders count: %d", [self.items count]);

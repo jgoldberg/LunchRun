@@ -9,6 +9,7 @@
 #import <CoreData/CoreData.h>
 
 @class OrderItemSummary;
+@class ScheduledRun;
 
 @interface OwnerSummary :  NSManagedObject  
 {
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) NSString * owner_name;
 @property (nonatomic, retain) NSString * hasOrders;
 @property (nonatomic, retain) NSSet * items;
+@property (nonatomic, retain) ScheduledRun * scheduled_run;
 
 @end
 
