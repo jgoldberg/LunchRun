@@ -260,7 +260,7 @@
 	//
 	NSArray *itemsArray = [params objectForKey:@"items"];
 	for (NSDictionary *itemData in itemsArray) {
-		OwnerSummary *owner = [createdOwners objectForKey:[itemData objectForKey:@"owner_id"]];
+		OwnerSummary *owner = [createdOwners objectForKey:[NSString stringWithFormat:@"%d",[[itemData objectForKey:@"owner_id"] intValue]]];
 		OrderSummary *order = [createdOrders objectForKey:[itemData objectForKey:@"name"]]; // Lookup by name since order is merged by name
 		
 		OrderItemSummary *orderItem = [EntityFactory createOrderItemSummary];
