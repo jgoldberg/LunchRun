@@ -14,8 +14,8 @@
 @synthesize receivedData=_receivedData;
 
 - (id)initWithURL:(NSString *)url groupToken:(NSString *)groupToken userToken:(NSString *)userToken delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure {
-	NSString *newUrl = [NSString stringWithFormat:@"%@?group_token=%@&user_token=%@",url,groupToken,userToken];
-	[self initWithURL:newUrl delegate:delegate onSuccess:onSuccess onFailure:onFailure];
+	_paramString = [NSString stringWithFormat:@"group_token=%@&user_token=%@",groupToken,userToken];
+	return [self initWithURL:url delegate:delegate onSuccess:onSuccess onFailure:onFailure];
 }
 
 - (id)initWithURL:(NSString *)url delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure {
@@ -24,22 +24,42 @@
 		_onSuccess = onSuccess;
 		_onFailure = onFailure;
 		_url = [url retain];
-		_baseUrl = @"http://ec2-50-16-7-104.compute-1.amazonaws.com";
-		//_baseUrl = @"http://localhost:8080";
+		//_baseUrl = @"http://ec2-50-16-7-104.compute-1.amazonaws.com";
+		_baseUrl = @"http://localhost:8080";
 	}
 	return self;
 }
 
 - (void) performGet {
+	[self performGet:nil];
+}
+
+- (void) performGet: (NSString *)paramString {
 	NSLog(@"HTTP GET");
-	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",_baseUrl,_url]]];
+	
+
+	if (nil != paramString && nil != _paramString) {
+		_paramString = [NSString stringWithFormat:@"%@&%@",_paramString, paramString];
+	} else if (nil != paramString) {
+		_paramString = paramString;
+	}
+
+	NSString *url;
+	if (nil != _paramString) {
+		url = [NSString stringWithFormat:@"%@%@?%@",_baseUrl,_url,_paramString];
+	} else {
+		url = [NSString stringWithFormat:@"%@%@",_baseUrl,_url];
+	}
+	
+	
+	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
 	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
 	if (connection) {
 		_receivedData = [[NSMutableData data] retain];
 	} else {
 		[_delegate performSelector:_onFailure withObject:nil];
 	}
-	[request release];
+	[request release];	
 }
 
 - (void) performPost: (NSString *)postData {

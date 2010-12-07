@@ -16,11 +16,13 @@
 	SEL _onFailure;
 	NSString *_url;
 	NSString *_baseUrl;
+	NSString *_paramString;
 }
 
 - (id)initWithURL:(NSString *)url delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure;
 - (id)initWithURL:(NSString *)url groupToken:(NSString *)groupToken userToken:(NSString *)userToken delegate:(id)delegate onSuccess:(SEL)onSuccess onFailure:(SEL)onFailure;
 - (void) performGet;
+- (void) performGet: (NSString *)paramString;
 - (void) performPost: (NSString *)postData;
 
 @property (nonatomic, retain) NSMutableData *receivedData;
