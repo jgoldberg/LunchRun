@@ -141,4 +141,76 @@
 	}
 }
 
++ (void) removeAllSummaryObjects {
+	LunchRunAppDelegate *delegate = (LunchRunAppDelegate*)[[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [delegate managedObjectContext];
+
+	//
+	// Mark all summary objects for deletion
+	//
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+	[request setEntity:[NSEntityDescription entityForName:@"OrderSummary" inManagedObjectContext:context]];
+	
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order_summary_id" ascending:YES];
+	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	
+	[request setPredicate:[NSPredicate predicateWithFormat:@"scheduled_run.scheduledRunID == %d",[[[delegate currentScheduledRun] scheduledRunID] intValue]]];
+	
+	NSError *error;
+	NSArray *orderArray = [context executeFetchRequest:request error:&error];
+	if (orderArray == nil)
+	{
+		NSLog(@"Error Finding All Scheduled Runs");
+	}
+	[sortDescriptor release];
+	[request release];
+	
+	NSMutableSet *results = [NSMutableSet setWithArray:orderArray];
+	for (NSInteger i = 0; i<[orderArray count]; i++) {
+		OrderSummary *orderSummary = [orderArray objectAtIndex:i];
+		for (OrderItemSummary *orderItem in [orderSummary items]) {
+			[results addObject:orderItem];
+			[results addObject:[orderItem owner]];
+		}
+	}
+
+	//
+	// Mark all remaining owner objects for deletion
+	//
+	NSFetchRequest *request2 = [[NSFetchRequest alloc] init];
+	[request2 setEntity:[NSEntityDescription entityForName:@"OwnerSummary" inManagedObjectContext:context]];
+	
+	NSSortDescriptor *sortDescriptor2 = [[NSSortDescriptor alloc] initWithKey:@"owner_id" ascending:YES];
+	[request2 setSortDescriptors:[NSArray arrayWithObject:sortDescriptor2]];
+	
+	[request2 setPredicate:[NSPredicate predicateWithFormat:@"scheduled_run.scheduledRunID == %d",[[[delegate currentScheduledRun] scheduledRunID] intValue]]];
+	
+	NSArray *ownerArray = [context executeFetchRequest:request2 error:&error];
+	if (ownerArray == nil)
+	{
+		NSLog(@"Error Finding All Scheduled Runs");
+	}
+	[sortDescriptor2 release];
+	[request2 release];
+	
+	for (OwnerSummary *ownerSummary in ownerArray) {
+		[results addObject:ownerSummary];
+	}
+	
+	//
+	// Finally, delete all objects
+	//		
+	for (NSManagedObject *object in results) {
+		[context deleteObject:object]; 
+	}
+	
+	if (![context save:&error]) {
+		NSLog(@"Error Removing All Summary Objects");
+	}
+}
+
++ (void) syncOrderSummary:(NSDictionary *)params {
+	[EntityService removeAllSummaryObjects];
+}
+
 @end
